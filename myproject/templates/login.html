@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Login - RescueMate</title>
+
+<link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="logo-container">
+    <img src="{% static 'images/Icon_img.png' %}" class="logo" alt="RescueMate Logo">
+    <h2 class="logo-text">RescueMate</h2>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="{% url 'index' %}">Home</a></li>
+    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+  </ul>
+</nav>
+
+<!-- ===== LOGIN SECTION ===== -->
+<section class="login-section">
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="icon-circle">
+          <img src="{% static 'images/Icon_img.png' %}" alt="RescueMate" class="login-icon">
+        </div>
+        <h2>Welcome Back!</h2>
+        <p>Login to continue your rescue journey</p>
+      </div>
+
+      {% if messages %}
+      <div class="messages" style="margin-bottom: 20px;">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" style="padding: 12px; border-radius: 5px; margin-bottom: 10px; {% if message.tags == 'error' %}background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;{% elif message.tags == 'success' %}background: #d4edda; color: #155724; border: 1px solid #c3e6cb;{% endif %}">
+          {{ message }}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <form id="loginForm" class="login-form" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-wrapper">
+            <span class="input-icon">📧</span>
+            <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="off">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="new-password">
+            <span class="toggle-password" id="togglePassword">👁️</span>
+          </div>
+        </div>
+
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox" id="remember">
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+
+      <div class="signup-link">
+        <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{% static 'js/login.js' %}?v=3"></script>
+</body>
+</html>

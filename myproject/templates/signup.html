@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Sign Up - RescueMate</title>
+
+<link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="logo-container">
+    <img src="{% static 'images/Icon_img.png' %}" class="logo" alt="RescueMate Logo">
+    <h2 class="logo-text">RescueMate</h2>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="{% url 'index' %}">Home</a></li>
+    <li><a href="{% url 'login' %}">Login</a></li>
+  </ul>
+</nav>
+
+<!-- ===== SIGNUP SECTION ===== -->
+<section class="signup-section">
+  <div class="signup-container">
+    <div class="signup-left">
+      <div class="welcome-content">
+        <div class="hero-image-container">
+          <img src="{% static 'images/signup_img.png' %}" alt="Happy rescued pet" class="signup-hero-img">
+        </div>
+      </div>
+    </div>
+
+    <div class="signup-right">
+      <div class="form-container">
+        <h2>Create Your Account</h2>
+        <p class="form-subtitle">Start your journey to make a difference</p>
+
+        {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <form id="signupForm" class="signup-form" method="POST" autocomplete="off">
+          {% csrf_token %}
+
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" required autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Create a strong password" required autocomplete="new-password">
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required autocomplete="new-password">
+          </div>
+
+          <div class="form-group otp-group">
+            <label>Enter OTP</label>
+            <button type="button" class="send-otp-btn" id="sendOtpBtn">Send OTP</button>
+
+            <div class="otp-boxes">
+              <input type="text" class="otp-box" name="otp_0" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+              <input type="text" class="otp-box" name="otp_1" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+              <input type="text" class="otp-box" name="otp_2" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+              <input type="text" class="otp-box" name="otp_3" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+              <input type="text" class="otp-box" name="otp_4" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+              <input type="text" class="otp-box" name="otp_5" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+            </div>
+
+            <small id="otpMessage" style="display:none;margin-top:5px;color:#4CAF50;"></small>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+          </div>
+
+          <button type="submit" class="signup-btn">Create Account</button>
+        </form>
+
+        <div class="form-footer">
+          <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== JavaScript ==================== -->
+<script src="{% static 'js/signup.js' %}?v=9" defer></script>
+</body>
+</html>

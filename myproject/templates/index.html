@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RescueMate - Pet Adoption & Rescue Portal</title>
+
+<link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="logo-container">
+    <img src="{% static 'images/Icon_img.png' %}" class="logo">
+    <div class="logo-text">RescueMate</div>
+  </div>
+
+  <ul class="nav-links">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#adopt">Adopt</a></li>
+  <li><a href="#rescue">Rescue</a></li>
+  <li><a href="{% url 'login' %}">Login</a></li>
+  <li><a href="{% url 'signup' %}">Sign Up</a></li>
+</ul>
+
+</nav>
+
+<!-- ===== HERO SECTION ===== -->
+<section id="home" class="hero">
+  <div class="hero-left">
+    <h2 class="typewriter">Every Life Matters — Give Hope, Give a Home 🐾</h2>
+    <p>Your kindness can change the world for a helpless animal.</p>
+    <p>Empowering shelters with smarter management tools to maximize impact. A unified platform designed to accelerate adoptions and save more lives.</p>
+  </div>
+
+  <div class="hero-right">
+    <img src="{% static 'images/home_img.png' %}" class="hero-img">
+  </div>
+</section>
+
+<!-- ===== MISSION SECTION ===== -->
+<section class="mission-section">
+  <div class="mission-container">
+    <div class="mission-left">
+      <div class="mission-images">
+        <img src="{% static 'images/index_1.png' %}" alt="Rescue Animals" class="mission-img">
+        <img src="{% static 'images/index_2.png' %}" alt="Happy Pets" class="mission-img">
+        <img src="{% static 'images/index_3.png' %}" alt="Adopted Pets" class="mission-img">
+      </div>
+    </div>
+
+    <div class="mission-right">
+      <h2 class="mission-title">Our Mission: Saving Lives Together</h2>
+      
+      <div class="mission-content">
+
+        <div class="info-block">
+          <div class="info-icon">🐾</div>
+          <div class="info-text">
+            <h3>Why Animal Rescue Matters</h3>
+            <p>Every year, millions of animals end up in shelters waiting for a loving home. Many face uncertain futures, but with your help, we can change their story. RescueMate connects compassionate people with animals in need, creating happy endings one adoption at a time.</p>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-icon">❤️</div>
+          <div class="info-text">
+            <h3>What We Do</h3>
+            <p>RescueMate is a comprehensive platform that streamlines the adoption process. We partner with verified shelters, provide real-time updates on available animals, and offer resources for new pet parents. Our goal is simple: make adoption easier, faster, and more transparent.</p>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-icon">🏆</div>
+          <div class="info-text">
+            <h3>Our Impact</h3>
+            <p>Since our launch, we've facilitated thousands of successful adoptions, connected hundreds of shelters with caring families, and provided ongoing support to ensure every animal finds their forever home. Together, we're building a community where every life matters.</p>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-icon">🌟</div>
+          <div class="info-text">
+            <h3>Join the Movement</h3>
+            <p>Whether you're looking to adopt, volunteer, foster, or donate, there's a place for you in our community. Every action counts, and together we can create a world where no animal is left behind. Start your rescue journey today.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  RescueMate — Together We Save Lives
+</footer>
+
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
