@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Admin Dashboard - RescueMate</title>
+    <link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="{% static 'images/Icon_img.png' %}" class="logo" alt="RescueMate Logo">
+        <h2 class="logo-text">RescueMate Admin</h2>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="{% url 'admin_dashboard' %}" class="active">Dashboard</a></li>
+        <li><a href="{% url 'admin_users' %}">Users</a></li>
+        <li><a href="{% url 'admin_reports' %}">Reports</a></li>
+        <li><a href="#" class="profile-link">
+            <span class="admin-icon">👑</span>
+            Admin: {{ user_name }}
+        </a></li>
+        <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- ===== ADMIN DASHBOARD CONTENT ===== -->
+<div class="admin-dashboard-container">
+    
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <h1>Welcome Admin {{ user_name }}! 👑</h1>
+        <p>Manage the RescueMate platform</p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+        
+        <div class="stat-card users-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-info">
+                <h3 id="totalUsers">Loading...</h3>
+                <p>Total Users</p>
+            </div>
+        </div>
+
+        <div class="stat-card found-card">
+            <div class="stat-icon">🔍</div>
+            <div class="stat-info">
+                <h3 id="foundPets">Loading...</h3>
+                <p>Found Pets</p>
+            </div>
+        </div>
+
+        <div class="stat-card rescue-card">
+            <div class="stat-icon">🚨</div>
+            <div class="stat-info">
+                <h3 id="rescueReports">Loading...</h3>
+                <p>Rescue Reports</p>
+            </div>
+        </div>
+
+        <div class="stat-card active-card">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-info">
+                <h3 id="activeReports">Loading...</h3>
+                <p>Active Reports</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Report Requests Section -->
+    <div class="report-requests-section">
+        <h2>Recent Report Requests</h2>
+        <div class="requests-container">
+            <div class="requests-tabs">
+                <button class="tab-btn active" onclick="showTab('found')">Found Pets</button>
+                <button class="tab-btn" onclick="showTab('rescue')">Rescue Reports</button>
+            </div>
+            
+            <div class="requests-content">
+                <!-- Found Pets Tab -->
+                <div id="foundTab" class="tab-content active">
+                    <div id="foundRequestsGrid" class="found-requests-grid">
+                        <div class="loading-message">Loading found pet requests...</div>
+                    </div>
+                </div>
+                
+                <!-- Rescue Reports Tab -->
+                <div id="rescueTab" class="tab-content">
+                    <div id="rescueRequestsGrid" class="rescue-requests-grid">
+                        <div class="loading-message">Loading rescue requests...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+        <h2>Quick Actions</h2>
+        <div class="actions-grid">
+            
+            <div class="action-card">
+                <div class="action-icon">👥</div>
+                <h3>Manage Users</h3>
+                <p>View and manage user accounts</p>
+                <a href="{% url 'admin_users' %}" class="action-btn">View Users</a>
+            </div>
+
+            <div class="action-card">
+                <div class="action-icon">📊</div>
+                <h3>View All Reports</h3>
+                <p>Monitor all rescue and found pet reports</p>
+                <a href="{% url 'admin_reports' %}" class="action-btn">View Reports</a>
+            </div>
+
+            <div class="action-card">
+                <div class="action-icon">📋</div>
+                <h3>Report Requests</h3>
+                <p>Manage pending report requests</p>
+                <button class="action-btn" onclick="scrollToReports()">View Requests</button>
+            </div>
+
+            <div class="action-card">
+                <div class="action-icon">⚙️</div>
+                <h3>System Settings</h3>
+                <p>Configure platform settings</p>
+                <button class="action-btn" onclick="alert('🚧 Settings coming soon!')">Settings</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- JavaScript -->
+<script src="{% static 'js/admin_dashboard.js' %}"></script>
+
+</body>
+</html>

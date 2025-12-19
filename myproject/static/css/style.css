@@ -564,7 +564,51 @@ footer::after {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1024px) {
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 20px 100px;
+  }
+  
+  .hero {
+    padding: 100px 120px;
+  }
+  
+  .mission-section {
+    padding: 120px 100px;
+  }
+  
+  .about {
+    padding: 140px 100px;
+  }
+}
+
+/* Desktop/Laptop (992px - 1199px) */
+@media (max-width: 1199px) {
+  .navbar {
+    padding: 20px 60px;
+  }
+  
+  .hero {
+    padding: 80px 60px;
+  }
+  
+  .typewriter {
+    font-size: 44px;
+  }
+  
+  .mission-section {
+    padding: 100px 60px;
+  }
+  
+  .about {
+    padding: 120px 60px;
+  }
+}
+
+/* Tablet Landscape (768px - 991px) */
+@media (max-width: 991px) {
   .navbar {
     padding: 20px 40px;
   }
@@ -573,6 +617,7 @@ footer::after {
     padding: 60px 40px;
     flex-direction: column;
     text-align: center;
+    min-height: 80vh;
   }
 
   .hero-left, .hero-right {
@@ -585,6 +630,10 @@ footer::after {
 
   .typewriter {
     font-size: 40px;
+  }
+
+  .hero-left p {
+    font-size: 18px;
   }
 
   .mission-section {
@@ -604,19 +653,48 @@ footer::after {
     font-size: 36px;
   }
 
+  .about {
+    padding: 100px 40px;
+  }
+
+  .section-title {
+    font-size: 48px;
+  }
+
+  .about-features {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
 }
 
-@media (max-width: 768px) {
+/* Tablet Portrait (576px - 767px) */
+@media (max-width: 767px) {
   .navbar {
     padding: 15px 20px;
     flex-direction: column;
     gap: 15px;
+    text-align: center;
   }
 
   .nav-links {
     gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
+    font-size: 15px;
+  }
+
+  .nav-links a {
+    padding: 6px 12px;
+    font-size: 15px;
+  }
+
+  .logo-text {
+    font-size: 24px;
+  }
+
+  .logo {
+    width: 45px;
+    height: 45px;
   }
 
   .typewriter {
@@ -625,6 +703,7 @@ footer::after {
     border-right: none;
     animation: none;
     width: 100%;
+    line-height: 1.2;
   }
 
   .hero {
@@ -633,11 +712,20 @@ footer::after {
   }
 
   .hero-left p {
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  .hero-left p:first-of-type {
+    font-size: 20px;
+  }
+
+  .hero-left p:last-of-type {
+    font-size: 16px;
   }
 
   .sub-line {
-    font-size: 16px;
+    font-size: 15px;
+    padding: 15px;
   }
 
   .mission-section {
@@ -648,15 +736,25 @@ footer::after {
     font-size: 32px;
   }
 
+  .mission-images {
+    gap: 15px;
+  }
+
+  .mission-img {
+    height: 200px;
+  }
+
   .info-block {
     flex-direction: column;
     padding: 20px;
+    text-align: center;
   }
 
   .info-icon {
     width: 50px;
     height: 50px;
     font-size: 32px;
+    margin: 0 auto 15px auto;
   }
 
   .info-text h3 {
@@ -667,4 +765,274 @@ footer::after {
     font-size: 15px;
   }
 
+  .about {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    font-size: 40px;
+  }
+
+  .section-description {
+    font-size: 18px;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .feature-card {
+    padding: 30px 25px;
+  }
+
+  .feature-icon {
+    font-size: 50px;
+  }
+
+  .feature-title {
+    font-size: 22px;
+  }
+
+  .feature-desc {
+    font-size: 15px;
+  }
+}
+
+/* Mobile Large (480px - 575px) */
+@media (max-width: 575px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .nav-links a {
+    padding: 5px 8px;
+    font-size: 14px;
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .typewriter {
+    font-size: 28px;
+  }
+
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .hero-left p {
+    font-size: 15px;
+  }
+
+  .hero-left p:first-of-type {
+    font-size: 18px;
+  }
+
+  .hero-left p:last-of-type {
+    font-size: 15px;
+  }
+
+  .sub-line {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .mission-section {
+    padding: 40px 15px;
+  }
+
+  .mission-title {
+    font-size: 28px;
+  }
+
+  .mission-img {
+    height: 180px;
+  }
+
+  .info-block {
+    padding: 15px;
+  }
+
+  .info-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 28px;
+  }
+
+  .info-text h3 {
+    font-size: 18px;
+  }
+
+  .info-text p {
+    font-size: 14px;
+  }
+
+  .about {
+    padding: 60px 15px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .section-description {
+    font-size: 16px;
+  }
+
+  .feature-card {
+    padding: 25px 20px;
+  }
+
+  .feature-icon {
+    font-size: 45px;
+  }
+
+  .feature-title {
+    font-size: 20px;
+  }
+
+  .feature-desc {
+    font-size: 14px;
+  }
+
+  .feature-btn {
+    padding: 10px 25px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile Small (320px - 479px) */
+@media (max-width: 479px) {
+  .navbar {
+    padding: 10px 12px;
+  }
+
+  .nav-links {
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .nav-links a {
+    padding: 4px 6px;
+    font-size: 13px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .typewriter {
+    font-size: 24px;
+  }
+
+  .hero {
+    padding: 25px 12px;
+  }
+
+  .hero-left p {
+    font-size: 14px;
+  }
+
+  .hero-left p:first-of-type {
+    font-size: 16px;
+  }
+
+  .hero-left p:last-of-type {
+    font-size: 14px;
+  }
+
+  .sub-line {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .mission-section {
+    padding: 35px 12px;
+  }
+
+  .mission-title {
+    font-size: 24px;
+  }
+
+  .mission-img {
+    height: 160px;
+  }
+
+  .info-block {
+    padding: 12px;
+  }
+
+  .info-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .info-text h3 {
+    font-size: 16px;
+  }
+
+  .info-text p {
+    font-size: 13px;
+  }
+
+  .about {
+    padding: 50px 12px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-description {
+    font-size: 15px;
+  }
+
+  .feature-card {
+    padding: 20px 15px;
+  }
+
+  .feature-icon {
+    font-size: 40px;
+  }
+
+  .feature-title {
+    font-size: 18px;
+  }
+
+  .feature-desc {
+    font-size: 13px;
+  }
+
+  .feature-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  footer {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  footer::before,
+  footer::after {
+    display: none;
+  }
 }

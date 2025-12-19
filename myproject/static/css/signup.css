@@ -475,10 +475,143 @@ body {
   text-decoration: underline;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 968px) {
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 20px 100px;
+  }
+  
+  .signup-container {
+    max-width: 1400px;
+  }
+  
+  .signup-left {
+    padding: 70px 60px;
+  }
+  
+  .signup-right {
+    padding: 70px 60px;
+  }
+}
+
+/* Desktop/Laptop (992px - 1199px) */
+@media (max-width: 1199px) {
+  .navbar {
+    padding: 20px 60px;
+  }
+  
+  .signup-container {
+    max-width: 1200px;
+  }
+  
+  .signup-left {
+    padding: 60px 45px;
+  }
+  
+  .signup-right {
+    padding: 60px 45px;
+  }
+}
+
+/* Tablet Landscape (768px - 991px) */
+@media (max-width: 991px) {
+  .navbar {
+    padding: 20px 40px;
+  }
+
   .signup-container {
     flex-direction: column;
+    max-width: 800px;
+  }
+
+  .signup-left {
+    padding: 50px 40px;
+  }
+
+  .welcome-content h1 {
+    font-size: 40px;
+  }
+
+  .welcome-content > p {
+    font-size: 18px;
+  }
+
+  .hero-image-container {
+    margin-bottom: 30px;
+  }
+
+  .signup-hero-img {
+    height: 250px;
+  }
+
+  .badge {
+    padding: 18px 22px;
+  }
+
+  .badge-icon {
+    font-size: 36px;
+  }
+
+  .badge-text strong {
+    font-size: 24px;
+  }
+
+  .badge-text span {
+    font-size: 14px;
+  }
+
+  .signup-right {
+    padding: 50px 40px;
+    max-height: none;
+  }
+
+  .form-container h2 {
+    font-size: 32px;
+  }
+
+  .form-subtitle {
+    font-size: 15px;
+  }
+}
+
+/* Tablet Portrait (576px - 767px) */
+@media (max-width: 767px) {
+  .navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 15px;
+  }
+
+  .nav-links a {
+    padding: 6px 12px;
+    font-size: 15px;
+  }
+
+  .logo-text {
+    font-size: 24px;
+  }
+
+  .logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .signup-section {
+    padding: 30px 15px;
+  }
+
+  .signup-container {
+    max-width: 600px;
   }
 
   .signup-left {
@@ -489,24 +622,265 @@ body {
     font-size: 36px;
   }
 
-  .stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+  .welcome-content > p {
+    font-size: 16px;
+    margin-bottom: 30px;
   }
 
-  .stat-item h3 {
-    font-size: 28px;
+  .hero-image-container {
+    margin-bottom: 25px;
+  }
+
+  .signup-hero-img {
+    height: 220px;
+  }
+
+  .impact-badges {
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  .badge {
+    padding: 15px 20px;
+  }
+
+  .badge-icon {
+    font-size: 32px;
+  }
+
+  .badge-text strong {
+    font-size: 22px;
+  }
+
+  .badge-text span {
+    font-size: 13px;
   }
 
   .signup-right {
     padding: 40px 30px;
-    max-height: none;
+  }
+
+  .form-container h2 {
+    font-size: 30px;
+  }
+
+  .form-subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .signup-form {
+    gap: 18px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .send-otp-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .otp-boxes {
+    gap: 10px;
+  }
+
+  .otp-box {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .signup-btn {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .checkbox-group label {
+    font-size: 13px;
   }
 }
 
-@media (max-width: 768px) {
+/* Mobile Large (480px - 575px) */
+@media (max-width: 575px) {
   .navbar {
-    padding: 15px 20px;
+    padding: 12px 15px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .nav-links a {
+    padding: 5px 8px;
+    font-size: 14px;
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .signup-section {
+    padding: 25px 12px;
+  }
+
+  .signup-container {
+    max-width: 500px;
+    border-radius: 20px;
+  }
+
+  .signup-left {
+    padding: 35px 25px;
+  }
+
+  .welcome-content h1 {
+    font-size: 32px;
+  }
+
+  .welcome-content > p {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+
+  .hero-image-container {
+    margin-bottom: 20px;
+  }
+
+  .signup-hero-img {
+    height: 200px;
+  }
+
+  .impact-badges {
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .badge {
+    padding: 12px 18px;
+  }
+
+  .badge-icon {
+    font-size: 28px;
+  }
+
+  .badge-text strong {
+    font-size: 20px;
+  }
+
+  .badge-text span {
+    font-size: 12px;
+  }
+
+  .signup-right {
+    padding: 35px 25px;
+  }
+
+  .form-container h2 {
+    font-size: 28px;
+  }
+
+  .form-subtitle {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+
+  .signup-form {
+    gap: 16px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .send-otp-btn {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+
+  .otp-boxes {
+    gap: 8px;
+  }
+
+  .otp-box {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .signup-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .checkbox-group {
+    gap: 8px;
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+
+  .checkbox-group label {
+    font-size: 12px;
+  }
+
+  .form-footer p {
+    font-size: 14px;
+  }
+}
+
+/* Mobile Small (320px - 479px) */
+@media (max-width: 479px) {
+  .navbar {
+    padding: 10px 12px;
+  }
+
+  .nav-links {
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .nav-links a {
+    padding: 4px 6px;
+    font-size: 13px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .signup-section {
+    padding: 20px 10px;
+  }
+
+  .signup-container {
+    max-width: 300px;
+    border-radius: 15px;
   }
 
   .signup-left {
@@ -514,12 +888,43 @@ body {
   }
 
   .welcome-content h1 {
-    font-size: 32px;
+    font-size: 28px;
   }
 
-  .stats {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .welcome-content > p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .hero-image-container {
+    margin-bottom: 18px;
+    border-radius: 15px;
+  }
+
+  .signup-hero-img {
+    height: 180px;
+  }
+
+  .impact-badges {
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .badge {
+    padding: 10px 15px;
+    border-radius: 12px;
+  }
+
+  .badge-icon {
+    font-size: 24px;
+  }
+
+  .badge-text strong {
+    font-size: 18px;
+  }
+
+  .badge-text span {
+    font-size: 11px;
   }
 
   .signup-right {
@@ -527,7 +932,74 @@ body {
   }
 
   .form-container h2 {
-    font-size: 28px;
+    font-size: 24px;
+  }
+
+  .form-subtitle {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .signup-form {
+    gap: 14px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .send-otp-btn {
+    padding: 5px 12px;
+    font-size: 11px;
+    border-radius: 6px;
+  }
+
+  .otp-boxes {
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .otp-box {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  .signup-btn {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  .checkbox-group {
+    gap: 6px;
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .checkbox-group label {
+    font-size: 11px;
+  }
+
+  .form-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+  }
+
+  .form-footer p {
+    font-size: 13px;
   }
 }
 

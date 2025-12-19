@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Found Pets - RescueMate</title>
+
+<link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+<link rel="stylesheet" href="{% static 'css/found_pet.css' %}">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="logo-container">
+    <img src="{% static 'images/Icon_img.png' %}" class="logo" alt="RescueMate Logo">
+    <h2 class="logo-text">RescueMate</h2>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+    <li><a href="{% url 'rescue' %}">Report Pet</a></li>
+    <li><a href="{% url 'found_pet' %}" class="active">Found Pet</a></li>
+    <li><a href="{% url 'report_info' %}">Report Info</a></li>
+    <li><a href="#" class="profile-link">
+      <span class="user-icon">👤</span>
+    </a></li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+  </ul>
+</nav>
+
+<!-- ===== FOUND PETS SECTION ===== -->
+<section class="found-pets-section">
+  <div class="found-pets-container">
+    
+    <div class="page-header">
+      <h1>🔍 Found Pets</h1>
+      <p>Browse pets that have been found and are looking for their owners</p>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="search-filter-section">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search by location, breed, color...">
+        <button class="search-btn">🔍</button>
+      </div>
+      
+      <div class="filter-options">
+        <select id="animalTypeFilter">
+          <option value="">All Animals</option>
+          <option value="dog">Dogs</option>
+          <option value="cat">Cats</option>
+          <option value="bird">Birds</option>
+          <option value="rabbit">Rabbits</option>
+          <option value="other">Other</option>
+        </select>
+        
+        <select id="cityFilter">
+          <option value="">All Cities</option>
+          <!-- Cities will be populated dynamically -->
+        </select>
+      </div>
+    </div>
+
+    <!-- Found Pets Grid -->
+    <div class="pets-grid" id="petsGrid">
+      <!-- Pet cards will be loaded here -->
+      <div class="loading-message">
+        <div class="loading-spinner"></div>
+        <p>Loading found pets...</p>
+      </div>
+    </div>
+
+    <!-- No Results Message -->
+    <div class="no-results" id="noResults" style="display: none;">
+      <div class="no-results-icon">🐾</div>
+      <h3>No pets found</h3>
+      <p>Try adjusting your search criteria or check back later.</p>
+    </div>
+
+  </div>
+</section>
+
+<script src="{% static 'js/found_pet.js' %}"></script>
+
+</body>
+</html>

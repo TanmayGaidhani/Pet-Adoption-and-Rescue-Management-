@@ -10,44 +10,8 @@
 <title>Dashboard - RescueMate</title>
 
 <link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
-<link rel="stylesheet" href="{% static 'css/login.css' %}">
-<style>
-  .dashboard-container {
-    max-width: 1200px;
-    margin: 100px auto;
-    padding: 40px;
-  }
-  .welcome-box {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-align: center;
-  }
-  .welcome-box h1 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  .welcome-box p {
-    color: #666;
-    font-size: 18px;
-    margin-bottom: 30px;
-  }
-  .logout-btn {
-    padding: 12px 30px;
-    background: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-  }
-  .logout-btn:hover {
-    background: #d32f2f;
-  }
-</style>
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link rel="stylesheet" href="{% static 'css/ai_chatbot.css' %}">
 </head>
 <body>
 
@@ -59,20 +23,92 @@
   </div>
 
   <ul class="nav-links">
-    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
-    <li><a href="{% url 'logout' %}">Logout</a></li>
-  </ul>
+    <li><a href="{% url 'dashboard' %}" class="active">Dashboard</a></li>
+    <li><a href="{% url 'rescue' %}">Report Pet</a></li>
+    <li><a href="{% url 'found_pet' %}">Found Pet</a></li>
+    <li><a href="{% url 'report_info' %}">Report Info</a></li>
+    <li><a href="#" class="profile-link">
+      <span class="user-icon">👤</span>
+      {{ user_name }}
+    </a></li>
+    <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
+
 </nav>
 
+<!-- ===== DASHBOARD CONTENT ===== -->
 <div class="dashboard-container">
-  <div class="welcome-box">
-    <h1>Welcome, {{ user_name }}! 🎉</h1>
-    <p>You have successfully logged in to RescueMate.</p>
-    <p>Your email has been verified and your account is active.</p>
-    <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+  
+  <!-- Welcome Section -->
+  <div class="welcome-section">
+    <h1>Welcome back, {{ user_name }}! 🎉</h1>
+    <p>What would you like to do today?</p>
   </div>
-</div>
 
+  <!-- Dashboard Cards -->
+  <div class="dashboard-grid">
+    
+    <!-- Adopt Card -->
+    <div class="dashboard-card adopt-card">
+      <div class="card-icon">🐾</div>
+      <h2>Adopt a Pet</h2>
+      <p>Browse available pets and find your perfect companion</p>
+      <button class="card-btn adopt-btn" onclick="navigateTo('adopt')">
+        Browse Pets
+      </button>
+    </div>
+
+    <!-- Rescue Card -->
+    <div class="dashboard-card rescue-card">
+      <div class="card-icon">🚨</div>
+      <h2>Report Rescue</h2>
+      <p>Help an animal in need by reporting a rescue case</p>
+      <button class="card-btn rescue-btn" onclick="navigateTo('rescue')">
+        Report Now
+      </button>
+    </div>
+
+    <!-- Profile Card -->
+    <div class="dashboard-card profile-card">
+      <div class="card-icon">👤</div>
+      <h2>My Profile</h2>
+      <p>View and update your personal information</p>
+      <button class="card-btn profile-btn" onclick="navigateTo('profile')">
+        View Profile
+      </button>
+    </div>
+
+    <!-- Settings Card -->
+    <div class="dashboard-card settings-card">
+      <div class="card-icon">⚙️</div>
+      <h2>Settings</h2>
+      <p>Manage your account preferences and security</p>
+      <button class="card-btn settings-btn" onclick="navigateTo('settings')">
+        Open Settings
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Stats Section -->
+  <div class="stats-section">
+    <h2>Your Impact</h2>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Pets Adopted</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Rescues Reported</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Lives Saved</div>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 <script>
 // Prevent back button after logout
@@ -84,11 +120,22 @@ window.onpopstate = function() {
 // Check session on page load
 window.addEventListener('pageshow', function(event) {
     if (event.persisted) {
-        // Page was loaded from cache (back button)
         window.location.reload();
     }
 });
+
+// Navigation function
+function navigateTo(section) {
+    if (section === 'rescue') {
+        window.location.href = "{% url 'rescue' %}";
+    } else {
+        alert(`🚧 ${section.charAt(0).toUpperCase() + section.slice(1)} section coming soon!`);
+    }
+}
 </script>
+
+<!-- AI Chatbot Script -->
+<script src="{% static 'js/ai_chatbot.js' %}"></script>
 
 </body>
 </html>
