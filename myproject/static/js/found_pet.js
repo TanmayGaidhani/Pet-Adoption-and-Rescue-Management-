@@ -64,37 +64,74 @@ document.addEventListener('DOMContentLoaded', function() {
         noResults.style.display = 'none';
         
         petsGrid.innerHTML = pets.map(pet => {
-            // Handle image path - use placeholder if no image
-            const imageSrc = pet.image_path ? `/media/${pet.image_path}` : 
-                `https://via.placeholder.com/300x250/4facfe/FFFFFF?text=${encodeURIComponent(pet.animal_type || 'Pet')}`;
+            const imageSrc = pet.image_path ? `/media/${pet.image_path}` : null;
             
             return `
-                <div class="pet-card">
-                    <img src="${imageSrc}" alt="${pet.breed || 'Pet'}" class="pet-image" 
-                         onerror="this.src='https://via.placeholder.com/300x250/4facfe/FFFFFF?text=Pet'">
-                    <div class="pet-info">
-                        <div class="pet-header">
-                            <span class="pet-type">${pet.animal_type || 'Unknown'}</span>
-                        </div>
-                        <div class="pet-details">
-                            <h3>${pet.breed || 'Unknown Breed'}</h3>
-                            <p><strong>Color:</strong> ${pet.color || 'Not specified'}</p>
-                            <p><strong>Gender:</strong> ${pet.gender || 'Unknown'}</p>
-                            <p><strong>Report Date:</strong> ${formatDate(pet.repo)}</p>
-                            ${pet.special_marks ? `<p><strong>Special Marks:</strong> ${pet.special_marks}</p>` : ''}
-                            <p><strong>Condition:</strong> ${pet.condition || 'Not specified'}</p>
-                            <p><strong>Description:</strong> ${pet.description || 'No description'}</p>
-                            <div class="pet-location">
-                                📍 ${pet.location || 'Unknown'}, ${pet.city || 'Unknown'}
+                <div class="pet-card-compact">
+                    <div class="pet-card-header">
+                        <span class="pet-type-badge">${pet.animal_type || 'UNKNOWN'}</span>
+                        <span class="pet-id">#${pet.id ? pet.id.substring(0, 6) : 'N/A'}</span>
+                    </div>
+                    
+                    <div class="pet-image-container">
+                        ${imageSrc 
+                            ? `<img src="${imageSrc}" class="pet-image-compact" alt="${pet.breed || 'Pet'}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                               <div class="no-image-compact" style="display: none;">
+                                   🔍<br><small>No Image</small>
+                               </div>`
+                            : `<div class="no-image-compact">
+                                   🔍<br><small>No Image</small>
+                               </div>`
+                        }
+                    </div>
+                    
+                    <div class="pet-content">
+                        <h5 class="pet-title-compact">${pet.breed || 'Unknown Breed'}</h5>
+                        <div class="pet-info-compact">
+                            <div class="info-row-compact">
+                                <span class="info-label-compact">Color:</span>
+                                <span class="info-value-compact">${truncateText(pet.color || 'Unknown', 12)}</span>
                             </div>
+                            <div class="info-row-compact">
+                                <span class="info-label-compact">Gender:</span>
+                                <span class="info-value-compact">${pet.gender || 'Unknown'}</span>
+                            </div>
+                            <div class="info-row-compact">
+                                <span class="info-label-compact">Date:</span>
+                                <span class="info-value-compact">${formatDate(pet.report_date)}</span>
+                            </div>
+                            <div class="info-row-compact">
+                                <span class="info-label-compact">Condition:</span>
+                                <span class="info-value-compact">${truncateText(pet.condition || 'Unknown', 10)}</span>
+                            </div>
+                            ${pet.special_marks ? `
+                            <div class="info-row-compact">
+                                <span class="info-label-compact">Marks:</span>
+                                <span class="info-value-compact">${truncateText(pet.special_marks, 12)}</span>
+                            </div>
+                            ` : ''}
                         </div>
-                        <button class="contact-btn" onclick="contactFinder('${pet.contact_name}', '${pet.contact_phone}', '${pet.contact_email}')">
-                            Contact Finder
-                        </button>
+                        
+                        <div class="pet-location-compact">
+                            📍 ${truncateText(pet.location || 'Unknown', 15)}, ${truncateText(pet.city || 'Unknown', 10)}
+                        </div>
+                        
+                        <div class="pet-actions-compact">
+                            <button class="btn-contact-compact" onclick="contactFinder('${pet.contact_name}', '${pet.contact_phone}', '${pet.contact_email}')" title="Contact Finder">
+                                📞 Contact
+                            </button>
+                        </div>
                     </div>
                 </div>
             `;
         }).join('');
+    }
+
+    // Helper function to truncate text
+    function truncateText(text, maxLength) {
+        if (!text) return '';
+        if (text.length <= maxLength) return text;
+        return text.substring(0, maxLength) + '...';
     }
 
     function populateCityFilter(pets) {

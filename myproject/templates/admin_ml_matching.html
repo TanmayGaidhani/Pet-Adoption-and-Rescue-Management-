@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>ML Pet Matching - Admin Dashboard</title>
+    <link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_ml_matching.css' %}">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="{% static 'images/Icon_img.png' %}" class="logo" alt="RescueMate Logo">
+        <h2 class="logo-text">RescueMate Admin</h2>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+        <li><a href="{% url 'admin_users' %}">Users</a></li>
+        <li><a href="{% url 'admin_reports' %}">Reports</a></li>
+        <li><a href="{% url 'admin_adoption' %}">Adoptions</a></li>
+        <li><a href="{% url 'admin_ml_matching' %}" class="active">ML Matching</a></li>
+        <li><a href="#" class="profile-link">
+            <span class="admin-icon">👑</span>
+            Admin: {{ user_name }}
+        </a></li>
+        <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- ===== ADMIN ML MATCHING CONTENT ===== -->
+<div class="admin-ml-container">
+    
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1>🤖 AI Pet Matching System</h1>
+        <p>Use machine learning to find potential matches between lost and found pets</p>
+        
+        <div class="action-buttons">
+            <button class="btn-primary" onclick="loadReports()">
+                <span class="btn-icon">🔄</span>
+                Refresh Reports
+            </button>
+            <button class="btn-secondary" onclick="runBatchAnalysis()">
+                <span class="btn-icon">🔍</span>
+                Batch Analysis
+            </button>
+            <button class="btn-info" onclick="showMatchHistory()">
+                <span class="btn-icon">📊</span>
+                Match History
+            </button>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="stat-card">
+            <div class="stat-icon">📋</div>
+            <div class="stat-info">
+                <div class="stat-number" id="lostReportsCount">-</div>
+                <div class="stat-label">Rescue Reports (Lost)</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🔍</div>
+            <div class="stat-info">
+                <div class="stat-number" id="foundReportsCount">-</div>
+                <div class="stat-label">Found Reports</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-info">
+                <div class="stat-number" id="totalMatchesCount">-</div>
+                <div class="stat-label">Total Matches</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">✅</div>
+            <div class="stat-info">
+                <div class="stat-number" id="approvedMatchesCount">-</div>
+                <div class="stat-label">Approved Matches</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Tabs -->
+    <div class="tabs-container">
+        <div class="tabs-header">
+            <button class="tab-btn active" onclick="showTab('matching', event)">Pet Matching</button>
+            <button class="tab-btn" onclick="showTab('results', event)">Match Results</button>
+            <button class="tab-btn" onclick="showTab('batch', event)">Batch Analysis</button>
+        </div>
+
+        <!-- Pet Matching Tab -->
+        <div id="matching-tab" class="tab-content active">
+            <div class="matching-container">
+                
+                <!-- Rescue Reports Section (treated as Lost Reports) -->
+                <div class="reports-section">
+                    <h3>📋 Lost Pet Reports (Rescue Reports)</h3>
+                    <div class="reports-grid" id="lostReportsGrid">
+                        <div class="loading-message">Loading rescue reports (treated as lost pets)...</div>
+                    </div>
+                </div>
+
+                <!-- Found Reports Section -->
+                <div class="reports-section">
+                    <h3>🔍 Found Pet Reports</h3>
+                    <div class="reports-grid" id="foundReportsGrid">
+                        <div class="loading-message">Loading found pet reports...</div>
+                    </div>
+                </div>
+
+                <!-- Match Button -->
+                <div class="match-action-section">
+                    <button class="btn-match" id="runMatchBtn" onclick="runMLMatch()" disabled>
+                        <span class="btn-icon">🤖</span>
+                        Run ML Match
+                    </button>
+                    <p class="match-instruction">Select one rescue report and one found report to run ML matching</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Match Results Tab -->
+        <div id="results-tab" class="tab-content">
+            <div class="results-container">
+                <h3>🎯 Match Results History</h3>
+                <div class="results-grid" id="matchResultsGrid">
+                    <div class="loading-message">Loading match results...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Batch Analysis Tab -->
+        <div id="batch-tab" class="tab-content">
+            <div class="batch-container">
+                <h3>🔍 Batch Analysis Results</h3>
+                <div class="batch-stats" id="batchStats">
+                    <p>Run batch analysis to see potential matches across all reports</p>
+                </div>
+                <div class="batch-results" id="batchResults">
+                    <!-- Batch results will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Match Result Modal -->
+<div id="matchModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>🤖 ML Match Result</h2>
+            <span class="close" onclick="closeMatchModal()">&times;</span>
+        </div>
+        <div class="modal-body" id="matchModalBody">
+            <!-- Match result content will be loaded here -->
+        </div>
+        <div class="modal-footer">
+            <button class="btn-approve" onclick="approveMatch()">
+                <span class="btn-icon">✅</span>
+                Approve & Notify
+            </button>
+            <button class="btn-reject" onclick="rejectMatch()">
+                <span class="btn-icon">❌</span>
+                Reject Match
+            </button>
+            <button class="btn-secondary" onclick="closeMatchModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+    <div class="modal-content" style="max-width: 90%; max-height: 90%; padding: 0; background: transparent; box-shadow: none;">
+        <div class="modal-header" style="border-radius: 10px 10px 0 0;">
+            <h2 id="imageTitle">Pet Image</h2>
+            <span class="close" onclick="closeImageModal()">&times;</span>
+        </div>
+        <div style="text-align: center; background: white; padding: 1rem; border-radius: 0 0 10px 10px;">
+            <img id="modalImage" src="" alt="Pet Image" style="max-width: 100%; max-height: 70vh; object-fit: contain; border-radius: 8px;">
+        </div>
+    </div>
+</div>
+
+<!-- Loading Overlay -->
+<div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Running ML Analysis...</p>
+    </div>
+</div>
+
+<script src="{% static 'js/admin_ml_matching.js' %}"></script>
+
+</body>
+</html>

@@ -66,38 +66,77 @@ document.addEventListener('DOMContentLoaded', function() {
         noResults.style.display = 'none';
         
         reportsGrid.innerHTML = reports.map(report => {
-            // Handle image path - use placeholder if no image
-            const imageSrc = report.image_path ? `/media/${report.image_path}` : 
-                `https://via.placeholder.com/350x250/f5576c/FFFFFF?text=${encodeURIComponent(report.animal_type || 'Animal')}`;
+            const imageSrc = report.image_path ? `/media/${report.image_path}` : null;
             
             return `
-                <div class="report-card">
-                    <img src="${imageSrc}" alt="${report.breed || 'Animal'}" class="report-image" 
-                         onerror="this.src='https://via.placeholder.com/350x250/f5576c/FFFFFF?text=Animal'">
-                    <div class="report-info">
-                        <div class="report-header">
-                            <span class="animal-type">${report.animal_type || 'Unknown'}</span>
-                            <span class="urgency-badge urgency-${report.urgency || 'low'}">${(report.urgency || 'low').toUpperCase()}</span>
-                        </div>
-                        <div class="report-details">
-                            <h3>${report.breed || 'Unknown Breed'}</h3>
-                            <p><strong>Color:</strong> ${report.color || 'Not specified'}</p>
-                            <p><strong>Gender:</strong> ${report.gender || 'Unknown'}</p>
-                            <p><strong>Condition:</strong> ${report.condition || 'Not specified'}</p>
-                            <p><strong>Date Found:</strong> ${formatDate(report.date_found)}</p>
-                            ${report.special_marks ? `<p><strong>Special Marks:</strong> ${report.special_marks}</p>` : ''}
-                            <p><strong>Description:</strong> ${report.description || 'No description'}</p>
-                            <div class="report-location">
-                                📍 ${report.location || 'Unknown'}, ${report.city || 'Unknown'}
+                <div class="report-card-compact">
+                    <div class="report-card-header">
+                        <span class="animal-type-badge">${report.animal_type || 'UNKNOWN'}</span>
+                        <span class="urgency-badge urgency-${report.urgency || 'low'}">${(report.urgency || 'low').toUpperCase()}</span>
+                    </div>
+                    
+                    <div class="report-image-container">
+                        ${imageSrc 
+                            ? `<img src="${imageSrc}" class="report-image-compact" alt="${report.breed || 'Animal'}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                               <div class="no-image-compact" style="display: none;">
+                                   🚨<br><small>No Image</small>
+                               </div>`
+                            : `<div class="no-image-compact">
+                                   🚨<br><small>No Image</small>
+                               </div>`
+                        }
+                    </div>
+                    
+                    <div class="report-content">
+                        <h5 class="report-title-compact">${report.breed || 'Unknown Breed'}</h5>
+                        <div class="report-info-compact">
+                            <div class="info-row-compact">
+                                <span class="info-label-compact">Color:</span>
+                                <span class="info-value-compact">${truncateText(report.color || 'Unknown', 12)}</span>
                             </div>
+                            <div class="info-row-compact">
+                                <span class="info-label-compact">Gender:</span>
+                                <span class="info-value-compact">${report.gender || 'Unknown'}</span>
+                            </div>
+                            <div class="info-row-compact">
+                                <span class="info-label-compact">Condition:</span>
+                                <span class="info-value-compact">${truncateText(report.condition || 'Unknown', 10)}</span>
+                            </div>
+                            <div class="info-row-compact">
+                                <span class="info-label-compact">Date:</span>
+                                <span class="info-value-compact">${formatDate(report.date_found)}</span>
+                            </div>
+                            ${report.special_marks ? `
+                            <div class="info-row-compact">
+                                <span class="info-label-compact">Marks:</span>
+                                <span class="info-value-compact">${truncateText(report.special_marks, 12)}</span>
+                            </div>
+                            ` : ''}
                         </div>
-                        <button class="contact-btn" onclick="contactReporter('${report.contact_name}', '${report.contact_phone}', '${report.contact_email}')">
-                            Contact Reporter
-                        </button>
+                        
+                        <div class="report-location-compact">
+                            📍 ${truncateText(report.location || 'Unknown', 15)}, ${truncateText(report.city || 'Unknown', 10)}
+                        </div>
+                        
+                        <div class="report-actions-compact">
+                            <button class="btn-contact-compact" onclick="contactReporter('${report.contact_name}', '${report.contact_phone}', '${report.contact_email}')" title="Contact Reporter">
+                                📞 Contact
+                            </button>
+                            <button class="btn-chat-compact" onclick="openPetChat('${report.id}', '${report.breed || 'Unknown Pet'}')" title="Chat about this pet">
+                                💬 Chat
+                            </button>
+                        </div>
                     </div>
                 </div>
             `;
         }).join('');
+    }
+
+    // Helper function to truncate text
+    function truncateText(text, maxLength) {
+        if (!text) return '';
+        if (text.length <= maxLength) return text;
+        return text.substring(0, maxLength) + '...';
     }
 
     function populateCityFilter(reports) {
@@ -187,5 +226,186 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(contactInfo);
         // In real implementation, this could open a contact form or dial the number
     };
+
+    // Chat functionality
+    window.openPetChat = function(reportId, petName) {
+        openChatModal(reportId, petName);
+    };
+
+    function openChatModal(reportId, petName) {
+        // Create chat modal if it doesn't exist
+        let chatModal = document.getElementById('petChatModal');
+        if (!chatModal) {
+            createChatModal();
+            chatModal = document.getElementById('petChatModal');
+        }
+
+        // Set pet info
+        document.getElementById('chatPetName').textContent = petName;
+        document.getElementById('chatReportId').value = reportId;
+        
+        // Clear and load messages
+        loadChatMessages(reportId);
+        
+        // Show modal
+        chatModal.style.display = 'block';
+    }
+
+    function createChatModal() {
+        const modalHTML = `
+            <div id="petChatModal" class="chat-modal">
+                <div class="chat-modal-content">
+                    <div class="chat-header">
+                        <h3>💬 Chat about <span id="chatPetName"></span></h3>
+                        <span class="chat-close" onclick="closeChatModal()">&times;</span>
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="loading-chat">Loading messages...</div>
+                    </div>
+                    <div class="chat-input-section">
+                        <input type="hidden" id="chatReportId">
+                        <div class="chat-input-container">
+                            <input type="text" id="chatMessageInput" placeholder="Type your message about this pet..." maxlength="500">
+                            <button id="sendChatMessage" onclick="sendMessage()">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+        // Add event listeners
+        document.getElementById('chatMessageInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
+
+    window.closeChatModal = function() {
+        document.getElementById('petChatModal').style.display = 'none';
+    };
+
+    window.sendMessage = function() {
+        const messageInput = document.getElementById('chatMessageInput');
+        const reportId = document.getElementById('chatReportId').value;
+        const message = messageInput.value.trim();
+
+        if (!message) {
+            alert('Please enter a message');
+            return;
+        }
+
+        // Send message to server
+        fetch('/api/pet-chat/send/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify({
+                report_id: reportId,
+                message: message
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                messageInput.value = '';
+                loadChatMessages(reportId);
+            } else {
+                alert('Failed to send message: ' + (data.error || 'Unknown error'));
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to send message');
+        });
+    };
+
+    function loadChatMessages(reportId) {
+        const chatMessages = document.getElementById('chatMessages');
+        chatMessages.innerHTML = '<div class="loading-chat">Loading messages...</div>';
+
+        fetch(`/api/pet-chat/messages/${reportId}/`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    displayChatMessages(data.messages);
+                } else {
+                    chatMessages.innerHTML = '<div class="no-messages">No messages yet. Start the conversation!</div>';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                chatMessages.innerHTML = '<div class="error-messages">Failed to load messages</div>';
+            });
+    }
+
+    function displayChatMessages(messages) {
+        const chatMessages = document.getElementById('chatMessages');
+        
+        if (messages.length === 0) {
+            chatMessages.innerHTML = '<div class="no-messages">No messages yet. Start the conversation!</div>';
+            return;
+        }
+
+        chatMessages.innerHTML = messages.map(msg => `
+            <div class="chat-message ${msg.is_current_user ? 'own-message' : 'other-message'}">
+                <div class="message-header">
+                    <span class="message-user">${msg.user_name}</span>
+                    <span class="message-time">${formatChatTime(msg.created_at)}</span>
+                </div>
+                <div class="message-text">${escapeHtml(msg.message)}</div>
+            </div>
+        `).join('');
+
+        // Scroll to bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function formatChatTime(dateString) {
+        const date = new Date(dateString);
+        const now = new Date();
+        const diffMs = now - date;
+        const diffMins = Math.floor(diffMs / 60000);
+        const diffHours = Math.floor(diffMs / 3600000);
+        const diffDays = Math.floor(diffMs / 86400000);
+
+        if (diffMins < 1) return 'Just now';
+        if (diffMins < 60) return `${diffMins}m ago`;
+        if (diffHours < 24) return `${diffHours}h ago`;
+        if (diffDays < 7) return `${diffDays}d ago`;
+        return date.toLocaleDateString();
+    }
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('petChatModal');
+        if (event.target === modal) {
+            closeChatModal();
+        }
+    });
 
 });

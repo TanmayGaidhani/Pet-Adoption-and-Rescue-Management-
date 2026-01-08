@@ -682,3 +682,21 @@ body {
     font-size: 14px;
   }
 }
+/* ===== AUTO-POPULATED FIELD STYLES ===== */
+input[type="hidden"] {
+  display: none;
+}
+
+/* Style for any visible readonly fields if needed */
+input[readonly] {
+  background-color: #f8fafc !important;
+  border: 2px solid #e2e8f0 !important;
+  color: #64748b !important;
+  cursor: not-allowed;
+}
+
+input[readonly]:focus {
+  outline: none;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 0 0 3px rgba(203, 213, 225, 0.1) !important;
+}

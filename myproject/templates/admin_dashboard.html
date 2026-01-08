@@ -24,6 +24,8 @@
         <li><a href="{% url 'admin_dashboard' %}" class="active">Dashboard</a></li>
         <li><a href="{% url 'admin_users' %}">Users</a></li>
         <li><a href="{% url 'admin_reports' %}">Reports</a></li>
+        <li><a href="{% url 'admin_adoption' %}">Adoptions</a></li>
+        <li><a href="{% url 'admin_ml_matching' %}">ML Matching</a></li>
         <li><a href="#" class="profile-link">
             <span class="admin-icon">👑</span>
             Admin: {{ user_name }}
@@ -110,33 +112,50 @@
         <h2>Quick Actions</h2>
         <div class="actions-grid">
             
-            <div class="action-card">
-                <div class="action-icon">👥</div>
-                <h3>Manage Users</h3>
-                <p>View and manage user accounts</p>
-                <a href="{% url 'admin_users' %}" class="action-btn">View Users</a>
-            </div>
+            <a href="{% url 'admin_users' %}" class="action-card-link">
+                <div class="action-card">
+                    <div class="action-icon">👥</div>
+                    <h3>Manage Users</h3>
+                    <p>View and manage user accounts</p>
+                    <span class="action-btn">View Users</span>
+                </div>
+            </a>
 
-            <div class="action-card">
-                <div class="action-icon">📊</div>
-                <h3>View All Reports</h3>
-                <p>Monitor all rescue and found pet reports</p>
-                <a href="{% url 'admin_reports' %}" class="action-btn">View Reports</a>
-            </div>
+            <a href="{% url 'admin_adoption' %}" class="action-card-link">
+                <div class="action-card">
+                    <div class="action-icon">🐾</div>
+                    <h3>Adoption Management</h3>
+                    <p>Add pets for adoption and manage requests</p>
+                    <span class="action-btn">Manage Adoptions</span>
+                </div>
+            </a>
 
-            <div class="action-card">
-                <div class="action-icon">📋</div>
-                <h3>Report Requests</h3>
-                <p>Manage pending report requests</p>
-                <button class="action-btn" onclick="scrollToReports()">View Requests</button>
-            </div>
+            <a href="{% url 'admin_reports' %}" class="action-card-link">
+                <div class="action-card">
+                    <div class="action-icon">📊</div>
+                    <h3>View All Reports</h3>
+                    <p>Monitor all rescue and found pet reports</p>
+                    <span class="action-btn">View Reports</span>
+                </div>
+            </a>
 
-            <div class="action-card">
-                <div class="action-icon">⚙️</div>
-                <h3>System Settings</h3>
-                <p>Configure platform settings</p>
-                <button class="action-btn" onclick="alert('🚧 Settings coming soon!')">Settings</button>
-            </div>
+            <a href="{% url 'admin_chat' %}" class="action-card-link">
+                <div class="action-card">
+                    <div class="action-icon">💬</div>
+                    <h3>Chat Management</h3>
+                    <p>Monitor and manage pet discussions</p>
+                    <span class="action-btn">Manage Chats</span>
+                </div>
+            </a>
+
+            <a href="{% url 'admin_settings' %}" class="action-card-link">
+                <div class="action-card">
+                    <div class="action-icon">⚙️</div>
+                    <h3>System Settings</h3>
+                    <p>Configure platform settings</p>
+                    <span class="action-btn">Settings</span>
+                </div>
+            </a>
 
         </div>
     </div>

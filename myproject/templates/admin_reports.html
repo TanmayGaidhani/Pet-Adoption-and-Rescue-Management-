@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Admin Reports - RescueMate</title>
+    <link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_reports.css' %}">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="{% static 'images/Icon_img.png' %}" class="logo" alt="RescueMate Logo">
+        <h2 class="logo-text">RescueMate Admin</h2>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+        <li><a href="{% url 'admin_users' %}">Users</a></li>
+        <li><a href="{% url 'admin_reports' %}" class="active">Reports</a></li>
+        <li><a href="{% url 'admin_adoption' %}">Adoptions</a></li>
+        <li><a href="{% url 'admin_ml_matching' %}">ML Matching</a></li>
+        <li><a href="#" class="profile-link">
+            <span class="admin-icon">👑</span>
+            Admin: {{ user_name }}
+        </a></li>
+        <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- ===== ADMIN REPORTS CONTENT ===== -->
+<div class="admin-reports-container">
+    
+    <!-- Header Section -->
+    <div class="reports-header">
+        <h1>📊 Reports Management</h1>
+        <p>Monitor and manage all rescue and found pet reports</p>
+    </div>
+
+    <!-- Reports Stats -->
+    <div class="reports-stats-grid">
+        
+        <div class="reports-stat-card total-reports">
+            <div class="stat-icon">📋</div>
+            <div class="stat-info">
+                <h3 id="totalReportsCount">Loading...</h3>
+                <p>Total Reports</p>
+            </div>
+        </div>
+
+        <div class="reports-stat-card pending-reports">
+            <div class="stat-icon">⏳</div>
+            <div class="stat-info">
+                <h3 id="pendingReportsCount">Loading...</h3>
+                <p>Pending Approval</p>
+            </div>
+        </div>
+
+        <div class="reports-stat-card approved-reports">
+            <div class="stat-icon">✅</div>
+            <div class="stat-info">
+                <h3 id="approvedReportsCount">Loading...</h3>
+                <p>Approved Reports</p>
+            </div>
+        </div>
+
+        <div class="reports-stat-card recent-reports">
+            <div class="stat-icon">🆕</div>
+            <div class="stat-info">
+                <h3 id="recentReportsCount">Loading...</h3>
+                <p>This Week</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Reports Management Interface -->
+    <div class="reports-main-interface">
+        
+        <!-- Controls Section -->
+        <div class="reports-controls">
+            <div class="reports-tabs">
+                <button class="tab-btn active" onclick="showReportsTab('all')" id="allTab">All Reports</button>
+                <button class="tab-btn" onclick="showReportsTab('pending')" id="pendingTab">Pending</button>
+                <button class="tab-btn" onclick="showReportsTab('approved')" id="approvedTab">Approved</button>
+                <button class="tab-btn" onclick="showReportsTab('rescue')" id="rescueTab">Rescue</button>
+                <button class="tab-btn" onclick="showReportsTab('found')" id="foundTab">Found Pets</button>
+            </div>
+            
+            <div class="reports-actions">
+                <button id="refreshReports" class="refresh-btn">🔄 Refresh</button>
+                <button id="exportReports" class="export-btn">📊 Export CSV</button>
+            </div>
+        </div>
+
+        <!-- Reports Table -->
+        <div class="reports-table-section">
+            <div class="reports-table-container">
+                <table class="reports-table" id="reportsTable">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Animal</th>
+                            <th>Breed</th>
+                            <th>Location</th>
+                            <th>Reporter</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reportsTableBody">
+                        <tr class="loading-row">
+                            <td colspan="8" class="loading-cell">
+                                <div class="loading-spinner">⏳</div>
+                                Loading reports...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Report Details Modal -->
+<div id="reportModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalTitle">📋 Report Details</h2>
+            <span class="modal-close">&times;</span>
+        </div>
+        <div class="modal-body" id="modalBody">
+            <!-- Report details will be loaded here -->
+        </div>
+        <div class="modal-footer">
+            <button id="closeModal" class="modal-btn secondary">Close</button>
+            <button id="approveReport" class="modal-btn approve">Approve</button>
+            <button id="rejectReport" class="modal-btn reject">Reject</button>
+            <button id="deleteReport" class="modal-btn delete">Delete</button>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="{% static 'js/admin_reports.js' %}"></script>
+
+</body>
+</html>

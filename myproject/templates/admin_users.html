@@ -25,6 +25,8 @@
         <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
         <li><a href="{% url 'admin_users' %}" class="active">Users</a></li>
         <li><a href="{% url 'admin_reports' %}">Reports</a></li>
+        <li><a href="{% url 'admin_adoption' %}">Adoptions</a></li>
+        <li><a href="{% url 'admin_ml_matching' %}">ML Matching</a></li>
         <li><a href="#" class="profile-link">
             <span class="admin-icon">👑</span>
             Admin: {{ user_name }}
@@ -120,23 +122,17 @@
             <table class="users-table" id="usersTable">
                 <thead>
                     <tr>
-                        <th class="sortable" data-sort="id">
-                            <span class="th-content">ID <span class="sort-arrow">↕️</span></span>
-                        </th>
                         <th class="sortable" data-sort="username">
-                            <span class="th-content">Username <span class="sort-arrow">↕️</span></span>
+                            <span class="th-content">Username</span>
                         </th>
                         <th class="sortable" data-sort="email">
-                            <span class="th-content">Email <span class="sort-arrow">↕️</span></span>
+                            <span class="th-content">Email</span>
                         </th>
                         <th class="sortable" data-sort="first_name">
-                            <span class="th-content">Name <span class="sort-arrow">↕️</span></span>
+                            <span class="th-content">Name</span>
                         </th>
                         <th class="sortable" data-sort="date_joined">
-                            <span class="th-content">Joined <span class="sort-arrow">↕️</span></span>
-                        </th>
-                        <th class="sortable" data-sort="last_login">
-                            <span class="th-content">Last Login <span class="sort-arrow">↕️</span></span>
+                            <span class="th-content">Joined</span>
                         </th>
                         <th>Status</th>
                         <th>Actions</th>
@@ -144,7 +140,7 @@
                 </thead>
                 <tbody id="usersTableBody">
                     <tr class="loading-row">
-                        <td colspan="8" class="loading-cell">
+                        <td colspan="6" class="loading-cell">
                             <div class="loading-spinner">⏳</div>
                             Loading users...
                         </td>

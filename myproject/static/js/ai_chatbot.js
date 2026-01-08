@@ -36,9 +36,12 @@ class AIChatbot {
                             </div>
                         </div>
                     </div>
-                    <button class="chat-close-btn" id="chatCloseBtn" aria-label="Close chat">
-                        ×
-                    </button>
+                    <div class="chat-header-actions">
+                        
+                        <button class="chat-close-btn" id="chatCloseBtn" aria-label="Close chat">
+                            ×
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Messages Area -->
@@ -93,11 +96,15 @@ class AIChatbot {
         const chatButton = document.getElementById('aiChatButton');
         const closeBtn = document.getElementById('chatCloseBtn');
         const sendBtn = document.getElementById('chatSendBtn');
+        const historyBtn = document.getElementById('chatHistoryBtn');
         const input = document.getElementById('aiChatInput');
 
         chatButton.addEventListener('click', () => this.toggleChat());
         closeBtn.addEventListener('click', () => this.closeChat());
         sendBtn.addEventListener('click', () => this.sendMessage());
+        if (historyBtn) {
+            historyBtn.addEventListener('click', () => this.showChatHistory());
+        }
 
         input.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' && !e.shiftKey) {
@@ -304,6 +311,94 @@ class AIChatbot {
         }
         
         return hasPetKeyword;
+    }
+
+    async showChatHistory() {
+        try {
+            const response = await fetch('/api/chat-history/');
+            const data = await response.json();
+
+            if (data.messages && data.messages.length > 0) {
+                // Clear current messages
+                const messagesContainer = document.getElementById('aiChatMessages');
+                messagesContainer.innerHTML = '';
+
+                // Add history header
+                messagesContainer.innerHTML = `
+                    <div class="chat-history-header">
+                        <h4>📋 Chat History (${data.total_count} messages)</h4>
+                        <button class="clear-history-btn" onclick="aiChatbot.clearChatHistory()">🗑️ Clear History</button>
+                    </div>
+                `;
+
+                // Add historical messages
+                data.messages.reverse().forEach(msg => {
+                    this.addMessage(msg.user_message, 'user', false);
+                    this.addMessage(msg.bot_response, 'bot', false);
+                });
+
+                // Add back to chat button
+                messagesContainer.insertAdjacentHTML('beforeend', `
+                    <div class="back-to-chat">
+                        <button class="back-to-chat-btn" onclick="aiChatbot.backToChat()">💬 Back to Chat</button>
+                    </div>
+                `);
+            } else {
+                // Show no history message
+                const messagesContainer = document.getElementById('aiChatMessages');
+                messagesContainer.innerHTML = `
+                    <div class="no-history">
+                        <div class="no-history-icon">📋</div>
+                        <h4>No Chat History</h4>
+                        <p>Start a conversation to see your chat history here!</p>
+                        <button class="back-to-chat-btn" onclick="aiChatbot.backToChat()">💬 Start Chatting</button>
+                    </div>
+                `;
+            }
+        } catch (error) {
+            console.error('Error loading chat history:', error);
+            this.addMessage('Sorry, I could not load your chat history.', 'bot');
+        }
+    }
+
+    async clearChatHistory() {
+        if (confirm('Are you sure you want to clear your entire chat history? This cannot be undone.')) {
+            try {
+                const response = await fetch('/api/chat-history/clear/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': this.getCookie('csrftoken')
+                    }
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    alert(`✅ Cleared ${data.deleted_count} chat messages!`);
+                    this.backToChat();
+                } else {
+                    alert('❌ Failed to clear chat history.');
+                }
+            } catch (error) {
+                console.error('Error clearing chat history:', error);
+                alert('❌ Error clearing chat history.');
+            }
+        }
+    }
+
+    backToChat() {
+        // Restore welcome message
+        const messagesContainer = document.getElementById('aiChatMessages');
+        messagesContainer.innerHTML = `
+            <div class="chat-welcome">
+                <img src="/static/images/chatboticon.png" alt="PetCare AI" class="welcome-icon" style="width: 64px; height: 64px; object-fit: contain;">
+                <h3>Hello! I'm PetCare AI</h3>
+                <p>Your intelligent assistant for all animal-related questions. Ask me about pet care, health, training, nutrition, and more!</p>
+            </div>
+        `;
+        
+        // Reset messages array
+        this.messages = [];
     }
 
     getCookie(name) {

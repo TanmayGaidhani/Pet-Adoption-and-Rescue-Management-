@@ -1,0 +1,319 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>View Updates - RescueMate</title>
+
+<link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+<link rel="stylesheet" href="{% static 'css/view_updates.css' %}">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="logo-container">
+    <img src="{% static 'images/Icon_img.png' %}" class="logo" alt="RescueMate Logo">
+    <h2 class="logo-text">RescueMate</h2>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+    <li><a href="{% url 'found_pet' %}">Found Pets</a></li>
+    <li><a href="{% url 'report_info' %}">Rescue Reports</a></li>
+    <li><a href="{% url 'adoption' %}">Adopt a Pet</a></li>
+    <li><a href="{% url 'rescue' %}">Report</a></li>
+    <li><a href="{% url 'user_profile' %}" class="profile-link">
+      <span class="user-icon">👤</span>
+      {{ user_name }}
+    </a></li>
+    <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
+  </ul>
+</nav>
+
+<!-- ===== VIEW UPDATES SECTION ===== -->
+<section class="view-updates-section">
+  <div class="view-updates-container">
+    
+    <div class="page-header">
+      <h1>📋 View Updates</h1>
+      <p>Track the status of all your requests and reports</p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+      <div class="stat-card total">
+        <div class="stat-icon">📊</div>
+        <div class="stat-content">
+          <div class="stat-number" id="totalCount">0</div>
+          <div class="stat-label">Total Requests</div>
+        </div>
+      </div>
+      
+      <div class="stat-card pending">
+        <div class="stat-icon">⏳</div>
+        <div class="stat-content">
+          <div class="stat-number" id="pendingCount">0</div>
+          <div class="stat-label">Pending</div>
+        </div>
+      </div>
+      
+      <div class="stat-card approved">
+        <div class="stat-icon">✅</div>
+        <div class="stat-content">
+          <div class="stat-number" id="approvedCount">0</div>
+          <div class="stat-label">Approved</div>
+        </div>
+      </div>
+      
+      <div class="stat-card rejected">
+        <div class="stat-icon">❌</div>
+        <div class="stat-content">
+          <div class="stat-number" id="rejectedCount">0</div>
+          <div class="stat-label">Rejected</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All Requests</button>
+      <button class="filter-tab" data-filter="adoption">Adoption</button>
+      <button class="filter-tab" data-filter="rescue">Rescue</button>
+      <button class="filter-tab" data-filter="found_pet">Found Pet</button>
+      <button class="filter-tab" data-filter="pending">Pending</button>
+      <button class="filter-tab" data-filter="approved">Approved</button>
+      <button class="filter-tab" data-filter="rejected">Rejected</button>
+    </div>
+
+    <!-- Requests List -->
+    <div class="requests-container">
+      <div class="requests-grid" id="requestsGrid">
+        <!-- Loading message -->
+        <div class="loading-message">
+          <div class="loading-spinner"></div>
+          <p>Loading your requests...</p>
+        </div>
+      </div>
+
+      <!-- No Results Message -->
+      <div class="no-results" id="noResults" style="display: none;">
+        <div class="no-results-icon">📋</div>
+        <h3>No requests found</h3>
+        <p>You haven't submitted any requests yet. Start by adopting a pet or reporting a rescue!</p>
+        <div class="action-buttons">
+          <a href="{% url 'adoption' %}" class="action-btn primary">Browse Pets</a>
+          <a href="{% url 'rescue' %}" class="action-btn secondary">Report Rescue</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// Prevent back button after logout
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function() {
+    window.history.pushState(null, "", window.location.href);
+};
+
+// Check session on page load
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
+
+// ===== VIEW UPDATES FUNCTIONALITY =====
+let allRequests = [];
+let currentFilter = 'all';
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadUserRequests();
+    setupFilterTabs();
+});
+
+function loadUserRequests() {
+    fetch('/api/user-requests/')
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                console.error('Error:', data.error);
+                showError('Failed to load requests');
+                return;
+            }
+            
+            allRequests = data.requests || [];
+            updateStats(data);
+            displayRequests(allRequests);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showError('Failed to load requests');
+        });
+}
+
+function updateStats(data) {
+    document.getElementById('totalCount').textContent = data.total_count || 0;
+    document.getElementById('pendingCount').textContent = data.pending_count || 0;
+    document.getElementById('approvedCount').textContent = data.approved_count || 0;
+    document.getElementById('rejectedCount').textContent = data.rejected_count || 0;
+}
+
+function displayRequests(requests) {
+    const requestsGrid = document.getElementById('requestsGrid');
+    const noResults = document.getElementById('noResults');
+
+    if (requests.length === 0) {
+        requestsGrid.innerHTML = '';
+        noResults.style.display = 'block';
+        return;
+    }
+
+    noResults.style.display = 'none';
+    
+    requestsGrid.innerHTML = requests.map(request => {
+        const statusClass = request.status.toLowerCase();
+        const typeIcon = getTypeIcon(request.type);
+        const statusIcon = getStatusIcon(request.status);
+        
+        return `
+            <div class="request-card ${statusClass}">
+                <div class="request-header">
+                    <div class="request-type">
+                        <span class="type-icon">${typeIcon}</span>
+                        <span class="type-text">${formatType(request.type)}</span>
+                    </div>
+                    <div class="request-status ${statusClass}">
+                        <span class="status-icon">${statusIcon}</span>
+                        <span class="status-text">${request.status.toUpperCase()}</span>
+                    </div>
+                </div>
+                
+                <div class="request-content">
+                    <h3 class="request-title">${request.title}</h3>
+                    <p class="request-description">${request.description}</p>
+                    
+                    <div class="request-details">
+                        ${formatDetails(request.type, request.details)}
+                    </div>
+                    
+                    <div class="request-footer">
+                        <div class="request-date">
+                            📅 ${request.created_at}
+                        </div>
+                        <button class="view-details-btn" onclick="viewRequestDetails('${request.id}', '${request.type}')">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function setupFilterTabs() {
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active class from all tabs
+            filterTabs.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            currentFilter = this.dataset.filter;
+            filterRequests();
+        });
+    });
+}
+
+function filterRequests() {
+    let filteredRequests = allRequests;
+    
+    if (currentFilter !== 'all') {
+        if (['adoption', 'rescue', 'found_pet'].includes(currentFilter)) {
+            filteredRequests = allRequests.filter(request => request.type === currentFilter);
+        } else if (['pending', 'approved', 'rejected'].includes(currentFilter)) {
+            filteredRequests = allRequests.filter(request => request.status === currentFilter);
+        }
+    }
+    
+    displayRequests(filteredRequests);
+}
+
+function getTypeIcon(type) {
+    switch(type) {
+        case 'adoption': return '🐾';
+        case 'rescue': return '🚨';
+        case 'found_pet': return '🔍';
+        default: return '📋';
+    }
+}
+
+function getStatusIcon(status) {
+    switch(status.toLowerCase()) {
+        case 'approved': return '✅';
+        case 'rejected': return '❌';
+        case 'pending': return '⏳';
+        default: return '❓';
+    }
+}
+
+function formatType(type) {
+    switch(type) {
+        case 'adoption': return 'Adoption Request';
+        case 'rescue': return 'Rescue Report';
+        case 'found_pet': return 'Found Pet Report';
+        default: return 'Request';
+    }
+}
+
+function formatDetails(type, details) {
+    switch(type) {
+        case 'adoption':
+            return `
+                <div class="detail-item"><strong>Pet:</strong> ${details.pet_name}</div>
+                <div class="detail-item"><strong>Housing:</strong> ${details.housing_type}</div>
+            `;
+        case 'rescue':
+            return `
+                <div class="detail-item"><strong>Animal:</strong> ${details.animal_type} - ${details.breed}</div>
+                <div class="detail-item"><strong>Location:</strong> ${details.location}, ${details.city}</div>
+                <div class="detail-item"><strong>Condition:</strong> ${details.condition}</div>
+            `;
+        case 'found_pet':
+            return `
+                <div class="detail-item"><strong>Animal:</strong> ${details.animal_type} - ${details.breed}</div>
+                <div class="detail-item"><strong>Location:</strong> ${details.location}, ${details.city}</div>
+                <div class="detail-item"><strong>Color:</strong> ${details.color}</div>
+            `;
+        default:
+            return '';
+    }
+}
+
+function viewRequestDetails(requestId, requestType) {
+    const request = allRequests.find(r => r.id === requestId);
+    if (!request) return;
+    
+    alert(`Request Details:\n\nType: ${formatType(request.type)}\nStatus: ${request.status.toUpperCase()}\nSubmitted: ${request.created_at}\n\nDescription: ${request.description}`);
+}
+
+function showError(message) {
+    const requestsGrid = document.getElementById('requestsGrid');
+    requestsGrid.innerHTML = `
+        <div class="error-message">
+            <p style="color: #f44336;">❌ ${message}</p>
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html>

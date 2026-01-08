@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>My Profile - RescueMate</title>
+
+<link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+<link rel="stylesheet" href="{% static 'css/user_profile.css' %}">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="logo-container">
+    <img src="{% static 'images/Icon_img.png' %}" class="logo" alt="RescueMate Logo">
+    <h2 class="logo-text">RescueMate</h2>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+    <li><a href="{% url 'found_pet' %}">Found Pets</a></li>
+    <li><a href="{% url 'report_info' %}">Rescue Reports</a></li>
+    <li><a href="{% url 'adoption' %}">Adopt a Pet</a></li>
+    <li><a href="{% url 'rescue' %}">Report</a></li>
+    <li><a href="{% url 'community_comments' %}">Community</a></li>
+    <li><a href="{% url 'user_profile' %}" class="profile-link active">
+      <span class="user-icon">👤</span>
+      {{ user_name }}
+    </a></li>
+    <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
+  </ul>
+</nav>
+
+<!-- ===== PROFILE SECTION ===== -->
+<section class="profile-section">
+  <div class="profile-container">
+    
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>👤 My Profile</h1>
+      <p>Manage your account and view your activity</p>
+    </div>
+
+    <!-- Profile Content -->
+    <div class="profile-content">
+      
+      <!-- Profile Info Card -->
+      <div class="profile-info-card">
+        <div class="profile-header">
+          <div class="profile-avatar">
+            <span class="avatar-icon">👤</span>
+          </div>
+          <div class="profile-details">
+            <h2 class="profile-name">{{ user_name }}</h2>
+            <p class="profile-email">{{ user_email }}</p>
+            <div class="profile-stats">
+              <span class="stat-item">
+                <span class="stat-icon">📅</span>
+                Member since: <span id="memberSince">Loading...</span>
+              </span>
+            </div>
+          </div>
+          <button class="edit-profile-btn" onclick="toggleEditMode()">
+            <span class="btn-icon">✏️</span>
+            Edit Profile
+          </button>
+        </div>
+        
+        <!-- Edit Profile Form (Hidden by default) -->
+        <div class="edit-profile-form" id="editProfileForm" style="display: none;">
+          <form id="profileUpdateForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="first_name" value="{{ user_first_name }}">
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="last_name" value="{{ user_last_name }}">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" value="{{ user_email }}">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" value="{{ user_phone }}">
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn-cancel" onclick="toggleEditMode()">Cancel</button>
+              <button type="submit" class="btn-save">
+                <span class="btn-icon">💾</span>
+                Save Changes
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Activity Stats -->
+      <div class="activity-stats">
+        <h3>📊 Your Activity</h3>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">🐾</div>
+            <div class="stat-number" id="adoptionRequests">0</div>
+            <div class="stat-label">Adoption Requests</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🚨</div>
+            <div class="stat-number" id="rescueReports">0</div>
+            <div class="stat-label">Rescue Reports</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🔍</div>
+            <div class="stat-number" id="foundPetReports">0</div>
+            <div class="stat-label">Found Pet Reports</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">💬</div>
+            <div class="stat-number" id="communityComments">0</div>
+            <div class="stat-label">Community Comments</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="recent-activity">
+        <div class="activity-header">
+          <h3>📋 Recent Activity</h3>
+          <div class="activity-filters">
+            <button class="filter-btn active" onclick="filterActivity('all')">All</button>
+            <button class="filter-btn" onclick="filterActivity('adoption')">Adoptions</button>
+            <button class="filter-btn" onclick="filterActivity('rescue')">Rescues</button>
+            <button class="filter-btn" onclick="filterActivity('found')">Found Pets</button>
+            <button class="filter-btn" onclick="filterActivity('comments')">Comments</button>
+          </div>
+        </div>
+        
+        <div class="activity-list" id="activityList">
+          <div class="loading-message">
+            <div class="loading-spinner"></div>
+            <p>Loading your activity...</p>
+          </div>
+        </div>
+        
+        <!-- No Activity Message -->
+        <div class="no-activity" id="noActivity" style="display: none;">
+          <div class="no-activity-icon">📝</div>
+          <h4>No Activity Yet</h4>
+          <p>Start by adopting a pet, reporting a rescue, or joining community discussions!</p>
+        </div>
+      </div>
+
+      <!-- Account Settings -->
+      <div class="account-settings">
+        <h3>⚙️ Account Settings</h3>
+        <div class="settings-list">
+          <div class="setting-item">
+            <div class="setting-info">
+              <h4>Email Notifications</h4>
+              <p>Receive updates about your reports and adoption requests</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="emailNotifications" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          
+          <div class="setting-item">
+            <div class="setting-info">
+              <h4>Community Notifications</h4>
+              <p>Get notified about new community comments and discussions</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="communityNotifications" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          
+          <div class="setting-item">
+            <div class="setting-info">
+              <h4>Privacy Settings</h4>
+              <p>Control who can see your profile and activity</p>
+            </div>
+            <select id="privacyLevel" class="privacy-select">
+              <option value="public">Public</option>
+              <option value="community" selected>Community Only</option>
+              <option value="private">Private</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="danger-zone">
+          <h4>🚨 Danger Zone</h4>
+          <p>These actions cannot be undone</p>
+          <div class="danger-actions">
+            <button class="btn-danger" onclick="confirmAccountDeletion()">
+              <span class="btn-icon">🗑️</span>
+              Delete Account
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+// Prevent back button after logout
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function() {
+    window.history.pushState(null, "", window.location.href);
+};
+
+// Check session on page load
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
+</script>
+
+<script src="{% static 'js/user_profile.js' %}"></script>
+
+</body>
+</html>

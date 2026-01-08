@@ -64,63 +64,59 @@ function displayFoundRequests(pets) {
     }
 
     grid.innerHTML = pets.slice(0, 6).map(pet => {
-        const imageSrc = pet.image_path
-            ? `/media/${pet.image_path}`
-            : 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRUVGMkZGIi8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNDAiIHI9IjE1IiBmaWxsPSIjNjY3RUVBIi8+CjxwYXRoIGQ9Ik0zNSA2NUg2NVY3NUgzNVY2NVoiIGZpbGw9IiM2NjdFRUEiLz4KPHN2Zz4K';
-
         return `
-            <div class="responsive-admin-card found-pet-card" id="found-${pet.id}">
-                <div class="card-header">
+            <div class="report-card-compact found-pet-card" id="found-${pet.id}">
+                <div class="report-card-header">
                     <span class="report-badge found-badge">FOUND</span>
-                    <span class="report-id">#${pet.id}</span>
+                    <span class="report-id">#${pet.id.substring(0, 6)}</span>
                 </div>
-
-                <div class="card-body">
-                    <div class="card-image">
-                        <img src="${imageSrc}" alt="Found Pet" 
-                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRUVGMkZGIi8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNDAiIHI9IjE1IiBmaWxsPSIjNjY3RUVBIi8+CjxwYXRoIGQ9Ik0zNSA2NUg2NVY3NUgzNVY2NVoiIGZpbGw9IiM2NjdFRUEiLz4KPHN2Zz4K'">
+                
+                <div class="report-image-container">
+                    ${pet.image_path ? `
+                        <img src="/media/${pet.image_path}" class="report-image-compact" alt="Found Pet" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="no-image-compact" style="display: none;">
+                            🔍<br><small>No Image</small>
+                        </div>
+                    ` : `
+                        <div class="no-image-compact">
+                            🔍<br><small>No Image</small>
+                        </div>
+                    `}
+                </div>
+                
+                <div class="report-content">
+                    <h5 class="report-title">${pet.breed || 'Unknown Breed'}</h5>
+                    <div class="report-info-compact">
+                        <div class="info-row">
+                            <span class="info-label">Type:</span>
+                            <span class="info-value">${pet.animal_type || 'Unknown'}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Color:</span>
+                            <span class="info-value">${pet.color || 'Unknown'}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Location:</span>
+                            <span class="info-value">${truncateText(pet.location || 'Unknown', 15)}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Finder:</span>
+                            <span class="info-value">${truncateText(pet.contact_name || 'Unknown', 12)}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Date:</span>
+                            <span class="info-value">${formatDate(pet.report_date)}</span>
+                        </div>
                     </div>
                     
-                    <div class="card-info">
-                        <h3 class="pet-title">${pet.breed || 'Unknown Breed'}</h3>
-                        <p class="pet-details">${pet.animal_type || 'Unknown'} • ${pet.color || 'Unknown'}</p>
-                        
-                        <div class="info-compact">
-                            <div class="info-row">
-                                <span class="info-icon">📍</span>
-                                <span class="info-text">${truncateText(pet.location || "Unknown location", 20)}</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-icon">👤</span>
-                                <span class="info-text">${truncateText(pet.contact_name || "Unknown", 15)}</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-icon">📞</span>
-                                <span class="info-text">${pet.contact_phone || "No phone"}</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-icon">📅</span>
-                                <span class="info-text">${formatDate(pet.report_date)}</span>
-                            </div>
-                        </div>
-
-                        ${pet.special_marks ? `
-                        <div class="special-compact">
-                            <span class="special-icon">⭐</span>
-                            <span class="special-text">${truncateText(pet.special_marks, 30)}</span>
-                        </div>` : ''}
+                    <div class="report-actions-compact">
+                        <button class="btn-approve-compact" onclick="approveRequest('found','${pet.id}')" title="Approve Request">
+                            ✓
+                        </button>
+                        <button class="btn-reject-compact" onclick="rejectRequest('found','${pet.id}')" title="Reject Request">
+                            ✗
+                        </button>
                     </div>
-                </div>
-
-                <div class="card-actions">
-                    <button class="btn-approve" onclick="approveRequest('found','${pet.id}')">
-                        <span class="btn-icon">✓</span>
-                        <span class="btn-text">Approve</span>
-                    </button>
-                    <button class="btn-reject" onclick="rejectRequest('found','${pet.id}')">
-                        <span class="btn-icon">✗</span>
-                        <span class="btn-text">Reject</span>
-                    </button>
                 </div>
             </div>
         `;
@@ -144,63 +140,60 @@ function displayRescueRequests(reports) {
     }
 
     grid.innerHTML = reports.slice(0, 6).map(report => {
-        const imageSrc = report.image_path ? `/media/${report.image_path}` : 
-            'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRkVGM0M3Ii8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNDAiIHI9IjE1IiBmaWxsPSIjRjU5NTZDIi8+CjxwYXRoIGQ9Ik0zNSA2NUg2NVY3NUgzNVY2NVoiIGZpbGw9IiNGNTk1NkMiLz4KPHN2Zz4K';
-        
         return `
-            <div class="responsive-admin-card rescue-card" id="rescue-${report.id}">
-                <div class="card-header">
+            <div class="report-card-compact rescue-card" id="rescue-${report.id}">
+                <div class="report-card-header">
                     <span class="report-badge rescue-badge">RESCUE</span>
-                    <span class="report-id">#${report.id}</span>
+                    <span class="report-id">#${report.id.substring(0, 6)}</span>
                     <span class="urgency-badge urgency-${report.urgency || 'low'}">${(report.urgency || 'low').toUpperCase()}</span>
                 </div>
                 
-                <div class="card-body">
-                    <div class="card-image">
-                        <img src="${imageSrc}" alt="Rescue Animal" 
-                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRkVGM0M3Ii8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNDAiIHI9IjE1IiBmaWxsPSIjRjU5NTZDIi8+CjxwYXRoIGQ9Ik0zNSA2NUg2NVY3NUgzNVY2NVoiIGZpbGw9IiNGNTk1NkMiLz4KPHN2Zz4K'">
-                    </div>
-                    
-                    <div class="card-info">
-                        <h3 class="pet-title">${report.breed || 'Unknown Breed'}</h3>
-                        <p class="pet-details">${report.animal_type || 'Unknown'} • ${report.color || 'Unknown'}</p>
-                        
-                        <div class="info-compact">
-                            <div class="info-row">
-                                <span class="info-icon">📍</span>
-                                <span class="info-text">${truncateText(report.location || "Unknown location", 20)}</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-icon">👤</span>
-                                <span class="info-text">${truncateText(report.contact_name || "Unknown", 15)}</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-icon">📞</span>
-                                <span class="info-text">${report.contact_phone || "No phone"}</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-icon">📅</span>
-                                <span class="info-text">${formatDate(report.report_date)}</span>
-                            </div>
+                <div class="report-image-container">
+                    ${report.image_path ? `
+                        <img src="/media/${report.image_path}" class="report-image-compact" alt="Rescue Animal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="no-image-compact" style="display: none;">
+                            🚨<br><small>No Image</small>
                         </div>
-                        
-                        ${report.special_marks ? `
-                        <div class="special-compact">
-                            <span class="special-icon">⭐</span>
-                            <span class="special-text">${truncateText(report.special_marks, 30)}</span>
-                        </div>` : ''}
-                    </div>
+                    ` : `
+                        <div class="no-image-compact">
+                            🚨<br><small>No Image</small>
+                        </div>
+                    `}
                 </div>
                 
-                <div class="card-actions">
-                    <button class="btn-approve" onclick="approveRequest('rescue', '${report.id}')">
-                        <span class="btn-icon">✓</span>
-                        <span class="btn-text">Approve</span>
-                    </button>
-                    <button class="btn-reject" onclick="rejectRequest('rescue', '${report.id}')">
-                        <span class="btn-icon">✗</span>
-                        <span class="btn-text">Reject</span>
-                    </button>
+                <div class="report-content">
+                    <h5 class="report-title">${report.breed || 'Unknown Breed'}</h5>
+                    <div class="report-info-compact">
+                        <div class="info-row">
+                            <span class="info-label">Type:</span>
+                            <span class="info-value">${report.animal_type || 'Unknown'}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Color:</span>
+                            <span class="info-value">${report.color || 'Unknown'}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Location:</span>
+                            <span class="info-value">${truncateText(report.location || 'Unknown', 15)}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Reporter:</span>
+                            <span class="info-value">${truncateText(report.contact_name || 'Unknown', 12)}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Date:</span>
+                            <span class="info-value">${formatDate(report.report_date)}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="report-actions-compact">
+                        <button class="btn-approve-compact" onclick="approveRequest('rescue','${report.id}')" title="Approve Request">
+                            ✓
+                        </button>
+                        <button class="btn-reject-compact" onclick="rejectRequest('rescue','${report.id}')" title="Reject Request">
+                            ✗
+                        </button>
+                    </div>
                 </div>
             </div>
         `;

@@ -427,6 +427,7 @@ body {
   }
 }
 
+
 /* ===== MISSION SECTION ===== */
 .mission-section {
   padding: 100px 80px;
@@ -601,6 +602,27 @@ footer::after {
   .mission-section {
     padding: 100px 60px;
   }
+
+  .features-section {
+    padding: 80px 60px;
+  }
+
+  .features-title {
+    font-size: 48px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+  }
+
+  .feature-card {
+    padding: 50px 40px;
+  }
+
+  .feature-icon {
+    font-size: 80px;
+  }
   
   .about {
     padding: 120px 60px;
@@ -638,6 +660,31 @@ footer::after {
 
   .mission-section {
     padding: 70px 40px;
+  }
+
+  .features-section {
+    padding: 70px 40px;
+  }
+
+  .features-title {
+    font-size: 42px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+  }
+
+  .feature-card {
+    padding: 45px 35px;
+  }
+
+  .feature-icon {
+    font-size: 75px;
+  }
+
+  .feature-card h3 {
+    font-size: 28px;
   }
 
   .mission-container {
@@ -730,6 +777,40 @@ footer::after {
 
   .mission-section {
     padding: 50px 20px;
+  }
+
+  .features-section {
+    padding: 60px 20px;
+  }
+
+  .features-title {
+    font-size: 36px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .feature-card {
+    padding: 40px 30px;
+  }
+
+  .feature-icon {
+    font-size: 70px;
+  }
+
+  .feature-card h3 {
+    font-size: 26px;
+  }
+
+  .feature-card p {
+    font-size: 17px;
+  }
+
+  .feature-btn {
+    padding: 16px 35px;
+    font-size: 15px;
   }
 
   .mission-title {
@@ -853,6 +934,35 @@ footer::after {
     padding: 40px 15px;
   }
 
+  .features-section {
+    padding: 50px 15px;
+  }
+
+  .features-title {
+    font-size: 32px;
+  }
+
+  .feature-card {
+    padding: 35px 25px;
+  }
+
+  .feature-icon {
+    font-size: 65px;
+  }
+
+  .feature-card h3 {
+    font-size: 24px;
+  }
+
+  .feature-card p {
+    font-size: 16px;
+  }
+
+  .feature-btn {
+    padding: 14px 30px;
+    font-size: 14px;
+  }
+
   .mission-title {
     font-size: 28px;
   }
@@ -965,6 +1075,35 @@ footer::after {
 
   .mission-section {
     padding: 35px 12px;
+  }
+
+  .features-section {
+    padding: 40px 12px;
+  }
+
+  .features-title {
+    font-size: 28px;
+  }
+
+  .feature-card {
+    padding: 30px 20px;
+  }
+
+  .feature-icon {
+    font-size: 60px;
+  }
+
+  .feature-card h3 {
+    font-size: 22px;
+  }
+
+  .feature-card p {
+    font-size: 15px;
+  }
+
+  .feature-btn {
+    padding: 12px 25px;
+    font-size: 13px;
   }
 
   .mission-title {

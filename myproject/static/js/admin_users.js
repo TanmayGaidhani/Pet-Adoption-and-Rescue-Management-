@@ -76,7 +76,7 @@ function showNoUsersMessage() {
     const tbody = document.getElementById('usersTableBody');
     tbody.innerHTML = `
         <tr class="no-users-row">
-            <td colspan="8" class="loading-cell">
+            <td colspan="6" class="loading-cell">
                 <div style="font-size: 48px; margin-bottom: 16px; opacity: 0.6;">👥</div>
                 No users found
             </td>
@@ -98,7 +98,6 @@ function displayUsers() {
 
     tbody.innerHTML = usersToShow.map(user => `
         <tr class="user-row" data-user-id="${user.id}">
-            <td><strong>#${user.id}</strong></td>
             <td>
                 <div style="display: flex; align-items: center; gap: 8px;">
                     <div style="
@@ -119,7 +118,6 @@ function displayUsers() {
             <td>${user.email}</td>
             <td>${user.first_name || 'N/A'} ${user.last_name || ''}</td>
             <td>${formatDate(user.date_joined)}</td>
-            <td>${user.last_login ? formatDate(user.last_login) : 'Never'}</td>
             <td>
                 <span class="status-badge ${getUserStatusClass(user)}">
                     ${getUserStatus(user)}
@@ -127,12 +125,6 @@ function displayUsers() {
             </td>
             <td>
                 <div class="action-buttons">
-                    <button class="action-btn btn-view" onclick="viewUser(${user.id})" title="View Details">
-                        👁️ View
-                    </button>
-                    <button class="action-btn btn-edit" onclick="editUser(${user.id})" title="Edit User">
-                        ✏️ Edit
-                    </button>
                     ${!user.is_superuser ? `
                     <button class="action-btn btn-delete" onclick="deleteUser(${user.id})" title="Delete User">
                         🗑️ Delete
@@ -325,15 +317,18 @@ function sortUsers(field) {
 }
 
 function updateSortArrows() {
-    // Reset all arrows
-    document.querySelectorAll('.sort-arrow').forEach(arrow => {
-        arrow.textContent = '↕️';
+    // Reset all headers
+    document.querySelectorAll('.sortable .th-content').forEach(header => {
+        const text = header.textContent.replace(' ↑', '').replace(' ↓', '');
+        header.textContent = text;
     });
 
-    // Update current sort arrow
-    const currentHeader = document.querySelector(`[data-sort="${currentSort.field}"] .sort-arrow`);
+    // Update current sort header
+    const currentHeader = document.querySelector(`[data-sort="${currentSort.field}"] .th-content`);
     if (currentHeader) {
-        currentHeader.textContent = currentSort.direction === 'asc' ? '↑' : '↓';
+        const text = currentHeader.textContent;
+        const arrow = currentSort.direction === 'asc' ? ' ↑' : ' ↓';
+        currentHeader.textContent = text + arrow;
     }
 }
 
@@ -379,62 +374,73 @@ function updatePagination() {
     }
 }
 
-function viewUser(userId) {
-    const user = currentUsers.find(u => u.id === userId);
-    if (!user) return;
-
-    const modal = document.getElementById('userModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalBody = document.getElementById('modalBody');
-
-    modalTitle.textContent = `👤 ${user.username} - User Details`;
-    
-    modalBody.innerHTML = `
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-            <div>
-                <h4 style="color: #374151; margin-bottom: 10px; font-size: 14px; font-weight: 600;">Basic Information</h4>
-                <div style="background: #f9fafb; padding: 15px; border-radius: 8px;">
-                    <p><strong>ID:</strong> #${user.id}</p>
-                    <p><strong>Username:</strong> ${user.username}</p>
-                    <p><strong>Email:</strong> ${user.email}</p>
-                    <p><strong>Name:</strong> ${user.first_name || 'N/A'} ${user.last_name || ''}</p>
-                </div>
-            </div>
-            <div>
-                <h4 style="color: #374151; margin-bottom: 10px; font-size: 14px; font-weight: 600;">Account Status</h4>
-                <div style="background: #f9fafb; padding: 15px; border-radius: 8px;">
-                    <p><strong>Status:</strong> <span class="status-badge ${getUserStatusClass(user)}">${getUserStatus(user)}</span></p>
-                    <p><strong>Active:</strong> ${user.is_active ? '✅ Yes' : '❌ No'}</p>
-                    <p><strong>Staff:</strong> ${user.is_staff ? '✅ Yes' : '❌ No'}</p>
-                    <p><strong>Superuser:</strong> ${user.is_superuser ? '✅ Yes' : '❌ No'}</p>
-                </div>
-            </div>
-        </div>
-        <div>
-            <h4 style="color: #374151; margin-bottom: 10px; font-size: 14px; font-weight: 600;">Activity Information</h4>
-            <div style="background: #f9fafb; padding: 15px; border-radius: 8px;">
-                <p><strong>Date Joined:</strong> ${formatDate(user.date_joined)}</p>
-                <p><strong>Last Login:</strong> ${user.last_login ? formatDate(user.last_login) : 'Never logged in'}</p>
-                <p><strong>Account Age:</strong> ${getAccountAge(user.date_joined)}</p>
-            </div>
-        </div>
-    `;
-
-    modal.style.display = 'block';
-}
-
-function editUser(userId) {
-    alert(`🚧 Edit user functionality coming soon! User ID: ${userId}`);
-}
-
 function deleteUser(userId) {
     const user = currentUsers.find(u => u.id === userId);
     if (!user) return;
 
-    if (confirm(`Are you sure you want to delete user "${user.username}"? This action cannot be undone.`)) {
-        // Here you would make an API call to delete the user
-        alert(`🚧 Delete user functionality coming soon! User: ${user.username}`);
-    }
+    // Create a custom confirmation dialog
+    const confirmDelete = confirm(
+        `⚠️ DELETE USER CONFIRMATION\n\n` +
+        `Are you sure you want to permanently delete user "${user.username}"?\n\n` +
+        `This will also delete:\n` +
+        `• All their pet reports\n` +
+        `• All their comments\n` +
+        `• All their chat messages\n` +
+        `• All associated data\n\n` +
+        `⚠️ THIS ACTION CANNOT BE UNDONE!\n\n` +
+        `Click OK to proceed or Cancel to abort.`
+    );
+
+    if (!confirmDelete) return;
+
+    // Show loading state
+    const deleteBtn = document.querySelector(`[onclick="deleteUser(${userId})"]`);
+    const originalText = deleteBtn.innerHTML;
+    deleteBtn.innerHTML = '⏳ Deleting...';
+    deleteBtn.disabled = true;
+
+    // Make API call to delete user
+    fetch('/api/admin/delete-user/', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken')
+        },
+        body: JSON.stringify({
+            user_id: userId
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Show success message
+            alert(`✅ User "${user.username}" has been successfully deleted.`);
+            
+            // Remove user from current data
+            currentUsers = currentUsers.filter(u => u.id !== userId);
+            filteredUsers = filteredUsers.filter(u => u.id !== userId);
+            
+            // Refresh the display
+            displayUsers();
+            updatePagination();
+            loadUsersStats(); // Refresh stats
+        } else {
+            // Show error message
+            alert(`❌ Error deleting user: ${data.error}`);
+            
+            // Restore button
+            deleteBtn.innerHTML = originalText;
+            deleteBtn.disabled = false;
+        }
+    })
+    .catch(error => {
+        console.error('Error deleting user:', error);
+        alert(`❌ Network error occurred while deleting user. Please try again.`);
+        
+        // Restore button
+        deleteBtn.innerHTML = originalText;
+        deleteBtn.disabled = false;
+    });
 }
 
 function exportUsers() {

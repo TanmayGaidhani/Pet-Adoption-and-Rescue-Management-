@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Admin Chat Management - RescueMate</title>
+    <link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_chat.css' %}">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="{% static 'images/Icon_img.png' %}" class="logo" alt="RescueMate Logo">
+        <h2 class="logo-text">RescueMate Admin</h2>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+        <li><a href="{% url 'admin_users' %}">Users</a></li>
+        <li><a href="{% url 'admin_reports' %}">Reports</a></li>
+        <li><a href="{% url 'admin_adoption' %}">Adoptions</a></li>
+        <li><a href="{% url 'admin_ml_matching' %}">ML Matching</a></li>
+        <li><a href="#" class="profile-link">
+            <span class="admin-icon">👑</span>
+            Admin: {{ user_name }}
+        </a></li>
+        <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- ===== ADMIN CHAT CONTENT ===== -->
+<div class="admin-chat-container">
+    
+    <!-- Header Section -->
+    <div class="chat-header">
+        <h1>💬 Chat Management</h1>
+        <p>Monitor and manage pet-related community discussions</p>
+    </div>
+
+    <!-- Chat Stats -->
+    <div class="chat-stats-grid">
+        
+        <div class="chat-stat-card total-chats">
+            <div class="stat-icon">💬</div>
+            <div class="stat-info">
+                <h3 id="totalChatsCount">Loading...</h3>
+                <p>Active Chats</p>
+            </div>
+        </div>
+
+        <div class="chat-stat-card recent-messages">
+            <div class="stat-icon">📨</div>
+            <div class="stat-info">
+                <h3 id="recentMessagesCount">Loading...</h3>
+                <p>Messages Today</p>
+            </div>
+        </div>
+
+        <div class="chat-stat-card active-users">
+            <div class="stat-icon">👥</div>
+            <div class="stat-info">
+                <h3 id="activeUsersCount">Loading...</h3>
+                <p>Active Users</p>
+            </div>
+        </div>
+
+        <div class="chat-stat-card flagged-messages">
+            <div class="stat-icon">🚩</div>
+            <div class="stat-info">
+                <h3 id="flaggedMessagesCount">0</h3>
+                <p>Flagged Messages</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Main Chat Interface -->
+    <div class="chat-main-interface">
+        
+        <!-- Left Panel: Chat List -->
+        <div class="chat-list-panel">
+            <div class="panel-header">
+                <h3>🐾 Pet Discussions</h3>
+                <button id="refreshChats" class="refresh-btn">🔄</button>
+            </div>
+            
+            <div class="search-chats">
+                <input type="text" id="chatSearch" placeholder="Search by pet name or report ID...">
+            </div>
+            
+            <div class="chat-list" id="chatList">
+                <div class="loading-chats">Loading pet discussions...</div>
+            </div>
+        </div>
+
+        <!-- Right Panel: Chat Messages -->
+        <div class="chat-messages-panel">
+            <div class="chat-panel-header" id="chatPanelHeader">
+                <div class="selected-chat-info">
+                    <h3>Select a pet discussion to view messages</h3>
+                    <p>Choose from the list on the left to monitor conversations</p>
+                </div>
+            </div>
+            
+            <div class="chat-messages-container" id="chatMessagesContainer">
+                <div class="no-chat-selected">
+                    <div class="no-chat-icon">💬</div>
+                    <h3>No Chat Selected</h3>
+                    <p>Select a pet discussion from the left panel to view and manage messages</p>
+                </div>
+            </div>
+            
+            <!-- Admin Message Input -->
+            <div class="admin-message-input" id="adminMessageInput" style="display: none;">
+                <div class="admin-input-container">
+                    <input type="text" id="adminMessageText" placeholder="Send message as admin..." maxlength="500">
+                    <button id="sendAdminMessage">Send as Admin</button>
+                </div>
+                <div class="admin-actions">
+                    <button id="moderateChat" class="moderate-btn">🛡️ Moderate</button>
+                    <button id="closeChat" class="close-btn">🔒 Close Chat</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Moderation Modal -->
+<div id="moderationModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>🛡️ Chat Moderation</h2>
+            <span class="modal-close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <h4>Moderation Actions:</h4>
+            <div class="moderation-actions">
+                <button class="mod-action-btn warn-btn">⚠️ Send Warning</button>
+                <button class="mod-action-btn mute-btn">🔇 Mute User</button>
+                <button class="mod-action-btn delete-btn">🗑️ Delete Message</button>
+                <button class="mod-action-btn ban-btn">🚫 Ban User</button>
+            </div>
+            <div class="moderation-reason">
+                <label for="moderationReason">Reason:</label>
+                <textarea id="moderationReason" placeholder="Enter moderation reason..."></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button id="cancelModeration" class="modal-btn secondary">Cancel</button>
+            <button id="applyModeration" class="modal-btn primary">Apply Action</button>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="{% static 'js/admin_chat.js' %}"></script>
+
+</body>
+</html>

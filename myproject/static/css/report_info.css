@@ -178,119 +178,218 @@ body {
   border-color: #f5576c;
 }
 
-/* ===== REPORTS GRID ===== */
-.reports-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 30px;
+/* ===== REPORTS SECTION ===== */
+.reports-section {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   margin-bottom: 40px;
 }
 
-.report-card {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s, box-shadow 0.3s;
+/* ===== REPORTS GRID ===== */
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.report-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
-
-.report-image {
+/* ===== COMPACT REPORT CARDS ===== */
+.report-card-compact {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  max-width: 240px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.report-info {
-  padding: 25px;
+.report-card-compact:hover {
+  border-color: #f5576c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #fafbff;
 }
 
-.report-header {
+.report-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.25rem;
 }
 
-.animal-type {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  color: white;
-  padding: 5px 12px;
-  border-radius: 15px;
-  font-size: 12px;
+.animal-type-badge {
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
 }
 
 .urgency-badge {
-  padding: 5px 12px;
-  border-radius: 15px;
-  font-size: 12px;
+  padding: 0.1rem 0.4rem;
+  border-radius: 10px;
+  font-size: 0.6rem;
   font-weight: 600;
   text-transform: uppercase;
 }
 
-.urgency-emergency {
-  background: #ff4444;
-  color: white;
+.urgency-badge.urgency-emergency {
+  background: #fee2e2;
+  color: #dc2626;
 }
 
-.urgency-high {
-  background: #ff8800;
-  color: white;
+.urgency-badge.urgency-high {
+  background: #fef3c7;
+  color: #d97706;
 }
 
-.urgency-medium {
-  background: #ffaa00;
-  color: white;
+.urgency-badge.urgency-medium {
+  background: #fef3c7;
+  color: #d97706;
 }
 
-.urgency-low {
-  background: #4CAF50;
-  color: white;
+.urgency-badge.urgency-low {
+  background: #dcfce7;
+  color: #16a34a;
 }
 
-.report-details h3 {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.report-details p {
+.report-id {
   color: #666;
-  margin-bottom: 8px;
-  font-size: 14px;
+  font-size: 0.65rem;
+  font-family: monospace;
 }
 
-.report-location {
+.report-image-container {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   display: flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+}
+
+.report-image-compact {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  object-fit: contain;
+  border-radius: 4px;
+  background: #ffffff;
+  margin: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.no-image-compact {
+  color: #999;
+  font-size: 0.75rem;
+  text-align: center;
+  background: #f8f9fa;
+  border: 1px dashed #ddd;
+  border-radius: 6px;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.report-content {
+  flex: 1;
+}
+
+.report-title-compact {
+  color: #333;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.report-info-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.info-row-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 0.7rem;
+  line-height: 1.3;
+}
+
+.info-label-compact {
+  color: #666;
+  font-weight: 500;
+  min-width: 45px;
+  flex-shrink: 0;
+}
+
+.info-value-compact {
+  color: #333;
+  text-align: right;
+  flex: 1;
+  margin-left: 0.25rem;
+  word-break: break-word;
+}
+
+.report-location-compact {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   color: #f5576c;
   font-weight: 600;
-  margin-top: 15px;
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
 }
 
-.contact-btn {
-  width: 100%;
-  padding: 12px;
+.report-actions-compact {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.btn-contact-compact {
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.3s;
-  margin-top: 15px;
 }
 
-.contact-btn:hover {
-  transform: scale(1.02);
+.btn-contact-compact:hover {
+  background: linear-gradient(135deg, #e082fa 0%, #f4456b 100%);
+  transform: scale(1.05);
 }
 
 /* ===== LOADING AND NO RESULTS ===== */
@@ -354,8 +453,8 @@ body {
   }
   
   .reports-grid {
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
   }
 }
 
@@ -370,7 +469,7 @@ body {
   }
   
   .reports-grid {
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
 }
 
@@ -411,25 +510,30 @@ body {
     font-size: 14px;
   }
 
+  .reports-section {
+    padding: 25px;
+  }
+
   .reports-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    padding: 12px;
   }
-
-  .report-image {
-    height: 220px;
+  
+  .report-card-compact {
+    max-width: 100%;
   }
-
-  .report-info {
-    padding: 20px;
+  
+  .report-image-container {
+    height: 100px;
   }
-
-  .report-details h3 {
-    font-size: 18px;
+  
+  .report-title-compact {
+    font-size: 0.8rem;
   }
-
-  .report-details p {
-    font-size: 13px;
+  
+  .info-row-compact {
+    font-size: 0.65rem;
   }
 }
 
@@ -509,52 +613,39 @@ body {
     font-size: 13px;
   }
 
+  .reports-section {
+    padding: 20px;
+  }
+
   .reports-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
-  }
-
-  .report-image {
-    height: 200px;
-  }
-
-  .report-info {
-    padding: 18px;
-  }
-
-  .report-header {
-    margin-bottom: 12px;
-  }
-
-  .animal-type {
-    padding: 4px 10px;
-    font-size: 11px;
-  }
-
-  .urgency-badge {
-    padding: 4px 10px;
-    font-size: 11px;
-  }
-
-  .report-details h3 {
-    font-size: 17px;
-    margin-bottom: 8px;
-  }
-
-  .report-details p {
-    font-size: 12px;
-    margin-bottom: 6px;
-  }
-
-  .report-location {
-    margin-top: 12px;
-  }
-
-  .contact-btn {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
     padding: 10px;
-    font-size: 14px;
-    margin-top: 12px;
+  }
+  
+  .report-card-compact {
+    max-width: 100%;
+  }
+  
+  .report-image-container {
+    height: 90px;
+  }
+  
+  .report-title-compact {
+    font-size: 0.75rem;
+  }
+  
+  .info-row-compact {
+    font-size: 0.6rem;
+  }
+  
+  .report-location-compact {
+    font-size: 0.65rem;
+  }
+  
+  .btn-contact-compact {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.5rem;
   }
 
   .loading-message {
@@ -657,56 +748,34 @@ body {
   }
 
   .reports-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    margin-bottom: 25px;
-  }
-
-  .report-card {
-    border-radius: 12px;
-  }
-
-  .report-image {
-    height: 180px;
-  }
-
-  .report-info {
-    padding: 15px;
-  }
-
-  .report-header {
-    margin-bottom: 10px;
-  }
-
-  .animal-type {
-    padding: 3px 8px;
-    font-size: 10px;
-  }
-
-  .urgency-badge {
-    padding: 3px 8px;
-    font-size: 10px;
-  }
-
-  .report-details h3 {
-    font-size: 16px;
-    margin-bottom: 6px;
-  }
-
-  .report-details p {
-    font-size: 11px;
-    margin-bottom: 5px;
-  }
-
-  .report-location {
-    margin-top: 10px;
-    font-size: 12px;
-  }
-
-  .contact-btn {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
     padding: 8px;
-    font-size: 13px;
-    margin-top: 10px;
+  }
+
+  .report-card-compact {
+    max-width: 200px;
+  }
+  
+  .report-image-container {
+    height: 80px;
+  }
+  
+  .report-title-compact {
+    font-size: 0.7rem;
+  }
+  
+  .info-row-compact {
+    font-size: 0.55rem;
+  }
+  
+  .report-location-compact {
+    font-size: 0.6rem;
+  }
+  
+  .btn-contact-compact {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.4rem;
   }
 
   .loading-message {
@@ -813,61 +882,35 @@ body {
   }
 
   .reports-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-
-  .report-card {
-    border-radius: 10px;
-  }
-
-  .report-image {
-    height: 160px;
-  }
-
-  .report-info {
-    padding: 12px;
-  }
-
-  .report-header {
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-
-  .animal-type {
-    padding: 2px 6px;
-    font-size: 9px;
-    border-radius: 10px;
-  }
-
-  .urgency-badge {
-    padding: 2px 6px;
-    font-size: 9px;
-    border-radius: 8px;
-  }
-
-  .report-details h3 {
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-
-  .report-details p {
-    font-size: 10px;
-    margin-bottom: 4px;
-  }
-
-  .report-location {
-    margin-top: 8px;
-    font-size: 11px;
-  }
-
-  .contact-btn {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 6px;
     padding: 6px;
-    font-size: 12px;
-    margin-top: 8px;
-    border-radius: 6px;
+  }
+
+  .report-card-compact {
+    max-width: 180px;
+    padding: 0.5rem;
+  }
+  
+  .report-image-container {
+    height: 70px;
+  }
+  
+  .report-title-compact {
+    font-size: 0.65rem;
+  }
+  
+  .info-row-compact {
+    font-size: 0.5rem;
+  }
+  
+  .report-location-compact {
+    font-size: 0.55rem;
+  }
+  
+  .btn-contact-compact {
+    font-size: 0.55rem;
+    padding: 0.2rem 0.3rem;
   }
 
   .loading-message {
@@ -898,5 +941,258 @@ body {
 
   .no-results p {
     font-size: 12px;
+  }
+}
+
+/* ===== CHAT MODAL STYLES ===== */
+.chat-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.chat-modal-content {
+  background: white;
+  margin: 5% auto;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.chat-close {
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.chat-close:hover {
+  opacity: 1;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chat-message {
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.own-message {
+  align-self: flex-end;
+}
+
+.other-message {
+  align-self: flex-start;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #666;
+}
+
+.message-user {
+  font-weight: 600;
+  color: #f5576c;
+}
+
+.message-time {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.message-text {
+  background: white;
+  padding: 12px 15px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  line-height: 1.4;
+}
+
+.own-message .message-text {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.chat-input-section {
+  padding: 20px;
+  background: white;
+  border-top: 1px solid #eee;
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#chatMessageInput {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#chatMessageInput:focus {
+  border-color: #f5576c;
+}
+
+#sendChatMessage {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+#sendChatMessage:hover {
+  transform: translateY(-2px);
+}
+
+.loading-chat, .no-messages, .error-messages {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-style: italic;
+}
+
+.no-messages {
+  color: #999;
+}
+
+.error-messages {
+  color: #f44336;
+}
+
+/* ===== CHAT BUTTON STYLES ===== */
+.btn-chat-compact {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-chat-compact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Update report actions to accommodate both buttons */
+.report-actions-compact {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.report-actions-compact button {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===== RESPONSIVE CHAT MODAL ===== */
+@media (max-width: 768px) {
+  .chat-modal-content {
+    width: 95%;
+    height: 80vh;
+    margin: 10% auto;
+  }
+  
+  .chat-header {
+    padding: 15px;
+  }
+  
+  .chat-header h3 {
+    font-size: 16px;
+  }
+  
+  .chat-messages {
+    padding: 15px;
+  }
+  
+  .chat-input-section {
+    padding: 15px;
+  }
+  
+  #chatMessageInput {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-modal-content {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+  }
+  
+  .message-text {
+    padding: 10px 12px;
+  }
+  
+  .chat-input-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #chatMessageInput {
+    width: 100%;
+  }
+  
+  #sendChatMessage {
+    width: 100%;
+    padding: 15px;
   }
 }

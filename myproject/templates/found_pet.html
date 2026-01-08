@@ -10,7 +10,7 @@
 <title>Found Pets - RescueMate</title>
 
 <link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
-<link rel="stylesheet" href="{% static 'css/found_pet.css' %}">
+<link rel="stylesheet" href="{% static 'css/found_pet.css' %}?v=3.0">
 </head>
 <body>
 
@@ -26,8 +26,9 @@
     <li><a href="{% url 'rescue' %}">Report Pet</a></li>
     <li><a href="{% url 'found_pet' %}" class="active">Found Pet</a></li>
     <li><a href="{% url 'report_info' %}">Report Info</a></li>
-    <li><a href="#" class="profile-link">
+    <li><a href="{% url 'user_profile' %}" class="profile-link">
       <span class="user-icon">👤</span>
+      {{ user_name }}
     </a></li>
     <li><a href="{% url 'logout' %}">Logout</a></li>
   </ul>
@@ -67,11 +68,13 @@
     </div>
 
     <!-- Found Pets Grid -->
-    <div class="pets-grid" id="petsGrid">
-      <!-- Pet cards will be loaded here -->
-      <div class="loading-message">
-        <div class="loading-spinner"></div>
-        <p>Loading found pets...</p>
+    <div class="pets-section">
+      <div class="pets-grid" id="petsGrid">
+        <!-- Pet cards will be loaded here -->
+        <div class="loading-message">
+          <div class="loading-spinner"></div>
+          <p>Loading found pets...</p>
+        </div>
       </div>
     </div>
 

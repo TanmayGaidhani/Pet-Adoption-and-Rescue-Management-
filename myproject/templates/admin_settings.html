@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>System Settings - RescueMate</title>
+    <link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_settings.css' %}">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="{% static 'images/Icon_img.png' %}" class="logo" alt="RescueMate Logo">
+        <h2 class="logo-text">RescueMate Admin</h2>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+        <li><a href="{% url 'admin_users' %}">Users</a></li>
+        <li><a href="{% url 'admin_reports' %}">Reports</a></li>
+        <li><a href="{% url 'admin_adoption' %}">Adoptions</a></li>
+        <li><a href="{% url 'admin_ml_matching' %}">ML Matching</a></li>
+        <li><a href="#" class="profile-link">
+            <span class="admin-icon">👑</span>
+            Admin: {{ user_name }}
+        </a></li>
+        <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- ===== ADMIN SETTINGS CONTENT ===== -->
+<div class="admin-settings-container">
+    
+    <!-- Header Section -->
+    <div class="settings-header">
+        <h1>⚙️ System Settings</h1>
+        <p>Configure platform settings and system preferences</p>
+    </div>
+
+    <!-- Settings Grid -->
+    <div class="settings-grid">
+        
+        <!-- Platform Settings -->
+        <div class="settings-card">
+            <div class="card-header">
+                <h3>🌐 Platform Settings</h3>
+                <p>General platform configuration</p>
+            </div>
+            <div class="card-content">
+                <div class="setting-item">
+                    <label for="platformName">Platform Name</label>
+                    <input type="text" id="platformName" value="RescueMate" readonly>
+                </div>
+                <div class="setting-item">
+                    <label for="platformVersion">Version</label>
+                    <input type="text" id="platformVersion" value="1.0.0" readonly>
+                </div>
+                <div class="setting-item">
+                    <label for="maintenanceMode">Maintenance Mode</label>
+                    <select id="maintenanceMode">
+                        <option value="false">Disabled</option>
+                        <option value="true">Enabled</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Settings -->
+        <div class="settings-card">
+            <div class="card-header">
+                <h3>📧 Email Settings</h3>
+                <p>Configure email notifications</p>
+            </div>
+            <div class="card-content">
+                <div class="setting-item">
+                    <label for="emailNotifications">Email Notifications</label>
+                    <select id="emailNotifications">
+                        <option value="true">Enabled</option>
+                        <option value="false">Disabled</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="adminEmail">Admin Email</label>
+                    <input type="email" id="adminEmail" value="admin@rescuemate.com">
+                </div>
+                <div class="setting-item">
+                    <label for="smtpServer">SMTP Server</label>
+                    <input type="text" id="smtpServer" value="smtp.gmail.com" readonly>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Settings -->
+        <div class="settings-card">
+            <div class="card-header">
+                <h3>🔒 Security Settings</h3>
+                <p>Platform security configuration</p>
+            </div>
+            <div class="card-content">
+                <div class="setting-item">
+                    <label for="sessionTimeout">Session Timeout (minutes)</label>
+                    <input type="number" id="sessionTimeout" value="60" min="15" max="480">
+                </div>
+                <div class="setting-item">
+                    <label for="maxLoginAttempts">Max Login Attempts</label>
+                    <input type="number" id="maxLoginAttempts" value="5" min="3" max="10">
+                </div>
+                <div class="setting-item">
+                    <label for="requireEmailVerification">Require Email Verification</label>
+                    <select id="requireEmailVerification">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Settings -->
+        <div class="settings-card">
+            <div class="card-header">
+                <h3>💬 Chat Settings</h3>
+                <p>Community chat configuration</p>
+            </div>
+            <div class="card-content">
+                <div class="setting-item">
+                    <label for="chatEnabled">Enable Chat System</label>
+                    <select id="chatEnabled">
+                        <option value="true">Enabled</option>
+                        <option value="false">Disabled</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="maxMessageLength">Max Message Length</label>
+                    <input type="number" id="maxMessageLength" value="500" min="100" max="1000">
+                </div>
+                <div class="setting-item">
+                    <label for="chatModeration">Auto Moderation</label>
+                    <select id="chatModeration">
+                        <option value="true">Enabled</option>
+                        <option value="false">Disabled</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Upload Settings -->
+        <div class="settings-card">
+            <div class="card-header">
+                <h3>📁 File Upload Settings</h3>
+                <p>Configure file upload limits</p>
+            </div>
+            <div class="card-content">
+                <div class="setting-item">
+                    <label for="maxFileSize">Max File Size (MB)</label>
+                    <input type="number" id="maxFileSize" value="10" min="1" max="50">
+                </div>
+                <div class="setting-item">
+                    <label for="allowedFileTypes">Allowed File Types</label>
+                    <input type="text" id="allowedFileTypes" value="jpg, jpeg, png, gif" readonly>
+                </div>
+                <div class="setting-item">
+                    <label for="imageCompression">Image Compression</label>
+                    <select id="imageCompression">
+                        <option value="true">Enabled</option>
+                        <option value="false">Disabled</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Database Settings -->
+        <div class="settings-card">
+            <div class="card-header">
+                <h3>🗄️ Database Settings</h3>
+                <p>Database configuration and maintenance</p>
+            </div>
+            <div class="card-content">
+                <div class="setting-item">
+                    <label for="dbStatus">Database Status</label>
+                    <input type="text" id="dbStatus" value="Connected" readonly>
+                </div>
+                <div class="setting-item">
+                    <label for="autoBackup">Auto Backup</label>
+                    <select id="autoBackup">
+                        <option value="true">Enabled</option>
+                        <option value="false">Disabled</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="backupFrequency">Backup Frequency</label>
+                    <select id="backupFrequency">
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="settings-actions">
+        <button id="saveSettings" class="save-btn">💾 Save Settings</button>
+        <button id="resetSettings" class="reset-btn">🔄 Reset to Default</button>
+        <button id="exportSettings" class="export-btn">📊 Export Configuration</button>
+    </div>
+
+</div>
+
+<!-- Success/Error Messages -->
+<div id="messageContainer" class="message-container" style="display: none;">
+    <div id="messageContent" class="message-content"></div>
+</div>
+
+<!-- JavaScript -->
+<script src="{% static 'js/admin_settings.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Community Comments - RescueMate</title>
+
+<link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+<link rel="stylesheet" href="{% static 'css/community_comments.css' %}?v=2.0">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="logo-container">
+    <img src="{% static 'images/Icon_img.png' %}" class="logo" alt="RescueMate Logo">
+    <h2 class="logo-text">RescueMate</h2>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+    <li><a href="{% url 'found_pet' %}">Found Pets</a></li>
+    <li><a href="{% url 'report_info' %}">Rescue Reports</a></li>
+    <li><a href="{% url 'adoption' %}">Adopt a Pet</a></li>
+    <li><a href="{% url 'rescue' %}">Report</a></li>
+    <li><a href="{% url 'community_comments' %}" class="active">Community</a></li>
+    <li><a href="{% url 'user_profile' %}" class="profile-link">
+      <span class="user-icon">👤</span>
+      {{ user_name }}
+    </a></li>
+    <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
+  </ul>
+</nav>
+
+<!-- ===== COMMUNITY COMMENTS SECTION ===== -->
+<section class="comments-section">
+  <div class="comments-container">
+    
+    <!-- Page Header -->
+    <div class="page-header">
+      <!-- <div class="header-icon">💬</div> -->
+      <h1>Community Comments</h1>
+      <p>Share your thoughts and connect with the pet rescue community</p>
+    </div>
+
+    <!-- Post Comment Section -->
+    <div class="post-comment-card">
+      <div class="post-header">
+        <div class="user-avatar">👤</div>
+        <div class="user-info">
+          <h3>{{ user_name }}</h3>
+          <p>Share your thoughts with the community</p>
+        </div>
+      </div>
+      
+      <div class="post-form">
+        <textarea id="commentInput" placeholder="What's on your mind? Share your pet rescue experiences, tips, or thoughts..." maxlength="500"></textarea>
+        
+        <!-- Image Upload Section -->
+        <div class="image-upload-section">
+          <input type="file" id="imageInput" accept="image/*" style="display: none;">
+          <div class="image-preview" id="imagePreview" style="display: none;">
+            <img id="previewImg" src="" alt="Preview">
+            <button type="button" class="remove-image-btn" onclick="removeImage()">✕</button>
+          </div>
+          <button type="button" class="add-image-btn" id="addImageBtn" onclick="document.getElementById('imageInput').click()">
+            <span class="btn-icon">📷</span>
+            Add Image
+          </button>
+        </div>
+        
+        <div class="post-actions">
+          <span class="char-count" id="charCount">0/500</span>
+          <button class="post-btn" id="postCommentBtn">
+            <span class="btn-icon">📝</span>
+            Post Comment
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comments Feed -->
+    <div class="comments-feed">
+      <div class="feed-header">
+        <h2>Community Feed</h2>
+        <div class="feed-stats">
+          <span id="commentCount">Loading...</span> comments
+        </div>
+      </div>
+      
+      <div class="comments-list" id="commentsList">
+        <div class="loading-message">
+          <div class="loading-spinner"></div>
+          <p>Loading community comments...</p>
+        </div>
+      </div>
+      
+      <!-- No Comments Message -->
+      <div class="no-comments" id="noComments" style="display: none;">
+        <div class="no-comments-icon">💭</div>
+        <h3>No comments yet</h3>
+        <p>Be the first to share your thoughts with the community!</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// Prevent back button after logout
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function() {
+    window.history.pushState(null, "", window.location.href);
+};
+
+// Check session on page load
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
+</script>
+
+<script src="{% static 'js/community_comments.js' %}"></script>
+
+</body>
+</html>

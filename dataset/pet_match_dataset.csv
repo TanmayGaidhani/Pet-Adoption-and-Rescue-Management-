@@ -1,0 +1,1001 @@
+lost_pet_type,lost_breed,lost_color,lost_location,lost_date,found_pet_type,found_breed,found_color,found_location,found_date,match
+Dog,Bulldog,Golden,Riverside Park,2025-12-06,Dog,Bulldog,Golden,Riverside Park,2025-12-12,1
+Cat,Maine Coon,Mixed,Queens Plaza,2025-12-20,Cat,Abyssinian,Golden,Bronx Zoo,2025-12-28,0
+Dog,Golden Retriever,Golden,Staten Island,2025-12-16,Dog,Golden Retriever,Golden,Staten Island,2025-12-26,1
+Dog,Rottweiler,Brown,Queens Plaza,2025-12-18,Dog,Rottweiler,Brown,Queens Plaza,2025-12-23,1
+Dog,Golden Retriever,Gray,Manhattan,2025-12-07,Cat,Bengal,White,Queens Plaza,2025-12-11,0
+Cat,British Shorthair,Spotted,Times Square,2025-12-09,Cat,British Shorthair,Spotted,Times Square,2025-12-13,1
+Cat,Ragdoll,White,Brooklyn Bridge,2025-12-31,Bird,Finch,Striped,Staten Island,2026-01-07,0
+Dog,Bulldog,Golden,Bronx Zoo,2025-12-14,Dog,Rottweiler,Mixed,Queens Plaza,2025-12-21,0
+Cat,British Shorthair,Golden,Bronx Zoo,2025-12-11,Cat,British Shorthair,Golden,Bronx Zoo,2025-12-19,1
+Bird,Lovebird,Black,Riverside Park,2025-12-15,Cat,Russian Blue,Striped,Riverside Park,2025-12-17,0
+Bird,Parrot,Spotted,Riverside Park,2025-12-03,Bird,Parrot,Mixed,Riverside Park,2025-12-12,1
+Dog,Golden Retriever,Brown,Times Square,2025-12-18,Dog,Poodle,Gray,Queens Plaza,2025-12-22,0
+Dog,Beagle,Golden,Times Square,2025-12-19,Cat,Ragdoll,Spotted,Times Square,2025-12-24,0
+Cat,Russian Blue,Striped,Brooklyn Bridge,2025-12-08,Bird,Cockatiel,Black,Brooklyn Bridge,2025-12-12,0
+Cat,Russian Blue,Brown,Queens Plaza,2025-12-08,Cat,Russian Blue,Brown,Queens Plaza,2025-12-17,1
+Dog,Rottweiler,Black,Manhattan,2025-12-10,Bird,Canary,Mixed,Central Park,2025-12-16,0
+Cat,Russian Blue,Brown,Queens Plaza,2025-12-21,Cat,Russian Blue,Brown,Times Square,2025-12-30,1
+Bird,Budgie,Black,Brooklyn Bridge,2025-12-08,Bird,Canary,Gray,Brooklyn Bridge,2025-12-18,1
+Bird,Macaw,Orange,Staten Island,2025-12-20,Dog,Poodle,Mixed,Central Park,2025-12-24,0
+Dog,Labrador,Golden,Brooklyn Bridge,2025-12-09,Dog,Labrador,Golden,Brooklyn Bridge,2025-12-18,1
+Bird,Macaw,White,Riverside Park,2025-12-30,Bird,Macaw,White,Riverside Park,2025-12-31,1
+Bird,Macaw,Spotted,Manhattan,2025-12-06,Cat,British Shorthair,White,Bronx Zoo,2025-12-11,0
+Dog,Rottweiler,Gray,Bronx Zoo,2025-12-27,Bird,Lovebird,Black,Brooklyn Bridge,2025-12-29,0
+Dog,German Shepherd,Orange,Manhattan,2025-12-18,Dog,Rottweiler,Brown,Manhattan,2025-12-25,0
+Bird,Canary,Black,Queens Plaza,2025-12-15,Bird,Canary,Black,Times Square,2025-12-24,1
+Bird,Conure,Brown,Riverside Park,2025-12-18,Bird,Budgie,Striped,Brooklyn Bridge,2025-12-24,0
+Cat,British Shorthair,Striped,Central Park,2025-12-26,Cat,Ragdoll,Striped,Times Square,2025-12-28,1
+Bird,Lovebird,Golden,Riverside Park,2025-12-09,Bird,Lovebird,Golden,Riverside Park,2025-12-15,1
+Bird,Canary,Orange,Queens Plaza,2025-12-26,Bird,Lovebird,Orange,Queens Plaza,2025-12-29,0
+Cat,Ragdoll,Striped,Bronx Zoo,2025-12-24,Cat,Ragdoll,Striped,Queens Plaza,2026-01-01,1
+Dog,Bulldog,Mixed,Staten Island,2025-12-23,Dog,Golden Retriever,Mixed,Manhattan,2025-12-23,1
+Dog,Labrador,Spotted,Times Square,2025-12-22,Cat,Bengal,Spotted,Queens Plaza,2025-12-24,0
+Dog,Labrador,Brown,Riverside Park,2025-12-17,Dog,Yorkshire Terrier,Black,Brooklyn Bridge,2025-12-25,0
+Dog,Labrador,Mixed,Staten Island,2025-12-18,Bird,Canary,Striped,Bronx Zoo,2025-12-25,0
+Dog,Beagle,Gray,Staten Island,2025-12-11,Dog,Beagle,Gray,Staten Island,2025-12-15,1
+Dog,Golden Retriever,Mixed,Manhattan,2025-12-23,Bird,Parrot,Orange,Staten Island,2025-12-29,0
+Cat,Abyssinian,White,Bronx Zoo,2025-12-28,Dog,Yorkshire Terrier,Orange,Queens Plaza,2026-01-03,0
+Bird,Canary,Brown,Central Park,2025-12-30,Cat,Persian,Mixed,Staten Island,2026-01-09,0
+Dog,Poodle,Spotted,Bronx Zoo,2025-12-25,Dog,Labrador,Mixed,Times Square,2026-01-01,0
+Bird,Parrot,Spotted,Bronx Zoo,2025-12-24,Bird,Finch,White,Bronx Zoo,2025-12-28,1
+Bird,Finch,Orange,Staten Island,2025-12-15,Cat,Abyssinian,Spotted,Staten Island,2025-12-15,0
+Dog,Yorkshire Terrier,Spotted,Manhattan,2025-12-25,Bird,Conure,Gray,Bronx Zoo,2025-12-26,0
+Dog,German Shepherd,Mixed,Manhattan,2025-12-03,Cat,Bengal,White,Bronx Zoo,2025-12-07,0
+Cat,Ragdoll,Mixed,Times Square,2025-12-28,Bird,Lovebird,Black,Central Park,2025-12-30,0
+Cat,Siamese,White,Queens Plaza,2025-12-27,Bird,Macaw,Golden,Manhattan,2025-12-27,0
+Cat,British Shorthair,Mixed,Staten Island,2025-12-24,Cat,Ragdoll,Mixed,Times Square,2025-12-26,0
+Cat,Bengal,Black,Manhattan,2025-12-03,Bird,Cockatiel,Orange,Bronx Zoo,2025-12-12,0
+Cat,Siamese,Black,Central Park,2025-12-23,Dog,Golden Retriever,Brown,Central Park,2026-01-01,0
+Cat,Persian,Spotted,Bronx Zoo,2025-12-04,Cat,Siamese,White,Staten Island,2025-12-07,0
+Cat,Ragdoll,Gray,Queens Plaza,2025-12-13,Cat,Ragdoll,Spotted,Manhattan,2025-12-19,0
+Bird,Budgie,Striped,Queens Plaza,2025-12-28,Cat,Siamese,Spotted,Manhattan,2026-01-02,0
+Bird,Lovebird,Golden,Queens Plaza,2025-12-18,Cat,Maine Coon,Orange,Brooklyn Bridge,2025-12-26,0
+Dog,Golden Retriever,White,Staten Island,2025-12-28,Dog,Golden Retriever,White,Staten Island,2025-12-28,1
+Dog,Poodle,Gray,Times Square,2025-12-05,Bird,Finch,Gray,Times Square,2025-12-07,0
+Cat,Persian,Brown,Riverside Park,2025-12-05,Cat,Persian,Brown,Riverside Park,2025-12-05,1
+Cat,Ragdoll,Brown,Brooklyn Bridge,2025-12-17,Cat,Ragdoll,Brown,Brooklyn Bridge,2025-12-25,1
+Bird,Cockatiel,Golden,Riverside Park,2025-12-22,Bird,Lovebird,Mixed,Central Park,2025-12-22,0
+Bird,Finch,White,Staten Island,2025-12-02,Bird,Finch,White,Staten Island,2025-12-10,1
+Cat,Siamese,White,Riverside Park,2025-12-18,Cat,Abyssinian,White,Riverside Park,2025-12-18,1
+Bird,Budgie,Golden,Staten Island,2025-12-22,Bird,Budgie,Mixed,Staten Island,2025-12-24,1
+Cat,Russian Blue,White,Bronx Zoo,2025-12-22,Cat,Abyssinian,White,Central Park,2025-12-22,1
+Cat,Maine Coon,Spotted,Central Park,2025-12-29,Dog,Beagle,Mixed,Times Square,2026-01-08,0
+Bird,Finch,Golden,Manhattan,2025-12-03,Bird,Finch,Spotted,Manhattan,2025-12-12,1
+Bird,Budgie,Orange,Brooklyn Bridge,2025-12-13,Dog,Yorkshire Terrier,Mixed,Queens Plaza,2025-12-22,0
+Dog,Yorkshire Terrier,Striped,Times Square,2025-12-05,Bird,Macaw,Orange,Bronx Zoo,2025-12-09,0
+Bird,Conure,Gray,Queens Plaza,2025-12-06,Dog,German Shepherd,Mixed,Bronx Zoo,2025-12-13,0
+Cat,Persian,Black,Riverside Park,2025-12-15,Bird,Budgie,Gray,Bronx Zoo,2025-12-23,0
+Bird,Parrot,Brown,Riverside Park,2025-12-09,Dog,Rottweiler,Orange,Times Square,2025-12-17,0
+Bird,Lovebird,Spotted,Riverside Park,2025-12-28,Bird,Lovebird,Orange,Times Square,2026-01-05,0
+Cat,British Shorthair,Gray,Central Park,2025-12-05,Dog,Beagle,Brown,Manhattan,2025-12-14,0
+Bird,Finch,White,Central Park,2025-12-04,Bird,Canary,Spotted,Staten Island,2025-12-14,0
+Dog,Yorkshire Terrier,Gray,Manhattan,2025-12-04,Cat,Ragdoll,Mixed,Staten Island,2025-12-08,0
+Bird,Macaw,Spotted,Times Square,2025-12-30,Cat,Persian,Black,Manhattan,2026-01-03,0
+Cat,Ragdoll,Orange,Queens Plaza,2025-12-19,Dog,Golden Retriever,Mixed,Queens Plaza,2025-12-22,0
+Cat,British Shorthair,Orange,Manhattan,2025-12-14,Cat,Persian,Black,Riverside Park,2025-12-16,0
+Cat,Ragdoll,Orange,Staten Island,2025-12-10,Dog,Labrador,Mixed,Staten Island,2025-12-20,0
+Dog,German Shepherd,Golden,Bronx Zoo,2025-12-12,Dog,Poodle,Golden,Bronx Zoo,2025-12-13,0
+Cat,Siamese,Striped,Queens Plaza,2025-12-02,Bird,Conure,Striped,Central Park,2025-12-03,0
+Bird,Parrot,Striped,Central Park,2025-12-18,Cat,British Shorthair,White,Manhattan,2025-12-25,0
+Bird,Macaw,Brown,Manhattan,2025-12-23,Cat,Maine Coon,Brown,Staten Island,2025-12-25,0
+Bird,Macaw,White,Manhattan,2025-12-24,Dog,Yorkshire Terrier,Striped,Riverside Park,2025-12-24,0
+Dog,Poodle,Golden,Manhattan,2025-12-17,Cat,Maine Coon,Black,Brooklyn Bridge,2025-12-18,0
+Bird,Parrot,Striped,Manhattan,2025-12-11,Cat,Siamese,White,Central Park,2025-12-15,0
+Cat,Ragdoll,Spotted,Brooklyn Bridge,2025-12-08,Cat,Persian,White,Bronx Zoo,2025-12-12,0
+Bird,Canary,Orange,Times Square,2025-12-13,Bird,Cockatiel,Spotted,Bronx Zoo,2025-12-16,0
+Cat,Siamese,Golden,Central Park,2025-12-23,Cat,Russian Blue,Mixed,Brooklyn Bridge,2025-12-28,0
+Cat,Maine Coon,Striped,Riverside Park,2025-12-19,Cat,Maine Coon,Gray,Times Square,2025-12-22,0
+Cat,Persian,Black,Bronx Zoo,2025-12-12,Bird,Parrot,Gray,Central Park,2025-12-22,0
+Cat,Ragdoll,Spotted,Times Square,2025-12-24,Cat,Ragdoll,Orange,Riverside Park,2026-01-01,0
+Dog,Labrador,Striped,Bronx Zoo,2025-12-08,Bird,Lovebird,Brown,Riverside Park,2025-12-08,0
+Cat,Siamese,Mixed,Bronx Zoo,2025-12-02,Dog,Rottweiler,Spotted,Bronx Zoo,2025-12-09,0
+Cat,Russian Blue,Gray,Staten Island,2025-12-05,Bird,Canary,Striped,Bronx Zoo,2025-12-10,0
+Cat,Abyssinian,Black,Times Square,2025-12-02,Dog,Golden Retriever,Orange,Brooklyn Bridge,2025-12-09,0
+Cat,Ragdoll,Orange,Manhattan,2025-12-07,Cat,Ragdoll,Orange,Manhattan,2025-12-11,1
+Dog,Beagle,Black,Staten Island,2025-12-03,Bird,Conure,White,Brooklyn Bridge,2025-12-05,0
+Cat,Russian Blue,Striped,Brooklyn Bridge,2025-12-30,Dog,Bulldog,Gray,Bronx Zoo,2026-01-02,0
+Bird,Conure,Striped,Manhattan,2025-12-20,Bird,Finch,Striped,Manhattan,2025-12-29,1
+Dog,Yorkshire Terrier,White,Riverside Park,2025-12-14,Cat,Russian Blue,Black,Times Square,2025-12-23,0
+Bird,Cockatiel,Spotted,Staten Island,2025-12-13,Cat,Siamese,Mixed,Manhattan,2025-12-14,0
+Dog,German Shepherd,Brown,Queens Plaza,2025-12-20,Cat,Persian,Brown,Brooklyn Bridge,2025-12-20,0
+Bird,Finch,Orange,Times Square,2025-12-19,Bird,Finch,Striped,Times Square,2025-12-19,1
+Bird,Parrot,Orange,Bronx Zoo,2025-12-06,Dog,Labrador,Black,Riverside Park,2025-12-11,0
+Cat,Maine Coon,Brown,Times Square,2025-12-23,Cat,Maine Coon,Brown,Times Square,2025-12-30,1
+Dog,Beagle,Orange,Staten Island,2025-12-28,Dog,Yorkshire Terrier,Orange,Staten Island,2026-01-02,1
+Dog,Rottweiler,Golden,Queens Plaza,2025-12-03,Bird,Budgie,Spotted,Bronx Zoo,2025-12-05,0
+Dog,Labrador,Gray,Staten Island,2025-12-21,Dog,Labrador,Gray,Staten Island,2025-12-27,1
+Dog,German Shepherd,Spotted,Bronx Zoo,2025-12-05,Dog,German Shepherd,Spotted,Bronx Zoo,2025-12-05,1
+Bird,Parrot,Brown,Queens Plaza,2025-12-18,Bird,Canary,Mixed,Central Park,2025-12-22,0
+Cat,Persian,Golden,Bronx Zoo,2025-12-31,Cat,Abyssinian,Gray,Brooklyn Bridge,2026-01-03,0
+Cat,Russian Blue,Golden,Riverside Park,2025-12-30,Bird,Macaw,Golden,Queens Plaza,2026-01-06,0
+Bird,Parrot,White,Queens Plaza,2025-12-04,Bird,Parrot,Golden,Staten Island,2025-12-13,1
+Dog,Yorkshire Terrier,Mixed,Manhattan,2025-12-24,Dog,Yorkshire Terrier,Mixed,Queens Plaza,2025-12-28,1
+Bird,Canary,White,Riverside Park,2025-12-17,Bird,Canary,White,Riverside Park,2025-12-22,1
+Bird,Lovebird,Orange,Queens Plaza,2025-12-11,Bird,Lovebird,Orange,Brooklyn Bridge,2025-12-11,1
+Dog,Labrador,Golden,Riverside Park,2025-12-20,Cat,British Shorthair,Gray,Times Square,2025-12-27,0
+Bird,Budgie,Mixed,Staten Island,2025-12-22,Cat,Persian,Brown,Queens Plaza,2025-12-29,0
+Bird,Budgie,Golden,Riverside Park,2025-12-29,Cat,Abyssinian,Orange,Staten Island,2026-01-05,0
+Cat,Abyssinian,White,Riverside Park,2025-12-16,Dog,Poodle,Striped,Times Square,2025-12-22,0
+Bird,Macaw,Striped,Queens Plaza,2025-12-17,Bird,Macaw,Striped,Queens Plaza,2025-12-23,1
+Dog,German Shepherd,Orange,Central Park,2025-12-08,Bird,Parrot,Gray,Central Park,2025-12-18,0
+Cat,Russian Blue,Brown,Times Square,2025-12-29,Cat,Russian Blue,Brown,Times Square,2026-01-06,1
+Bird,Parrot,Orange,Central Park,2025-12-16,Cat,Abyssinian,Orange,Staten Island,2025-12-26,0
+Cat,British Shorthair,White,Bronx Zoo,2025-12-02,Cat,Maine Coon,Black,Times Square,2025-12-03,0
+Bird,Canary,Gray,Times Square,2025-12-21,Bird,Canary,Gray,Bronx Zoo,2025-12-31,1
+Cat,Ragdoll,Brown,Manhattan,2025-12-03,Dog,Rottweiler,Mixed,Bronx Zoo,2025-12-09,0
+Cat,Abyssinian,Golden,Times Square,2025-12-05,Bird,Lovebird,White,Riverside Park,2025-12-09,0
+Bird,Budgie,Gray,Bronx Zoo,2025-12-15,Dog,Golden Retriever,Striped,Manhattan,2025-12-18,0
+Dog,German Shepherd,Brown,Bronx Zoo,2025-12-02,Cat,Ragdoll,Striped,Riverside Park,2025-12-10,0
+Cat,Bengal,Striped,Bronx Zoo,2025-12-11,Bird,Budgie,Brown,Queens Plaza,2025-12-19,0
+Dog,Rottweiler,Brown,Brooklyn Bridge,2025-12-20,Dog,Rottweiler,Brown,Queens Plaza,2025-12-22,1
+Bird,Finch,Mixed,Times Square,2025-12-13,Bird,Finch,Mixed,Times Square,2025-12-23,1
+Cat,Maine Coon,Striped,Brooklyn Bridge,2025-12-28,Cat,Maine Coon,Striped,Queens Plaza,2026-01-03,1
+Dog,Golden Retriever,White,Manhattan,2025-12-29,Dog,Golden Retriever,White,Manhattan,2025-12-30,1
+Cat,Abyssinian,Golden,Brooklyn Bridge,2025-12-03,Cat,Abyssinian,Golden,Brooklyn Bridge,2025-12-05,1
+Dog,Rottweiler,Striped,Bronx Zoo,2025-12-02,Cat,British Shorthair,White,Riverside Park,2025-12-04,0
+Bird,Macaw,Gray,Manhattan,2025-12-26,Cat,Abyssinian,Black,Times Square,2026-01-02,0
+Dog,German Shepherd,Brown,Riverside Park,2025-12-12,Cat,Siamese,Black,Bronx Zoo,2025-12-14,0
+Bird,Cockatiel,Spotted,Manhattan,2025-12-17,Cat,British Shorthair,Orange,Manhattan,2025-12-22,0
+Dog,Bulldog,Mixed,Central Park,2025-12-23,Dog,Beagle,Black,Riverside Park,2025-12-31,0
+Dog,German Shepherd,Brown,Queens Plaza,2025-12-04,Cat,Persian,Striped,Central Park,2025-12-11,0
+Cat,Abyssinian,Golden,Central Park,2025-12-25,Cat,Maine Coon,Golden,Central Park,2025-12-25,1
+Bird,Conure,Golden,Queens Plaza,2025-12-05,Bird,Canary,White,Manhattan,2025-12-06,0
+Dog,Rottweiler,Striped,Bronx Zoo,2025-12-16,Cat,Russian Blue,Orange,Staten Island,2025-12-25,0
+Dog,Beagle,Brown,Times Square,2025-12-20,Dog,Beagle,Striped,Staten Island,2025-12-22,0
+Dog,Bulldog,Golden,Central Park,2025-12-08,Cat,Russian Blue,Mixed,Riverside Park,2025-12-09,0
+Cat,Siamese,Orange,Central Park,2025-12-14,Bird,Budgie,Black,Manhattan,2025-12-20,0
+Dog,Bulldog,Black,Riverside Park,2025-12-27,Dog,Bulldog,Black,Riverside Park,2025-12-29,1
+Bird,Lovebird,Mixed,Riverside Park,2025-12-21,Cat,Siamese,Striped,Bronx Zoo,2025-12-22,0
+Dog,Yorkshire Terrier,White,Riverside Park,2025-12-06,Cat,Russian Blue,White,Staten Island,2025-12-16,0
+Cat,British Shorthair,Orange,Times Square,2025-12-27,Dog,Labrador,Spotted,Central Park,2026-01-05,0
+Cat,Abyssinian,Golden,Manhattan,2025-12-04,Cat,Abyssinian,Mixed,Riverside Park,2025-12-13,0
+Dog,Beagle,Striped,Bronx Zoo,2025-12-15,Dog,Rottweiler,Black,Manhattan,2025-12-21,0
+Dog,Rottweiler,White,Staten Island,2025-12-11,Cat,Ragdoll,Mixed,Staten Island,2025-12-16,0
+Bird,Budgie,White,Central Park,2025-12-08,Bird,Macaw,Golden,Times Square,2025-12-12,0
+Bird,Budgie,Orange,Brooklyn Bridge,2025-12-30,Bird,Canary,Gray,Times Square,2026-01-03,0
+Dog,Labrador,Brown,Central Park,2025-12-07,Dog,Labrador,Brown,Central Park,2025-12-13,1
+Cat,British Shorthair,Striped,Times Square,2025-12-25,Cat,British Shorthair,Striped,Times Square,2025-12-29,1
+Cat,Ragdoll,Mixed,Riverside Park,2025-12-04,Bird,Finch,Black,Staten Island,2025-12-06,0
+Dog,Poodle,White,Riverside Park,2025-12-03,Dog,Labrador,White,Riverside Park,2025-12-10,1
+Bird,Finch,Orange,Bronx Zoo,2025-12-11,Bird,Canary,Striped,Riverside Park,2025-12-17,0
+Cat,Maine Coon,Orange,Manhattan,2025-12-24,Bird,Cockatiel,Spotted,Riverside Park,2025-12-27,0
+Dog,Golden Retriever,Black,Brooklyn Bridge,2025-12-12,Cat,Bengal,Gray,Bronx Zoo,2025-12-14,0
+Bird,Parrot,Brown,Riverside Park,2025-12-20,Dog,Poodle,Mixed,Manhattan,2025-12-26,0
+Dog,German Shepherd,Orange,Queens Plaza,2025-12-30,Cat,British Shorthair,Orange,Riverside Park,2026-01-07,0
+Bird,Macaw,Black,Manhattan,2025-12-24,Dog,German Shepherd,White,Bronx Zoo,2025-12-27,0
+Cat,Russian Blue,Gray,Bronx Zoo,2025-12-20,Bird,Conure,Brown,Brooklyn Bridge,2025-12-25,0
+Dog,Yorkshire Terrier,Golden,Riverside Park,2025-12-28,Dog,Labrador,Golden,Staten Island,2025-12-28,0
+Dog,Labrador,Orange,Brooklyn Bridge,2025-12-06,Cat,Maine Coon,Spotted,Brooklyn Bridge,2025-12-06,0
+Bird,Budgie,Gray,Manhattan,2025-12-02,Bird,Lovebird,Orange,Bronx Zoo,2025-12-03,0
+Dog,Beagle,Orange,Brooklyn Bridge,2025-12-05,Dog,Yorkshire Terrier,White,Central Park,2025-12-15,0
+Cat,Abyssinian,Black,Bronx Zoo,2025-12-30,Bird,Lovebird,White,Staten Island,2026-01-05,0
+Dog,Golden Retriever,Orange,Manhattan,2025-12-18,Dog,Golden Retriever,Mixed,Riverside Park,2025-12-20,0
+Dog,German Shepherd,Black,Riverside Park,2025-12-05,Dog,German Shepherd,Black,Riverside Park,2025-12-11,1
+Dog,Poodle,Black,Bronx Zoo,2025-12-16,Dog,German Shepherd,Golden,Bronx Zoo,2025-12-21,0
+Cat,Bengal,Spotted,Manhattan,2025-12-21,Cat,Bengal,Spotted,Manhattan,2025-12-27,1
+Cat,Maine Coon,Mixed,Riverside Park,2025-12-14,Cat,Maine Coon,Spotted,Central Park,2025-12-18,0
+Dog,Bulldog,Spotted,Bronx Zoo,2025-12-18,Dog,Rottweiler,Striped,Central Park,2025-12-21,0
+Dog,Labrador,Spotted,Queens Plaza,2025-12-17,Dog,Bulldog,Brown,Manhattan,2025-12-26,0
+Cat,Maine Coon,Striped,Brooklyn Bridge,2025-12-30,Cat,British Shorthair,Orange,Staten Island,2026-01-06,0
+Cat,Maine Coon,White,Manhattan,2025-12-29,Cat,Abyssinian,Golden,Times Square,2026-01-06,0
+Cat,Persian,Striped,Times Square,2025-12-08,Cat,Persian,Striped,Riverside Park,2025-12-09,1
+Dog,Beagle,White,Queens Plaza,2025-12-18,Cat,Persian,Gray,Central Park,2025-12-18,0
+Bird,Finch,Black,Central Park,2025-12-18,Bird,Macaw,Black,Bronx Zoo,2025-12-18,1
+Cat,British Shorthair,Striped,Queens Plaza,2025-12-31,Bird,Finch,Brown,Bronx Zoo,2026-01-06,0
+Bird,Budgie,Mixed,Central Park,2025-12-20,Dog,Labrador,Brown,Riverside Park,2025-12-24,0
+Dog,German Shepherd,Black,Manhattan,2025-12-22,Cat,Siamese,Golden,Manhattan,2025-12-27,0
+Cat,British Shorthair,Black,Manhattan,2025-12-05,Bird,Parrot,Mixed,Brooklyn Bridge,2025-12-05,0
+Bird,Conure,Mixed,Manhattan,2025-12-09,Dog,German Shepherd,Orange,Manhattan,2025-12-15,0
+Cat,Abyssinian,Spotted,Times Square,2025-12-12,Dog,Golden Retriever,White,Staten Island,2025-12-19,0
+Bird,Canary,Gray,Staten Island,2025-12-05,Bird,Canary,Gray,Staten Island,2025-12-06,1
+Cat,Russian Blue,Spotted,Queens Plaza,2025-12-03,Cat,Maine Coon,Gray,Times Square,2025-12-10,0
+Dog,Bulldog,Brown,Bronx Zoo,2025-12-13,Dog,Labrador,Mixed,Manhattan,2025-12-16,0
+Bird,Budgie,Spotted,Bronx Zoo,2025-12-05,Bird,Budgie,Mixed,Staten Island,2025-12-10,0
+Cat,Siamese,Black,Bronx Zoo,2025-12-25,Cat,British Shorthair,Spotted,Bronx Zoo,2025-12-31,1
+Dog,Golden Retriever,White,Riverside Park,2025-12-20,Cat,Siamese,Brown,Brooklyn Bridge,2025-12-21,0
+Cat,Siamese,Orange,Times Square,2025-12-02,Dog,German Shepherd,Striped,Bronx Zoo,2025-12-05,0
+Bird,Parrot,Black,Central Park,2025-12-23,Bird,Parrot,Black,Central Park,2025-12-24,1
+Dog,Yorkshire Terrier,Brown,Brooklyn Bridge,2025-12-14,Dog,Yorkshire Terrier,Brown,Brooklyn Bridge,2025-12-19,1
+Dog,Yorkshire Terrier,Brown,Riverside Park,2025-12-24,Cat,Abyssinian,Mixed,Staten Island,2025-12-25,0
+Bird,Conure,Gray,Times Square,2025-12-14,Cat,Siamese,Brown,Queens Plaza,2025-12-22,0
+Dog,Bulldog,Golden,Staten Island,2025-12-22,Bird,Finch,Black,Queens Plaza,2025-12-24,0
+Cat,Abyssinian,Orange,Queens Plaza,2025-12-11,Dog,Rottweiler,Brown,Riverside Park,2025-12-15,0
+Bird,Conure,Striped,Queens Plaza,2025-12-06,Bird,Cockatiel,Spotted,Central Park,2025-12-16,0
+Bird,Parrot,Black,Riverside Park,2025-12-07,Dog,Beagle,Striped,Times Square,2025-12-13,0
+Cat,Bengal,White,Bronx Zoo,2025-12-06,Bird,Lovebird,Gray,Central Park,2025-12-09,0
+Bird,Budgie,Golden,Bronx Zoo,2025-12-13,Bird,Budgie,Golden,Brooklyn Bridge,2025-12-21,1
+Dog,Rottweiler,Orange,Manhattan,2025-12-25,Dog,Bulldog,Orange,Manhattan,2026-01-03,1
+Bird,Parrot,Mixed,Brooklyn Bridge,2025-12-04,Bird,Parrot,Mixed,Queens Plaza,2025-12-11,1
+Dog,Rottweiler,Orange,Staten Island,2025-12-05,Cat,Persian,Gray,Brooklyn Bridge,2025-12-07,0
+Bird,Lovebird,Golden,Central Park,2025-12-07,Cat,Siamese,Black,Bronx Zoo,2025-12-12,0
+Cat,Bengal,Black,Riverside Park,2025-12-20,Cat,Abyssinian,Gray,Queens Plaza,2025-12-22,0
+Dog,Golden Retriever,Brown,Staten Island,2025-12-30,Bird,Parrot,Mixed,Queens Plaza,2026-01-01,0
+Bird,Finch,Golden,Central Park,2025-12-24,Cat,Maine Coon,Black,Manhattan,2025-12-27,0
+Cat,Ragdoll,Orange,Times Square,2025-12-13,Dog,German Shepherd,Orange,Queens Plaza,2025-12-16,0
+Bird,Finch,Spotted,Riverside Park,2025-12-24,Dog,Bulldog,Striped,Times Square,2025-12-26,0
+Bird,Finch,Gray,Brooklyn Bridge,2025-12-27,Dog,Beagle,Black,Central Park,2025-12-31,0
+Bird,Canary,Black,Brooklyn Bridge,2025-12-13,Bird,Canary,Black,Brooklyn Bridge,2025-12-21,1
+Bird,Lovebird,Spotted,Staten Island,2025-12-30,Dog,Yorkshire Terrier,Black,Staten Island,2026-01-08,0
+Dog,Beagle,Striped,Times Square,2025-12-09,Dog,Beagle,Gray,Times Square,2025-12-18,1
+Cat,Persian,Golden,Times Square,2025-12-05,Cat,British Shorthair,Golden,Riverside Park,2025-12-09,1
+Cat,Maine Coon,Mixed,Bronx Zoo,2025-12-26,Cat,Maine Coon,Mixed,Bronx Zoo,2026-01-05,1
+Cat,Ragdoll,Gray,Queens Plaza,2025-12-27,Dog,Beagle,Brown,Times Square,2025-12-28,0
+Cat,Abyssinian,Striped,Manhattan,2025-12-12,Bird,Parrot,Spotted,Bronx Zoo,2025-12-19,0
+Cat,Siamese,White,Riverside Park,2025-12-02,Dog,Golden Retriever,Orange,Riverside Park,2025-12-09,0
+Bird,Cockatiel,Spotted,Riverside Park,2025-12-13,Cat,Abyssinian,Gray,Riverside Park,2025-12-19,0
+Bird,Macaw,Mixed,Brooklyn Bridge,2025-12-29,Cat,Siamese,Mixed,Manhattan,2025-12-31,0
+Cat,Persian,Golden,Queens Plaza,2025-12-21,Cat,Maine Coon,Golden,Queens Plaza,2025-12-27,1
+Dog,Rottweiler,Golden,Staten Island,2025-12-06,Dog,Rottweiler,Mixed,Staten Island,2025-12-09,1
+Bird,Parrot,Striped,Central Park,2025-12-24,Bird,Parrot,White,Queens Plaza,2025-12-27,1
+Dog,Beagle,Black,Times Square,2025-12-19,Dog,Beagle,Black,Times Square,2025-12-19,1
+Cat,Russian Blue,Brown,Times Square,2025-12-06,Dog,Bulldog,Striped,Times Square,2025-12-15,0
+Cat,Persian,White,Riverside Park,2025-12-18,Cat,Persian,White,Riverside Park,2025-12-20,1
+Dog,Golden Retriever,Striped,Central Park,2025-12-18,Cat,Abyssinian,Striped,Staten Island,2025-12-20,0
+Dog,Rottweiler,Striped,Riverside Park,2025-12-19,Bird,Canary,Black,Staten Island,2025-12-25,0
+Cat,Persian,Orange,Central Park,2025-12-30,Cat,British Shorthair,Black,Central Park,2026-01-07,0
+Bird,Finch,Brown,Manhattan,2025-12-18,Dog,Beagle,Orange,Queens Plaza,2025-12-20,0
+Dog,Labrador,Black,Queens Plaza,2025-12-07,Cat,Bengal,Gray,Central Park,2025-12-07,0
+Bird,Budgie,Mixed,Riverside Park,2025-12-06,Dog,German Shepherd,Striped,Manhattan,2025-12-08,0
+Bird,Conure,Gray,Brooklyn Bridge,2025-12-21,Dog,Rottweiler,Striped,Manhattan,2025-12-24,0
+Cat,Maine Coon,White,Queens Plaza,2025-12-28,Cat,Abyssinian,Striped,Brooklyn Bridge,2026-01-01,0
+Bird,Parrot,Orange,Riverside Park,2025-12-03,Cat,Siamese,White,Brooklyn Bridge,2025-12-10,0
+Bird,Finch,White,Queens Plaza,2025-12-16,Cat,Bengal,Orange,Bronx Zoo,2025-12-18,0
+Cat,Bengal,Black,Central Park,2025-12-24,Bird,Budgie,Brown,Brooklyn Bridge,2026-01-03,0
+Bird,Cockatiel,White,Central Park,2025-12-04,Bird,Macaw,Spotted,Manhattan,2025-12-05,0
+Cat,Russian Blue,Gray,Manhattan,2025-12-04,Dog,Yorkshire Terrier,Spotted,Manhattan,2025-12-14,0
+Bird,Canary,Golden,Bronx Zoo,2025-12-03,Cat,Abyssinian,White,Central Park,2025-12-04,0
+Dog,Bulldog,Black,Staten Island,2025-12-14,Bird,Conure,Orange,Queens Plaza,2025-12-14,0
+Dog,Golden Retriever,Spotted,Staten Island,2025-12-07,Dog,Golden Retriever,Spotted,Staten Island,2025-12-17,1
+Bird,Finch,Black,Times Square,2025-12-18,Bird,Finch,Black,Times Square,2025-12-20,1
+Dog,Yorkshire Terrier,Mixed,Manhattan,2025-12-10,Dog,German Shepherd,Black,Riverside Park,2025-12-14,0
+Dog,Labrador,Orange,Central Park,2025-12-05,Dog,Labrador,Orange,Central Park,2025-12-08,1
+Bird,Budgie,Brown,Manhattan,2025-12-30,Dog,Golden Retriever,Mixed,Staten Island,2026-01-03,0
+Bird,Finch,Orange,Riverside Park,2025-12-21,Bird,Finch,White,Brooklyn Bridge,2025-12-28,0
+Cat,Russian Blue,Brown,Staten Island,2025-12-10,Dog,Poodle,Orange,Manhattan,2025-12-18,0
+Bird,Finch,Black,Riverside Park,2025-12-29,Dog,Poodle,Orange,Bronx Zoo,2025-12-31,0
+Cat,British Shorthair,Spotted,Central Park,2025-12-21,Cat,Persian,Mixed,Central Park,2025-12-22,1
+Cat,Maine Coon,Orange,Times Square,2025-12-25,Bird,Cockatiel,Spotted,Manhattan,2025-12-30,0
+Dog,Yorkshire Terrier,Gray,Central Park,2025-12-26,Bird,Lovebird,Orange,Central Park,2025-12-30,0
+Bird,Conure,Spotted,Brooklyn Bridge,2025-12-10,Bird,Conure,Spotted,Brooklyn Bridge,2025-12-17,1
+Bird,Cockatiel,Golden,Riverside Park,2025-12-20,Cat,Abyssinian,Spotted,Queens Plaza,2025-12-24,0
+Cat,Abyssinian,White,Central Park,2025-12-15,Cat,Persian,Brown,Times Square,2025-12-23,0
+Bird,Canary,Brown,Manhattan,2025-12-16,Cat,Ragdoll,Brown,Brooklyn Bridge,2025-12-24,0
+Dog,Poodle,White,Queens Plaza,2025-12-03,Bird,Conure,Golden,Queens Plaza,2025-12-05,0
+Bird,Cockatiel,Mixed,Central Park,2025-12-17,Dog,Poodle,Mixed,Central Park,2025-12-20,0
+Cat,Maine Coon,Striped,Times Square,2025-12-07,Cat,Maine Coon,Striped,Times Square,2025-12-11,1
+Cat,British Shorthair,White,Manhattan,2025-12-07,Cat,Russian Blue,Black,Manhattan,2025-12-13,0
+Cat,Persian,Black,Bronx Zoo,2025-12-25,Cat,Persian,Black,Bronx Zoo,2026-01-04,1
+Bird,Lovebird,Striped,Staten Island,2025-12-18,Bird,Macaw,Striped,Staten Island,2025-12-19,1
+Dog,German Shepherd,Black,Bronx Zoo,2025-12-07,Dog,German Shepherd,Black,Bronx Zoo,2025-12-10,1
+Bird,Conure,Black,Staten Island,2025-12-13,Cat,Ragdoll,Black,Riverside Park,2025-12-21,0
+Bird,Macaw,Golden,Central Park,2025-12-17,Dog,Labrador,Orange,Staten Island,2025-12-23,0
+Dog,Bulldog,Mixed,Bronx Zoo,2025-12-07,Dog,Bulldog,Mixed,Bronx Zoo,2025-12-14,1
+Dog,Rottweiler,Brown,Riverside Park,2025-12-18,Bird,Lovebird,Golden,Riverside Park,2025-12-19,0
+Dog,German Shepherd,Orange,Manhattan,2025-12-06,Dog,German Shepherd,Orange,Manhattan,2025-12-06,1
+Cat,Maine Coon,Brown,Manhattan,2025-12-18,Cat,Maine Coon,Brown,Central Park,2025-12-19,1
+Bird,Lovebird,Golden,Staten Island,2025-12-31,Cat,British Shorthair,Mixed,Brooklyn Bridge,2026-01-06,0
+Dog,Labrador,Striped,Bronx Zoo,2025-12-07,Cat,Ragdoll,Golden,Brooklyn Bridge,2025-12-15,0
+Dog,Yorkshire Terrier,Spotted,Riverside Park,2025-12-07,Dog,Yorkshire Terrier,Spotted,Riverside Park,2025-12-08,1
+Bird,Canary,Black,Riverside Park,2025-12-13,Bird,Budgie,Mixed,Bronx Zoo,2025-12-18,0
+Bird,Lovebird,Gray,Manhattan,2025-12-05,Bird,Macaw,Striped,Staten Island,2025-12-08,0
+Cat,Persian,White,Central Park,2025-12-30,Dog,Labrador,Brown,Bronx Zoo,2026-01-01,0
+Bird,Lovebird,Brown,Bronx Zoo,2025-12-26,Bird,Lovebird,Brown,Bronx Zoo,2026-01-01,1
+Bird,Lovebird,Striped,Manhattan,2025-12-10,Cat,Bengal,Orange,Times Square,2025-12-13,0
+Dog,Golden Retriever,Golden,Central Park,2025-12-29,Dog,Golden Retriever,Striped,Central Park,2026-01-04,1
+Bird,Conure,Mixed,Queens Plaza,2025-12-02,Cat,Maine Coon,Mixed,Staten Island,2025-12-08,0
+Cat,Ragdoll,Orange,Central Park,2025-12-04,Cat,Abyssinian,Brown,Staten Island,2025-12-09,0
+Dog,Yorkshire Terrier,Striped,Staten Island,2025-12-16,Dog,Yorkshire Terrier,Orange,Central Park,2025-12-16,0
+Dog,German Shepherd,Golden,Manhattan,2025-12-03,Cat,British Shorthair,Brown,Bronx Zoo,2025-12-09,0
+Bird,Lovebird,Brown,Staten Island,2025-12-07,Dog,German Shepherd,Brown,Central Park,2025-12-10,0
+Bird,Parrot,Mixed,Times Square,2025-12-10,Bird,Canary,White,Bronx Zoo,2025-12-16,0
+Bird,Canary,Brown,Manhattan,2025-12-04,Bird,Canary,Brown,Manhattan,2025-12-10,1
+Dog,Bulldog,Gray,Brooklyn Bridge,2025-12-28,Bird,Lovebird,Spotted,Central Park,2026-01-02,0
+Bird,Cockatiel,Golden,Manhattan,2025-12-12,Bird,Cockatiel,Golden,Staten Island,2025-12-20,1
+Dog,Yorkshire Terrier,Mixed,Staten Island,2025-12-22,Cat,Abyssinian,Golden,Central Park,2025-12-27,0
+Dog,Beagle,Mixed,Brooklyn Bridge,2025-12-30,Cat,British Shorthair,Brown,Brooklyn Bridge,2026-01-05,0
+Bird,Lovebird,Orange,Queens Plaza,2025-12-15,Bird,Canary,Striped,Riverside Park,2025-12-25,0
+Dog,Rottweiler,Gray,Bronx Zoo,2025-12-30,Cat,Maine Coon,Mixed,Brooklyn Bridge,2026-01-07,0
+Dog,German Shepherd,Orange,Staten Island,2025-12-19,Cat,Ragdoll,White,Bronx Zoo,2025-12-22,0
+Cat,Abyssinian,Spotted,Riverside Park,2025-12-21,Bird,Cockatiel,Golden,Times Square,2025-12-27,0
+Cat,Maine Coon,Orange,Staten Island,2025-12-30,Cat,Abyssinian,Golden,Riverside Park,2026-01-07,0
+Bird,Macaw,Brown,Central Park,2025-12-06,Cat,Russian Blue,Golden,Bronx Zoo,2025-12-12,0
+Dog,Bulldog,Black,Bronx Zoo,2025-12-02,Dog,Bulldog,Black,Bronx Zoo,2025-12-02,1
+Cat,Maine Coon,White,Queens Plaza,2025-12-04,Dog,Poodle,Striped,Staten Island,2025-12-06,0
+Bird,Canary,Black,Staten Island,2025-12-17,Bird,Lovebird,Brown,Times Square,2025-12-27,0
+Cat,Persian,Gray,Brooklyn Bridge,2025-12-14,Dog,Rottweiler,Brown,Bronx Zoo,2025-12-16,0
+Dog,Beagle,Brown,Brooklyn Bridge,2025-12-17,Bird,Conure,Striped,Central Park,2025-12-19,0
+Dog,Poodle,Golden,Times Square,2025-12-18,Cat,Bengal,Golden,Queens Plaza,2025-12-20,0
+Dog,Yorkshire Terrier,Mixed,Queens Plaza,2025-12-11,Dog,Bulldog,Mixed,Queens Plaza,2025-12-21,1
+Bird,Budgie,Gray,Riverside Park,2025-12-02,Dog,Labrador,White,Times Square,2025-12-07,0
+Cat,British Shorthair,White,Central Park,2025-12-08,Cat,Abyssinian,Golden,Staten Island,2025-12-10,0
+Cat,Bengal,Striped,Queens Plaza,2025-12-11,Cat,Siamese,Golden,Times Square,2025-12-18,0
+Bird,Cockatiel,White,Manhattan,2025-12-18,Dog,Beagle,White,Bronx Zoo,2025-12-28,0
+Dog,Yorkshire Terrier,Brown,Times Square,2025-12-28,Cat,Maine Coon,Golden,Brooklyn Bridge,2026-01-07,0
+Bird,Conure,Brown,Riverside Park,2025-12-19,Bird,Conure,Brown,Riverside Park,2025-12-22,1
+Cat,Bengal,Gray,Staten Island,2025-12-08,Cat,British Shorthair,White,Times Square,2025-12-14,0
+Bird,Finch,Black,Staten Island,2025-12-10,Cat,Persian,Brown,Staten Island,2025-12-11,0
+Bird,Lovebird,Golden,Central Park,2025-12-22,Cat,British Shorthair,Orange,Brooklyn Bridge,2026-01-01,0
+Bird,Finch,Golden,Queens Plaza,2025-12-03,Dog,Golden Retriever,Striped,Manhattan,2025-12-13,0
+Dog,German Shepherd,Mixed,Brooklyn Bridge,2025-12-21,Dog,Labrador,Spotted,Staten Island,2025-12-24,0
+Cat,Persian,White,Riverside Park,2025-12-10,Cat,Persian,White,Riverside Park,2025-12-18,1
+Bird,Parrot,Orange,Staten Island,2025-12-28,Bird,Cockatiel,Black,Queens Plaza,2025-12-30,0
+Dog,Rottweiler,Gray,Brooklyn Bridge,2025-12-19,Dog,Rottweiler,Gray,Brooklyn Bridge,2025-12-25,1
+Bird,Budgie,Brown,Manhattan,2025-12-16,Cat,Persian,Brown,Staten Island,2025-12-16,0
+Cat,Abyssinian,White,Times Square,2025-12-22,Cat,Abyssinian,White,Times Square,2025-12-26,1
+Bird,Canary,Orange,Times Square,2025-12-10,Bird,Canary,Orange,Times Square,2025-12-10,1
+Dog,Yorkshire Terrier,Brown,Staten Island,2025-12-15,Dog,Yorkshire Terrier,Brown,Staten Island,2025-12-20,1
+Dog,Bulldog,Spotted,Manhattan,2025-12-26,Dog,Rottweiler,Striped,Times Square,2026-01-05,0
+Dog,Poodle,Orange,Staten Island,2025-12-04,Dog,Labrador,Orange,Staten Island,2025-12-11,1
+Bird,Macaw,Mixed,Riverside Park,2025-12-11,Dog,German Shepherd,Mixed,Queens Plaza,2025-12-15,0
+Cat,Russian Blue,Black,Staten Island,2025-12-04,Cat,Russian Blue,Black,Staten Island,2025-12-10,1
+Dog,German Shepherd,Spotted,Times Square,2025-12-04,Dog,German Shepherd,Spotted,Times Square,2025-12-08,1
+Dog,Labrador,Orange,Staten Island,2025-12-03,Cat,Bengal,Striped,Times Square,2025-12-07,0
+Dog,Beagle,Gray,Staten Island,2025-12-22,Cat,Bengal,Spotted,Brooklyn Bridge,2025-12-27,0
+Dog,Labrador,Black,Central Park,2025-12-31,Dog,Poodle,Mixed,Bronx Zoo,2026-01-07,0
+Bird,Canary,White,Central Park,2025-12-22,Bird,Canary,White,Central Park,2025-12-22,1
+Cat,Persian,Golden,Central Park,2025-12-26,Cat,Persian,Golden,Central Park,2025-12-29,1
+Cat,Ragdoll,Brown,Staten Island,2025-12-15,Cat,Bengal,Golden,Central Park,2025-12-17,0
+Dog,Beagle,Orange,Staten Island,2025-12-02,Dog,German Shepherd,Golden,Central Park,2025-12-06,0
+Dog,German Shepherd,Mixed,Manhattan,2025-12-24,Cat,Abyssinian,Mixed,Central Park,2025-12-24,0
+Bird,Budgie,Mixed,Queens Plaza,2025-12-20,Bird,Finch,Mixed,Staten Island,2025-12-20,0
+Bird,Lovebird,Striped,Staten Island,2025-12-24,Cat,Maine Coon,White,Staten Island,2026-01-01,0
+Bird,Parrot,Brown,Queens Plaza,2025-12-02,Dog,German Shepherd,White,Riverside Park,2025-12-03,0
+Cat,Abyssinian,Mixed,Central Park,2025-12-13,Dog,Golden Retriever,Striped,Brooklyn Bridge,2025-12-15,0
+Cat,Bengal,Striped,Times Square,2025-12-16,Cat,Ragdoll,Golden,Bronx Zoo,2025-12-23,0
+Dog,Labrador,Mixed,Manhattan,2025-12-22,Dog,Yorkshire Terrier,Mixed,Manhattan,2025-12-28,1
+Dog,Poodle,Black,Bronx Zoo,2025-12-24,Cat,Russian Blue,Orange,Times Square,2026-01-01,0
+Cat,Russian Blue,Striped,Staten Island,2025-12-02,Dog,Rottweiler,Mixed,Bronx Zoo,2025-12-02,0
+Bird,Cockatiel,Gray,Queens Plaza,2025-12-28,Dog,Golden Retriever,Gray,Staten Island,2025-12-31,0
+Dog,Beagle,Striped,Staten Island,2025-12-26,Cat,British Shorthair,Striped,Central Park,2025-12-31,0
+Cat,Maine Coon,Mixed,Queens Plaza,2025-12-15,Dog,Rottweiler,Golden,Riverside Park,2025-12-24,0
+Cat,Maine Coon,Spotted,Brooklyn Bridge,2025-12-14,Cat,Maine Coon,Spotted,Brooklyn Bridge,2025-12-21,1
+Cat,Ragdoll,Spotted,Staten Island,2025-12-07,Dog,Golden Retriever,Mixed,Manhattan,2025-12-14,0
+Dog,Golden Retriever,Golden,Queens Plaza,2025-12-08,Dog,Yorkshire Terrier,Orange,Queens Plaza,2025-12-10,0
+Bird,Cockatiel,Striped,Manhattan,2025-12-26,Bird,Budgie,Mixed,Staten Island,2025-12-30,0
+Cat,Persian,Striped,Times Square,2025-12-04,Bird,Cockatiel,Golden,Times Square,2025-12-07,0
+Dog,Beagle,Black,Bronx Zoo,2025-12-27,Dog,Labrador,Gray,Manhattan,2026-01-02,0
+Dog,Rottweiler,Golden,Manhattan,2025-12-06,Dog,Rottweiler,Golden,Manhattan,2025-12-06,1
+Dog,Poodle,Spotted,Staten Island,2025-12-17,Dog,Poodle,Spotted,Riverside Park,2025-12-24,1
+Cat,Ragdoll,Golden,Central Park,2025-12-30,Cat,Ragdoll,Golden,Queens Plaza,2026-01-01,1
+Dog,Bulldog,Striped,Central Park,2025-12-12,Bird,Finch,Orange,Queens Plaza,2025-12-21,0
+Dog,Poodle,Gray,Central Park,2025-12-09,Bird,Parrot,White,Staten Island,2025-12-11,0
+Bird,Canary,White,Times Square,2025-12-26,Dog,Golden Retriever,Mixed,Manhattan,2026-01-05,0
+Dog,Yorkshire Terrier,Black,Times Square,2025-12-11,Bird,Canary,Striped,Queens Plaza,2025-12-11,0
+Dog,Labrador,Orange,Bronx Zoo,2025-12-31,Dog,Beagle,Golden,Times Square,2026-01-02,0
+Cat,Russian Blue,Gray,Central Park,2025-12-08,Bird,Cockatiel,Gray,Bronx Zoo,2025-12-13,0
+Cat,Bengal,Gray,Riverside Park,2025-12-20,Bird,Conure,Orange,Riverside Park,2025-12-24,0
+Dog,German Shepherd,Spotted,Brooklyn Bridge,2025-12-13,Dog,Rottweiler,Brown,Riverside Park,2025-12-22,0
+Cat,Siamese,Black,Staten Island,2025-12-21,Cat,Persian,Striped,Staten Island,2025-12-27,0
+Cat,Maine Coon,Brown,Central Park,2025-12-27,Dog,Bulldog,Golden,Bronx Zoo,2026-01-06,0
+Cat,Persian,Mixed,Brooklyn Bridge,2025-12-15,Dog,Yorkshire Terrier,Brown,Times Square,2025-12-23,0
+Cat,Siamese,Striped,Central Park,2025-12-26,Cat,Siamese,Striped,Central Park,2026-01-04,1
+Cat,Siamese,Orange,Manhattan,2025-12-27,Cat,Siamese,Orange,Bronx Zoo,2026-01-02,1
+Bird,Lovebird,Golden,Riverside Park,2025-12-11,Bird,Lovebird,Golden,Bronx Zoo,2025-12-14,1
+Dog,Poodle,Orange,Staten Island,2025-12-07,Dog,Poodle,Orange,Staten Island,2025-12-15,1
+Dog,Rottweiler,Spotted,Brooklyn Bridge,2025-12-28,Cat,Ragdoll,Striped,Central Park,2026-01-06,0
+Dog,Beagle,Spotted,Staten Island,2025-12-05,Dog,Beagle,Spotted,Riverside Park,2025-12-14,1
+Cat,Siamese,White,Times Square,2025-12-26,Cat,Siamese,White,Times Square,2025-12-26,1
+Bird,Finch,Brown,Bronx Zoo,2025-12-26,Dog,Poodle,Orange,Staten Island,2026-01-05,0
+Bird,Parrot,Black,Riverside Park,2025-12-03,Dog,Bulldog,Black,Brooklyn Bridge,2025-12-09,0
+Dog,Yorkshire Terrier,White,Central Park,2025-12-15,Dog,Yorkshire Terrier,Orange,Brooklyn Bridge,2025-12-17,1
+Cat,British Shorthair,Mixed,Bronx Zoo,2025-12-15,Cat,British Shorthair,Mixed,Bronx Zoo,2025-12-15,1
+Bird,Budgie,Golden,Queens Plaza,2025-12-18,Bird,Budgie,Golden,Queens Plaza,2025-12-21,1
+Bird,Canary,Striped,Riverside Park,2025-12-31,Cat,Russian Blue,Spotted,Bronx Zoo,2026-01-08,0
+Bird,Macaw,Orange,Riverside Park,2025-12-04,Bird,Lovebird,Gray,Staten Island,2025-12-13,0
+Bird,Conure,Golden,Central Park,2025-12-26,Cat,Maine Coon,Gray,Times Square,2026-01-05,0
+Bird,Budgie,Black,Brooklyn Bridge,2025-12-19,Dog,Rottweiler,Gray,Times Square,2025-12-21,0
+Bird,Parrot,Mixed,Queens Plaza,2025-12-28,Dog,Bulldog,Spotted,Riverside Park,2026-01-04,0
+Dog,Poodle,Orange,Riverside Park,2025-12-30,Dog,Bulldog,Orange,Bronx Zoo,2026-01-09,0
+Bird,Canary,Orange,Brooklyn Bridge,2025-12-30,Bird,Canary,Orange,Brooklyn Bridge,2026-01-09,1
+Bird,Conure,Mixed,Times Square,2025-12-07,Cat,Siamese,White,Bronx Zoo,2025-12-08,0
+Bird,Finch,Black,Bronx Zoo,2025-12-14,Bird,Budgie,Golden,Staten Island,2025-12-22,0
+Cat,Bengal,Spotted,Staten Island,2025-12-05,Cat,British Shorthair,Striped,Times Square,2025-12-05,0
+Bird,Finch,Brown,Central Park,2025-12-02,Bird,Finch,Brown,Central Park,2025-12-04,1
+Dog,Beagle,Mixed,Riverside Park,2025-12-04,Dog,Yorkshire Terrier,Mixed,Riverside Park,2025-12-11,1
+Dog,Rottweiler,Orange,Riverside Park,2025-12-29,Cat,Persian,Black,Central Park,2026-01-05,0
+Dog,Yorkshire Terrier,Mixed,Riverside Park,2025-12-21,Dog,Yorkshire Terrier,Mixed,Queens Plaza,2025-12-21,1
+Cat,British Shorthair,Spotted,Times Square,2025-12-15,Bird,Finch,Spotted,Central Park,2025-12-19,0
+Cat,Persian,Brown,Bronx Zoo,2025-12-03,Dog,German Shepherd,Black,Queens Plaza,2025-12-12,0
+Bird,Parrot,Orange,Brooklyn Bridge,2025-12-04,Cat,Ragdoll,Gray,Staten Island,2025-12-04,0
+Cat,Abyssinian,Black,Brooklyn Bridge,2025-12-24,Cat,Abyssinian,Mixed,Queens Plaza,2026-01-02,0
+Dog,Bulldog,Gray,Staten Island,2025-12-11,Dog,Bulldog,Gray,Staten Island,2025-12-17,1
+Bird,Canary,Spotted,Riverside Park,2025-12-05,Dog,German Shepherd,Brown,Queens Plaza,2025-12-07,0
+Dog,German Shepherd,Spotted,Times Square,2025-12-07,Dog,Rottweiler,Golden,Queens Plaza,2025-12-10,0
+Dog,Bulldog,Striped,Riverside Park,2025-12-28,Dog,Yorkshire Terrier,Striped,Riverside Park,2026-01-05,1
+Dog,Golden Retriever,Gray,Bronx Zoo,2025-12-27,Dog,Golden Retriever,Gray,Bronx Zoo,2026-01-01,1
+Bird,Parrot,Orange,Queens Plaza,2025-12-27,Dog,Poodle,Gray,Central Park,2026-01-02,0
+Cat,Maine Coon,Black,Times Square,2025-12-12,Dog,Yorkshire Terrier,Golden,Manhattan,2025-12-18,0
+Bird,Lovebird,Golden,Times Square,2025-12-21,Dog,Beagle,Gray,Manhattan,2025-12-26,0
+Bird,Conure,Golden,Manhattan,2025-12-16,Dog,Labrador,Golden,Riverside Park,2025-12-20,0
+Dog,Poodle,Black,Brooklyn Bridge,2025-12-16,Cat,Persian,Black,Manhattan,2025-12-25,0
+Bird,Parrot,Spotted,Manhattan,2025-12-22,Cat,Ragdoll,Gray,Bronx Zoo,2025-12-22,0
+Bird,Canary,Mixed,Central Park,2025-12-10,Cat,British Shorthair,Golden,Bronx Zoo,2025-12-16,0
+Bird,Macaw,Golden,Staten Island,2025-12-07,Bird,Macaw,Spotted,Brooklyn Bridge,2025-12-09,0
+Dog,Poodle,Mixed,Staten Island,2025-12-05,Bird,Finch,White,Manhattan,2025-12-13,0
+Bird,Conure,Striped,Riverside Park,2025-12-26,Bird,Cockatiel,Spotted,Times Square,2025-12-27,0
+Bird,Budgie,Orange,Bronx Zoo,2025-12-27,Dog,German Shepherd,Mixed,Brooklyn Bridge,2026-01-03,0
+Dog,Beagle,Brown,Queens Plaza,2025-12-16,Dog,Beagle,Brown,Staten Island,2025-12-22,1
+Cat,Persian,White,Staten Island,2025-12-08,Bird,Cockatiel,Spotted,Queens Plaza,2025-12-18,0
+Bird,Macaw,Gray,Brooklyn Bridge,2025-12-22,Bird,Macaw,Gray,Brooklyn Bridge,2025-12-31,1
+Cat,Ragdoll,White,Manhattan,2025-12-19,Dog,Golden Retriever,Mixed,Queens Plaza,2025-12-19,0
+Dog,Labrador,Brown,Times Square,2025-12-31,Dog,Yorkshire Terrier,Golden,Central Park,2026-01-10,0
+Dog,Bulldog,Golden,Central Park,2025-12-24,Dog,Bulldog,Golden,Central Park,2025-12-31,1
+Dog,Poodle,Spotted,Manhattan,2025-12-16,Cat,Russian Blue,Striped,Riverside Park,2025-12-17,0
+Dog,Poodle,Black,Times Square,2025-12-16,Dog,Golden Retriever,White,Bronx Zoo,2025-12-21,0
+Cat,Ragdoll,Black,Times Square,2025-12-06,Cat,Ragdoll,Black,Times Square,2025-12-15,1
+Bird,Macaw,Black,Brooklyn Bridge,2025-12-25,Bird,Finch,Gray,Times Square,2025-12-27,0
+Cat,Siamese,Striped,Brooklyn Bridge,2025-12-09,Bird,Cockatiel,Orange,Bronx Zoo,2025-12-14,0
+Dog,Beagle,Orange,Central Park,2025-12-07,Cat,Abyssinian,Orange,Brooklyn Bridge,2025-12-12,0
+Bird,Cockatiel,Striped,Central Park,2025-12-16,Bird,Finch,Striped,Queens Plaza,2025-12-24,0
+Bird,Cockatiel,Gray,Brooklyn Bridge,2025-12-11,Cat,Persian,Mixed,Brooklyn Bridge,2025-12-14,0
+Bird,Finch,Black,Central Park,2025-12-27,Bird,Finch,Black,Central Park,2025-12-29,1
+Cat,Siamese,Black,Queens Plaza,2025-12-28,Bird,Budgie,Orange,Bronx Zoo,2026-01-01,0
+Bird,Lovebird,Golden,Times Square,2025-12-10,Bird,Conure,Golden,Times Square,2025-12-19,1
+Dog,Beagle,Striped,Queens Plaza,2025-12-03,Cat,Russian Blue,Striped,Times Square,2025-12-06,0
+Cat,Persian,Mixed,Times Square,2025-12-31,Dog,Golden Retriever,Striped,Riverside Park,2025-12-31,0
+Cat,Abyssinian,Brown,Riverside Park,2025-12-28,Cat,Abyssinian,Brown,Riverside Park,2026-01-06,1
+Bird,Conure,Golden,Riverside Park,2025-12-19,Dog,Poodle,Striped,Staten Island,2025-12-28,0
+Dog,Beagle,Spotted,Manhattan,2025-12-05,Dog,Beagle,Spotted,Manhattan,2025-12-09,1
+Cat,British Shorthair,Orange,Riverside Park,2025-12-30,Bird,Cockatiel,Black,Times Square,2026-01-03,0
+Cat,Siamese,Black,Central Park,2025-12-13,Cat,Bengal,Spotted,Riverside Park,2025-12-17,0
+Bird,Cockatiel,White,Times Square,2025-12-10,Cat,Siamese,Spotted,Riverside Park,2025-12-12,0
+Cat,Persian,Mixed,Times Square,2025-12-03,Dog,Labrador,Spotted,Brooklyn Bridge,2025-12-07,0
+Bird,Conure,Golden,Bronx Zoo,2025-12-13,Bird,Conure,Golden,Bronx Zoo,2025-12-22,1
+Dog,Rottweiler,Spotted,Central Park,2025-12-13,Cat,Siamese,Striped,Queens Plaza,2025-12-22,0
+Dog,Yorkshire Terrier,Spotted,Bronx Zoo,2025-12-17,Cat,Abyssinian,Brown,Queens Plaza,2025-12-20,0
+Cat,Persian,Brown,Queens Plaza,2025-12-18,Bird,Budgie,Striped,Brooklyn Bridge,2025-12-23,0
+Dog,Rottweiler,Mixed,Staten Island,2025-12-30,Bird,Finch,Mixed,Central Park,2026-01-04,0
+Bird,Cockatiel,Orange,Brooklyn Bridge,2025-12-27,Dog,Labrador,Brown,Bronx Zoo,2025-12-30,0
+Cat,Russian Blue,Mixed,Riverside Park,2025-12-22,Cat,Russian Blue,Mixed,Riverside Park,2025-12-31,1
+Bird,Cockatiel,Orange,Brooklyn Bridge,2025-12-02,Bird,Cockatiel,Orange,Brooklyn Bridge,2025-12-07,1
+Dog,German Shepherd,Black,Times Square,2025-12-10,Dog,German Shepherd,Black,Times Square,2025-12-16,1
+Bird,Budgie,Orange,Times Square,2025-12-14,Bird,Budgie,Orange,Times Square,2025-12-14,1
+Bird,Cockatiel,Brown,Staten Island,2025-12-09,Dog,Yorkshire Terrier,Black,Bronx Zoo,2025-12-15,0
+Cat,British Shorthair,Golden,Staten Island,2025-12-20,Cat,Ragdoll,Striped,Staten Island,2025-12-29,0
+Bird,Macaw,Golden,Central Park,2025-12-18,Bird,Macaw,Golden,Riverside Park,2025-12-26,1
+Cat,Persian,White,Queens Plaza,2025-12-11,Cat,Persian,White,Queens Plaza,2025-12-13,1
+Bird,Conure,Mixed,Central Park,2025-12-31,Bird,Conure,Mixed,Central Park,2026-01-02,1
+Bird,Lovebird,Brown,Queens Plaza,2025-12-18,Dog,Poodle,Striped,Central Park,2025-12-22,0
+Dog,Poodle,Golden,Manhattan,2025-12-05,Cat,Maine Coon,Spotted,Central Park,2025-12-10,0
+Bird,Macaw,Golden,Queens Plaza,2025-12-13,Dog,German Shepherd,Spotted,Bronx Zoo,2025-12-21,0
+Dog,Rottweiler,Brown,Queens Plaza,2025-12-16,Dog,Poodle,White,Queens Plaza,2025-12-20,0
+Cat,Ragdoll,Spotted,Riverside Park,2025-12-27,Dog,Rottweiler,Striped,Times Square,2025-12-31,0
+Dog,Bulldog,Spotted,Bronx Zoo,2025-12-11,Cat,British Shorthair,Golden,Times Square,2025-12-19,0
+Bird,Lovebird,Golden,Riverside Park,2025-12-17,Bird,Lovebird,Golden,Riverside Park,2025-12-17,1
+Cat,Russian Blue,Mixed,Queens Plaza,2025-12-17,Cat,Siamese,Gray,Brooklyn Bridge,2025-12-26,0
+Bird,Parrot,Mixed,Times Square,2025-12-07,Cat,Maine Coon,Mixed,Staten Island,2025-12-10,0
+Cat,Maine Coon,Golden,Times Square,2025-12-25,Bird,Lovebird,White,Queens Plaza,2026-01-02,0
+Cat,Abyssinian,White,Staten Island,2025-12-02,Bird,Budgie,White,Times Square,2025-12-08,0
+Cat,Siamese,Gray,Central Park,2025-12-03,Bird,Canary,Orange,Riverside Park,2025-12-04,0
+Cat,Siamese,Striped,Bronx Zoo,2025-12-22,Dog,Golden Retriever,Spotted,Queens Plaza,2025-12-29,0
+Dog,Yorkshire Terrier,Mixed,Brooklyn Bridge,2025-12-06,Dog,Yorkshire Terrier,Mixed,Brooklyn Bridge,2025-12-11,1
+Bird,Cockatiel,Black,Staten Island,2025-12-10,Bird,Cockatiel,Black,Staten Island,2025-12-10,1
+Bird,Lovebird,Gray,Central Park,2025-12-07,Cat,Abyssinian,Mixed,Manhattan,2025-12-14,0
+Cat,Abyssinian,Gray,Brooklyn Bridge,2025-12-21,Dog,Labrador,Gray,Riverside Park,2025-12-29,0
+Bird,Budgie,Golden,Queens Plaza,2025-12-18,Cat,Bengal,Brown,Riverside Park,2025-12-19,0
+Cat,Maine Coon,Mixed,Queens Plaza,2025-12-10,Cat,Maine Coon,Mixed,Central Park,2025-12-13,1
+Dog,Beagle,Brown,Queens Plaza,2025-12-12,Dog,German Shepherd,White,Queens Plaza,2025-12-12,0
+Dog,German Shepherd,Golden,Manhattan,2025-12-13,Bird,Cockatiel,Orange,Riverside Park,2025-12-21,0
+Bird,Finch,Gray,Central Park,2025-12-17,Cat,Siamese,White,Queens Plaza,2025-12-26,0
+Dog,Bulldog,Golden,Bronx Zoo,2025-12-31,Cat,Russian Blue,Orange,Brooklyn Bridge,2026-01-08,0
+Dog,Labrador,Brown,Queens Plaza,2025-12-28,Dog,German Shepherd,Mixed,Riverside Park,2026-01-05,0
+Cat,Ragdoll,Spotted,Riverside Park,2025-12-29,Dog,Rottweiler,Gray,Central Park,2026-01-04,0
+Dog,Golden Retriever,Golden,Times Square,2025-12-28,Dog,Golden Retriever,Golden,Bronx Zoo,2026-01-03,1
+Bird,Lovebird,Orange,Central Park,2025-12-30,Cat,Ragdoll,Spotted,Brooklyn Bridge,2026-01-06,0
+Dog,Golden Retriever,White,Staten Island,2025-12-30,Cat,Persian,Brown,Times Square,2026-01-04,0
+Dog,Labrador,Gray,Central Park,2025-12-13,Dog,Beagle,Mixed,Bronx Zoo,2025-12-21,0
+Bird,Finch,Mixed,Bronx Zoo,2025-12-27,Dog,Bulldog,Gray,Bronx Zoo,2026-01-02,0
+Cat,Ragdoll,Orange,Brooklyn Bridge,2025-12-23,Bird,Cockatiel,Brown,Central Park,2025-12-24,0
+Dog,Yorkshire Terrier,Black,Times Square,2025-12-17,Bird,Conure,Mixed,Bronx Zoo,2025-12-26,0
+Cat,Russian Blue,Gray,Bronx Zoo,2025-12-29,Dog,Rottweiler,Gray,Central Park,2026-01-02,0
+Cat,British Shorthair,Orange,Times Square,2025-12-27,Dog,Golden Retriever,Spotted,Bronx Zoo,2026-01-06,0
+Bird,Lovebird,Mixed,Central Park,2025-12-09,Cat,Siamese,Black,Times Square,2025-12-11,0
+Bird,Parrot,Striped,Riverside Park,2025-12-14,Bird,Parrot,Striped,Brooklyn Bridge,2025-12-24,1
+Cat,Ragdoll,White,Staten Island,2025-12-18,Cat,Ragdoll,White,Staten Island,2025-12-20,1
+Cat,Abyssinian,Spotted,Riverside Park,2025-12-23,Cat,Abyssinian,Spotted,Riverside Park,2025-12-27,1
+Dog,Labrador,White,Queens Plaza,2025-12-06,Bird,Conure,Mixed,Central Park,2025-12-11,0
+Dog,Yorkshire Terrier,Mixed,Manhattan,2025-12-17,Dog,Yorkshire Terrier,Mixed,Manhattan,2025-12-24,1
+Dog,Bulldog,Gray,Staten Island,2025-12-30,Dog,Bulldog,Gray,Staten Island,2026-01-01,1
+Bird,Macaw,Spotted,Brooklyn Bridge,2025-12-30,Cat,Persian,Black,Manhattan,2026-01-02,0
+Dog,Bulldog,Gray,Riverside Park,2025-12-05,Dog,Yorkshire Terrier,Black,Queens Plaza,2025-12-13,0
+Bird,Finch,Golden,Central Park,2025-12-22,Cat,Russian Blue,Black,Queens Plaza,2025-12-30,0
+Cat,Maine Coon,Black,Times Square,2025-12-31,Cat,Maine Coon,Black,Times Square,2026-01-03,1
+Cat,Siamese,White,Staten Island,2025-12-17,Dog,Rottweiler,Golden,Queens Plaza,2025-12-24,0
+Dog,German Shepherd,White,Staten Island,2025-12-15,Bird,Macaw,Brown,Bronx Zoo,2025-12-19,0
+Dog,Labrador,White,Staten Island,2025-12-30,Bird,Finch,Golden,Bronx Zoo,2026-01-02,0
+Dog,Bulldog,Brown,Riverside Park,2025-12-24,Cat,Abyssinian,Spotted,Riverside Park,2025-12-26,0
+Bird,Conure,Striped,Bronx Zoo,2025-12-10,Bird,Conure,Striped,Bronx Zoo,2025-12-10,1
+Dog,Bulldog,Gray,Brooklyn Bridge,2025-12-02,Dog,Bulldog,Gray,Staten Island,2025-12-03,1
+Cat,Ragdoll,Striped,Riverside Park,2025-12-13,Dog,Rottweiler,Brown,Manhattan,2025-12-23,0
+Cat,Bengal,Golden,Riverside Park,2025-12-03,Cat,Siamese,Black,Manhattan,2025-12-04,0
+Cat,Persian,Orange,Queens Plaza,2025-12-12,Cat,Persian,Brown,Queens Plaza,2025-12-14,1
+Dog,Golden Retriever,Brown,Times Square,2025-12-13,Dog,Golden Retriever,Brown,Times Square,2025-12-19,1
+Dog,Rottweiler,Orange,Central Park,2025-12-12,Bird,Canary,Orange,Riverside Park,2025-12-15,0
+Bird,Cockatiel,Mixed,Staten Island,2025-12-16,Dog,Yorkshire Terrier,Striped,Bronx Zoo,2025-12-16,0
+Dog,Rottweiler,White,Riverside Park,2025-12-22,Bird,Finch,Mixed,Queens Plaza,2025-12-25,0
+Bird,Lovebird,Black,Central Park,2025-12-03,Cat,Russian Blue,White,Riverside Park,2025-12-09,0
+Dog,Bulldog,Black,Staten Island,2025-12-18,Dog,Yorkshire Terrier,Brown,Bronx Zoo,2025-12-27,0
+Dog,Golden Retriever,Mixed,Brooklyn Bridge,2025-12-21,Cat,Bengal,Black,Times Square,2025-12-31,0
+Bird,Canary,Black,Manhattan,2025-12-23,Bird,Canary,Black,Manhattan,2025-12-24,1
+Bird,Conure,Mixed,Riverside Park,2025-12-16,Bird,Conure,Mixed,Riverside Park,2025-12-21,1
+Dog,German Shepherd,Black,Bronx Zoo,2025-12-13,Dog,German Shepherd,White,Bronx Zoo,2025-12-13,1
+Dog,Bulldog,Golden,Manhattan,2025-12-18,Bird,Finch,Black,Central Park,2025-12-19,0
+Cat,British Shorthair,Black,Bronx Zoo,2025-12-15,Cat,Persian,Black,Brooklyn Bridge,2025-12-24,1
+Dog,Golden Retriever,Orange,Brooklyn Bridge,2025-12-27,Dog,Poodle,Gray,Times Square,2025-12-30,0
+Cat,Ragdoll,Striped,Riverside Park,2025-12-20,Cat,Ragdoll,Striped,Riverside Park,2025-12-25,1
+Dog,Bulldog,Striped,Times Square,2025-12-02,Dog,Bulldog,Mixed,Manhattan,2025-12-08,1
+Bird,Macaw,Brown,Central Park,2025-12-07,Dog,Beagle,Mixed,Central Park,2025-12-13,0
+Bird,Macaw,Striped,Times Square,2025-12-21,Dog,Beagle,Mixed,Queens Plaza,2025-12-30,0
+Dog,Beagle,Gray,Brooklyn Bridge,2025-12-23,Bird,Budgie,Spotted,Queens Plaza,2025-12-23,0
+Dog,German Shepherd,Orange,Brooklyn Bridge,2025-12-29,Dog,Labrador,Golden,Staten Island,2026-01-06,0
+Dog,Labrador,White,Manhattan,2025-12-08,Cat,Maine Coon,Orange,Bronx Zoo,2025-12-13,0
+Dog,Poodle,Orange,Central Park,2025-12-30,Bird,Conure,Mixed,Brooklyn Bridge,2026-01-09,0
+Bird,Cockatiel,Mixed,Bronx Zoo,2025-12-18,Bird,Cockatiel,Mixed,Bronx Zoo,2025-12-26,1
+Bird,Lovebird,Mixed,Central Park,2025-12-13,Cat,Russian Blue,Spotted,Bronx Zoo,2025-12-19,0
+Cat,Bengal,Spotted,Queens Plaza,2025-12-26,Bird,Budgie,Spotted,Manhattan,2025-12-28,0
+Cat,Persian,Orange,Queens Plaza,2025-12-02,Cat,Persian,Mixed,Staten Island,2025-12-06,0
+Cat,Siamese,Black,Brooklyn Bridge,2025-12-26,Cat,British Shorthair,Spotted,Queens Plaza,2026-01-05,0
+Bird,Conure,Golden,Bronx Zoo,2025-12-03,Bird,Macaw,Mixed,Times Square,2025-12-05,0
+Bird,Budgie,Brown,Central Park,2025-12-23,Dog,Bulldog,Golden,Manhattan,2026-01-01,0
+Cat,Persian,Striped,Times Square,2025-12-15,Cat,Persian,Striped,Manhattan,2025-12-22,1
+Dog,Golden Retriever,Brown,Brooklyn Bridge,2025-12-25,Cat,Ragdoll,Spotted,Staten Island,2025-12-31,0
+Dog,Rottweiler,Gray,Bronx Zoo,2025-12-16,Dog,Rottweiler,Gray,Queens Plaza,2025-12-25,1
+Cat,Maine Coon,Spotted,Manhattan,2025-12-28,Cat,Maine Coon,Brown,Manhattan,2025-12-30,1
+Cat,Russian Blue,Black,Queens Plaza,2025-12-24,Bird,Cockatiel,Black,Riverside Park,2025-12-27,0
+Dog,German Shepherd,Striped,Staten Island,2025-12-04,Dog,Golden Retriever,Orange,Riverside Park,2025-12-08,0
+Bird,Lovebird,Spotted,Staten Island,2025-12-17,Bird,Lovebird,Spotted,Bronx Zoo,2025-12-21,1
+Bird,Lovebird,Brown,Times Square,2025-12-29,Bird,Lovebird,Brown,Times Square,2026-01-08,1
+Cat,Ragdoll,Black,Bronx Zoo,2025-12-25,Cat,Ragdoll,Black,Bronx Zoo,2025-12-28,1
+Cat,Persian,Golden,Manhattan,2025-12-14,Bird,Parrot,Orange,Manhattan,2025-12-16,0
+Bird,Macaw,Mixed,Times Square,2025-12-25,Dog,Beagle,Black,Bronx Zoo,2025-12-30,0
+Bird,Finch,Orange,Riverside Park,2025-12-29,Bird,Macaw,Golden,Bronx Zoo,2026-01-04,0
+Bird,Budgie,Golden,Riverside Park,2025-12-12,Cat,Bengal,Brown,Manhattan,2025-12-14,0
+Dog,Beagle,Black,Queens Plaza,2025-12-09,Bird,Canary,Mixed,Brooklyn Bridge,2025-12-13,0
+Bird,Finch,Black,Queens Plaza,2025-12-11,Bird,Macaw,Black,Staten Island,2025-12-15,1
+Cat,Ragdoll,Gray,Queens Plaza,2025-12-16,Cat,Bengal,Golden,Brooklyn Bridge,2025-12-22,0
+Bird,Budgie,Brown,Staten Island,2025-12-06,Bird,Lovebird,Spotted,Times Square,2025-12-10,0
+Cat,Ragdoll,Spotted,Central Park,2025-12-03,Cat,British Shorthair,Brown,Riverside Park,2025-12-08,0
+Bird,Macaw,Orange,Manhattan,2025-12-17,Bird,Macaw,Orange,Brooklyn Bridge,2025-12-19,1
+Bird,Cockatiel,Brown,Central Park,2025-12-28,Cat,British Shorthair,Orange,Central Park,2026-01-07,0
+Bird,Conure,Spotted,Bronx Zoo,2025-12-02,Bird,Finch,Spotted,Brooklyn Bridge,2025-12-09,1
+Dog,Beagle,Striped,Central Park,2025-12-28,Bird,Cockatiel,Golden,Central Park,2026-01-06,0
+Cat,Abyssinian,Mixed,Staten Island,2025-12-07,Dog,Rottweiler,White,Central Park,2025-12-16,0
+Bird,Conure,Gray,Queens Plaza,2025-12-13,Bird,Parrot,Gray,Central Park,2025-12-22,0
+Bird,Macaw,Black,Bronx Zoo,2025-12-04,Dog,Rottweiler,Black,Staten Island,2025-12-04,0
+Dog,German Shepherd,Gray,Brooklyn Bridge,2025-12-22,Bird,Canary,Gray,Bronx Zoo,2025-12-25,0
+Cat,Bengal,Orange,Staten Island,2025-12-23,Bird,Budgie,White,Times Square,2025-12-24,0
+Cat,Bengal,Black,Central Park,2025-12-31,Dog,German Shepherd,Golden,Staten Island,2026-01-08,0
+Dog,Golden Retriever,Mixed,Staten Island,2025-12-19,Bird,Macaw,Brown,Central Park,2025-12-19,0
+Cat,Siamese,Orange,Times Square,2025-12-21,Cat,Maine Coon,Brown,Queens Plaza,2025-12-22,0
+Bird,Macaw,Spotted,Bronx Zoo,2025-12-25,Dog,Golden Retriever,White,Riverside Park,2025-12-29,0
+Bird,Finch,Orange,Riverside Park,2025-12-24,Cat,Bengal,Golden,Riverside Park,2026-01-02,0
+Dog,Labrador,Orange,Brooklyn Bridge,2025-12-22,Dog,Labrador,Orange,Brooklyn Bridge,2025-12-27,1
+Cat,Ragdoll,Gray,Riverside Park,2025-12-23,Cat,Bengal,Gray,Times Square,2025-12-29,0
+Dog,Bulldog,Golden,Times Square,2025-12-09,Cat,Siamese,Orange,Staten Island,2025-12-12,0
+Dog,Yorkshire Terrier,Golden,Manhattan,2025-12-04,Bird,Macaw,Black,Riverside Park,2025-12-11,0
+Cat,Bengal,Brown,Riverside Park,2025-12-06,Dog,German Shepherd,Black,Staten Island,2025-12-14,0
+Bird,Parrot,Orange,Riverside Park,2025-12-07,Bird,Conure,Orange,Riverside Park,2025-12-10,0
+Dog,Golden Retriever,White,Manhattan,2025-12-22,Dog,Golden Retriever,White,Manhattan,2025-12-29,1
+Bird,Parrot,Black,Bronx Zoo,2025-12-10,Cat,Persian,White,Queens Plaza,2025-12-16,0
+Bird,Finch,Striped,Bronx Zoo,2025-12-28,Bird,Finch,Spotted,Riverside Park,2026-01-01,1
+Bird,Lovebird,Gray,Bronx Zoo,2025-12-11,Bird,Lovebird,Gray,Bronx Zoo,2025-12-21,1
+Bird,Budgie,White,Bronx Zoo,2025-12-06,Bird,Budgie,White,Bronx Zoo,2025-12-10,1
+Bird,Budgie,Golden,Riverside Park,2025-12-25,Cat,Siamese,White,Central Park,2025-12-31,0
+Bird,Canary,White,Manhattan,2025-12-22,Bird,Canary,Spotted,Bronx Zoo,2025-12-23,0
+Cat,Siamese,Spotted,Riverside Park,2025-12-24,Bird,Cockatiel,Golden,Riverside Park,2026-01-01,0
+Cat,Russian Blue,Mixed,Manhattan,2025-12-09,Cat,Ragdoll,White,Manhattan,2025-12-09,0
+Dog,German Shepherd,Brown,Riverside Park,2025-12-09,Dog,Poodle,Brown,Times Square,2025-12-14,0
+Bird,Lovebird,Striped,Central Park,2025-12-16,Bird,Lovebird,Striped,Brooklyn Bridge,2025-12-18,1
+Dog,Beagle,White,Times Square,2025-12-18,Cat,Siamese,White,Staten Island,2025-12-23,0
+Bird,Canary,Gray,Staten Island,2025-12-22,Dog,Rottweiler,Golden,Riverside Park,2026-01-01,0
+Cat,Siamese,Mixed,Riverside Park,2025-12-21,Cat,Maine Coon,Orange,Brooklyn Bridge,2025-12-25,0
+Cat,Abyssinian,White,Queens Plaza,2025-12-09,Dog,Beagle,Spotted,Riverside Park,2025-12-18,0
+Bird,Finch,Striped,Staten Island,2025-12-07,Cat,British Shorthair,Golden,Bronx Zoo,2025-12-07,0
+Bird,Canary,Gray,Manhattan,2025-12-06,Bird,Canary,Gray,Staten Island,2025-12-16,1
+Dog,Poodle,Golden,Central Park,2025-12-20,Dog,Poodle,Gray,Brooklyn Bridge,2025-12-21,0
+Bird,Lovebird,White,Times Square,2025-12-26,Cat,Persian,White,Bronx Zoo,2025-12-30,0
+Cat,Bengal,Orange,Queens Plaza,2025-12-14,Bird,Lovebird,Brown,Times Square,2025-12-22,0
+Dog,Bulldog,Black,Manhattan,2025-12-09,Cat,Bengal,Black,Times Square,2025-12-10,0
+Cat,Persian,Orange,Manhattan,2025-12-19,Dog,Bulldog,Mixed,Times Square,2025-12-22,0
+Cat,Bengal,Orange,Staten Island,2025-12-19,Cat,British Shorthair,Orange,Staten Island,2025-12-24,1
+Dog,Labrador,Spotted,Brooklyn Bridge,2025-12-29,Dog,Poodle,White,Bronx Zoo,2025-12-31,0
+Cat,Maine Coon,Golden,Central Park,2025-12-23,Cat,Persian,Golden,Central Park,2025-12-29,1
+Cat,Bengal,Golden,Times Square,2025-12-10,Cat,Bengal,Golden,Times Square,2025-12-10,1
+Bird,Finch,Black,Riverside Park,2025-12-03,Bird,Parrot,Orange,Bronx Zoo,2025-12-09,0
+Bird,Lovebird,Brown,Manhattan,2025-12-22,Dog,Labrador,Striped,Manhattan,2025-12-31,0
+Bird,Budgie,Orange,Manhattan,2025-12-30,Bird,Budgie,Orange,Riverside Park,2025-12-30,1
+Dog,Labrador,Gray,Staten Island,2025-12-18,Cat,British Shorthair,Brown,Central Park,2025-12-27,0
+Cat,Ragdoll,Golden,Brooklyn Bridge,2025-12-04,Bird,Cockatiel,Black,Brooklyn Bridge,2025-12-07,0
+Dog,Bulldog,Brown,Queens Plaza,2025-12-22,Dog,Bulldog,Brown,Queens Plaza,2025-12-22,1
+Bird,Canary,Black,Queens Plaza,2025-12-08,Cat,Abyssinian,Mixed,Riverside Park,2025-12-10,0
+Bird,Parrot,White,Staten Island,2025-12-05,Bird,Finch,Orange,Queens Plaza,2025-12-09,0
+Cat,Russian Blue,Golden,Manhattan,2025-12-19,Bird,Cockatiel,Spotted,Central Park,2025-12-29,0
+Bird,Canary,Black,Bronx Zoo,2025-12-06,Bird,Parrot,Mixed,Riverside Park,2025-12-13,0
+Cat,Siamese,Spotted,Bronx Zoo,2025-12-22,Cat,Siamese,Spotted,Bronx Zoo,2025-12-22,1
+Bird,Macaw,Black,Riverside Park,2025-12-23,Bird,Macaw,Black,Riverside Park,2025-12-27,1
+Dog,Beagle,Brown,Central Park,2025-12-06,Cat,Abyssinian,Mixed,Brooklyn Bridge,2025-12-08,0
+Bird,Lovebird,Striped,Brooklyn Bridge,2025-12-16,Cat,Bengal,Spotted,Bronx Zoo,2025-12-21,0
+Bird,Conure,Striped,Riverside Park,2025-12-03,Dog,Golden Retriever,Striped,Queens Plaza,2025-12-11,0
+Cat,Russian Blue,Brown,Staten Island,2025-12-26,Cat,Persian,Striped,Brooklyn Bridge,2025-12-27,0
+Dog,Rottweiler,Gray,Central Park,2025-12-07,Dog,Rottweiler,Gray,Central Park,2025-12-14,1
+Bird,Canary,Orange,Bronx Zoo,2025-12-23,Dog,Bulldog,Spotted,Brooklyn Bridge,2025-12-29,0
+Dog,Yorkshire Terrier,Orange,Times Square,2025-12-06,Dog,Yorkshire Terrier,Orange,Bronx Zoo,2025-12-11,0
+Bird,Cockatiel,Mixed,Staten Island,2025-12-26,Dog,Yorkshire Terrier,Brown,Central Park,2026-01-02,0
+Dog,Golden Retriever,Black,Bronx Zoo,2025-12-26,Dog,Bulldog,Striped,Staten Island,2025-12-27,0
+Bird,Conure,Gray,Queens Plaza,2025-12-28,Bird,Parrot,Striped,Riverside Park,2026-01-01,0
+Bird,Lovebird,Brown,Brooklyn Bridge,2025-12-25,Cat,Siamese,Striped,Riverside Park,2026-01-01,0
+Cat,Siamese,Mixed,Riverside Park,2025-12-27,Cat,Russian Blue,Mixed,Bronx Zoo,2026-01-06,1
+Dog,Beagle,Striped,Riverside Park,2025-12-17,Dog,Beagle,Striped,Riverside Park,2025-12-21,1
+Cat,British Shorthair,Brown,Times Square,2025-12-03,Bird,Macaw,Brown,Central Park,2025-12-08,0
+Cat,Russian Blue,Mixed,Times Square,2025-12-16,Cat,Bengal,Brown,Times Square,2025-12-25,0
+Cat,Persian,Mixed,Central Park,2025-12-07,Cat,Persian,Mixed,Brooklyn Bridge,2025-12-09,1
+Cat,Siamese,Orange,Times Square,2025-12-11,Dog,Rottweiler,Orange,Times Square,2025-12-13,0
+Dog,Rottweiler,Mixed,Bronx Zoo,2025-12-18,Dog,German Shepherd,Mixed,Bronx Zoo,2025-12-23,1
+Dog,German Shepherd,Striped,Times Square,2025-12-20,Cat,Abyssinian,Golden,Queens Plaza,2025-12-20,0
+Cat,Persian,Orange,Queens Plaza,2025-12-23,Bird,Finch,Golden,Manhattan,2026-01-01,0
+Bird,Budgie,Mixed,Central Park,2025-12-06,Bird,Budgie,Mixed,Central Park,2025-12-11,1
+Bird,Finch,Golden,Times Square,2025-12-16,Bird,Finch,Golden,Times Square,2025-12-20,1
+Bird,Canary,Brown,Riverside Park,2025-12-14,Bird,Macaw,Gray,Bronx Zoo,2025-12-24,0
+Bird,Conure,Orange,Staten Island,2025-12-05,Bird,Conure,Orange,Staten Island,2025-12-13,1
+Cat,Abyssinian,Spotted,Central Park,2025-12-28,Bird,Conure,Spotted,Central Park,2026-01-04,0
+Dog,Golden Retriever,Gray,Bronx Zoo,2025-12-11,Dog,Beagle,Gray,Bronx Zoo,2025-12-11,1
+Cat,British Shorthair,White,Times Square,2025-12-17,Cat,British Shorthair,White,Queens Plaza,2025-12-26,1
+Bird,Lovebird,Mixed,Staten Island,2025-12-31,Bird,Lovebird,Mixed,Times Square,2026-01-06,0
+Dog,Rottweiler,Mixed,Central Park,2025-12-20,Bird,Cockatiel,Gray,Brooklyn Bridge,2025-12-28,0
+Bird,Parrot,Mixed,Brooklyn Bridge,2025-12-17,Bird,Parrot,Mixed,Queens Plaza,2025-12-17,1
+Bird,Conure,White,Queens Plaza,2025-12-17,Bird,Conure,White,Queens Plaza,2025-12-22,1
+Dog,Rottweiler,Striped,Staten Island,2025-12-28,Cat,Ragdoll,Orange,Central Park,2025-12-31,0
+Cat,Bengal,Gray,Queens Plaza,2025-12-06,Cat,Russian Blue,Orange,Manhattan,2025-12-13,0
+Dog,Yorkshire Terrier,Golden,Riverside Park,2025-12-11,Bird,Cockatiel,Orange,Staten Island,2025-12-14,0
+Dog,Beagle,Striped,Bronx Zoo,2025-12-13,Cat,Bengal,Striped,Brooklyn Bridge,2025-12-15,0
+Dog,Labrador,Orange,Queens Plaza,2025-12-25,Dog,Labrador,Orange,Queens Plaza,2026-01-02,1
+Dog,Labrador,Brown,Brooklyn Bridge,2025-12-25,Dog,Labrador,Brown,Brooklyn Bridge,2026-01-02,1
+Dog,Labrador,Gray,Times Square,2025-12-28,Bird,Parrot,Brown,Brooklyn Bridge,2025-12-30,0
+Cat,Bengal,Striped,Times Square,2025-12-13,Cat,Persian,Orange,Brooklyn Bridge,2025-12-19,0
+Bird,Macaw,Brown,Riverside Park,2025-12-13,Bird,Macaw,Brown,Riverside Park,2025-12-21,1
+Bird,Lovebird,Mixed,Bronx Zoo,2025-12-19,Dog,Labrador,Gray,Bronx Zoo,2025-12-25,0
+Cat,Abyssinian,Black,Staten Island,2025-12-18,Cat,Persian,White,Bronx Zoo,2025-12-23,0
+Cat,Persian,Orange,Staten Island,2025-12-15,Cat,Persian,Orange,Staten Island,2025-12-21,1
+Dog,Yorkshire Terrier,Striped,Manhattan,2025-12-13,Cat,Russian Blue,Spotted,Manhattan,2025-12-14,0
+Cat,Ragdoll,Orange,Central Park,2025-12-04,Bird,Cockatiel,Black,Staten Island,2025-12-06,0
+Cat,Siamese,Brown,Brooklyn Bridge,2025-12-03,Bird,Finch,Mixed,Queens Plaza,2025-12-03,0
+Dog,Yorkshire Terrier,White,Brooklyn Bridge,2025-12-11,Dog,Yorkshire Terrier,White,Staten Island,2025-12-15,1
+Cat,Siamese,Striped,Brooklyn Bridge,2025-12-11,Bird,Canary,Orange,Queens Plaza,2025-12-18,0
+Dog,Golden Retriever,Golden,Central Park,2025-12-14,Dog,Bulldog,Brown,Central Park,2025-12-24,0
+Dog,German Shepherd,Golden,Manhattan,2025-12-12,Bird,Canary,Striped,Staten Island,2025-12-15,0
+Bird,Finch,Golden,Brooklyn Bridge,2025-12-07,Bird,Conure,Striped,Manhattan,2025-12-13,0
+Dog,Poodle,Gray,Brooklyn Bridge,2025-12-17,Dog,Poodle,Gray,Central Park,2025-12-23,1
+Cat,Persian,White,Staten Island,2025-12-03,Cat,Persian,White,Staten Island,2025-12-10,1
+Bird,Macaw,Brown,Riverside Park,2025-12-15,Cat,Persian,Gray,Times Square,2025-12-19,0
+Dog,Bulldog,Striped,Manhattan,2025-12-27,Bird,Macaw,Black,Brooklyn Bridge,2026-01-03,0
+Bird,Canary,White,Bronx Zoo,2025-12-20,Dog,Rottweiler,Mixed,Times Square,2025-12-25,0
+Cat,Maine Coon,Black,Central Park,2025-12-13,Cat,Maine Coon,Black,Central Park,2025-12-20,1
+Bird,Canary,Spotted,Bronx Zoo,2025-12-23,Bird,Canary,Spotted,Central Park,2025-12-31,1
+Dog,Poodle,Black,Queens Plaza,2025-12-09,Dog,Bulldog,Golden,Staten Island,2025-12-10,0
+Dog,Labrador,Orange,Queens Plaza,2025-12-27,Dog,German Shepherd,Gray,Bronx Zoo,2026-01-01,0
+Cat,Maine Coon,Golden,Staten Island,2025-12-08,Cat,Ragdoll,White,Bronx Zoo,2025-12-13,0
+Cat,Bengal,White,Queens Plaza,2025-12-14,Dog,Poodle,Black,Times Square,2025-12-22,0
+Bird,Canary,Brown,Bronx Zoo,2025-12-10,Dog,Rottweiler,Striped,Queens Plaza,2025-12-13,0
+Cat,Abyssinian,Brown,Central Park,2025-12-28,Cat,Abyssinian,Brown,Central Park,2026-01-04,1
+Cat,Bengal,White,Manhattan,2025-12-14,Cat,Russian Blue,Striped,Riverside Park,2025-12-21,0
+Cat,Abyssinian,Mixed,Central Park,2025-12-02,Cat,Abyssinian,Brown,Staten Island,2025-12-11,0
+Bird,Lovebird,Golden,Manhattan,2025-12-11,Dog,Bulldog,Gray,Brooklyn Bridge,2025-12-12,0
+Cat,Russian Blue,Black,Manhattan,2025-12-31,Cat,Russian Blue,Gray,Manhattan,2026-01-10,1
+Cat,Siamese,Brown,Times Square,2025-12-12,Cat,Siamese,Brown,Times Square,2025-12-18,1
+Bird,Canary,Gray,Riverside Park,2025-12-08,Bird,Canary,Gray,Riverside Park,2025-12-13,1
+Cat,Maine Coon,White,Brooklyn Bridge,2025-12-12,Cat,Ragdoll,Brown,Queens Plaza,2025-12-20,0
+Bird,Budgie,Brown,Queens Plaza,2025-12-29,Bird,Budgie,Brown,Staten Island,2026-01-06,1
+Bird,Parrot,White,Staten Island,2025-12-23,Cat,Bengal,Orange,Central Park,2025-12-24,0
+Cat,Ragdoll,Spotted,Manhattan,2025-12-24,Cat,Siamese,Gray,Queens Plaza,2025-12-31,0
+Bird,Canary,Brown,Brooklyn Bridge,2025-12-31,Bird,Parrot,White,Brooklyn Bridge,2026-01-09,0
+Bird,Lovebird,Golden,Manhattan,2025-12-02,Bird,Lovebird,Golden,Manhattan,2025-12-04,1
+Dog,Bulldog,White,Bronx Zoo,2025-12-17,Bird,Conure,Orange,Brooklyn Bridge,2025-12-27,0
+Bird,Conure,Golden,Riverside Park,2025-12-27,Bird,Parrot,Orange,Times Square,2026-01-05,0
+Bird,Canary,Brown,Staten Island,2025-12-21,Dog,Poodle,Black,Central Park,2025-12-25,0
+Dog,Labrador,Brown,Times Square,2025-12-27,Dog,Rottweiler,Striped,Bronx Zoo,2026-01-04,0
+Bird,Finch,Gray,Staten Island,2025-12-05,Bird,Finch,White,Staten Island,2025-12-07,0
+Dog,German Shepherd,Mixed,Queens Plaza,2025-12-09,Cat,Bengal,Gray,Brooklyn Bridge,2025-12-12,0
+Dog,Poodle,Orange,Brooklyn Bridge,2025-12-26,Dog,Rottweiler,Orange,Brooklyn Bridge,2025-12-31,1
+Dog,Bulldog,Striped,Central Park,2025-12-21,Dog,Poodle,Striped,Bronx Zoo,2025-12-29,0
+Dog,Poodle,Brown,Bronx Zoo,2025-12-10,Bird,Parrot,Gray,Manhattan,2025-12-13,0
+Cat,Ragdoll,Golden,Queens Plaza,2025-12-26,Bird,Cockatiel,Gray,Riverside Park,2025-12-29,0
+Cat,Russian Blue,Orange,Central Park,2025-12-15,Bird,Budgie,White,Central Park,2025-12-25,0
+Bird,Macaw,Black,Queens Plaza,2025-12-10,Cat,Ragdoll,Golden,Queens Plaza,2025-12-16,0
+Cat,Abyssinian,Mixed,Manhattan,2025-12-21,Cat,British Shorthair,Mixed,Riverside Park,2025-12-27,0
+Dog,Beagle,Mixed,Bronx Zoo,2025-12-11,Bird,Macaw,Gray,Times Square,2025-12-11,0
+Cat,Abyssinian,Gray,Brooklyn Bridge,2025-12-10,Dog,Golden Retriever,Mixed,Central Park,2025-12-20,0
+Cat,Abyssinian,Golden,Staten Island,2025-12-08,Cat,Abyssinian,Golden,Manhattan,2025-12-17,1
+Bird,Parrot,Striped,Riverside Park,2025-12-06,Bird,Parrot,Striped,Riverside Park,2025-12-11,1
+Cat,Siamese,Gray,Times Square,2025-12-26,Cat,Siamese,Gray,Times Square,2025-12-26,1
+Bird,Cockatiel,Orange,Brooklyn Bridge,2025-12-20,Dog,Yorkshire Terrier,Striped,Manhattan,2025-12-28,0
+Cat,Maine Coon,Brown,Central Park,2025-12-31,Dog,Rottweiler,Orange,Brooklyn Bridge,2026-01-05,0
+Bird,Macaw,Striped,Riverside Park,2025-12-31,Cat,Russian Blue,Striped,Central Park,2026-01-10,0
+Cat,Abyssinian,Mixed,Bronx Zoo,2025-12-28,Cat,Abyssinian,Striped,Times Square,2026-01-03,1
+Cat,Bengal,Golden,Central Park,2025-12-25,Cat,Bengal,Golden,Central Park,2026-01-01,1
+Cat,Russian Blue,Striped,Manhattan,2025-12-03,Cat,Russian Blue,Striped,Queens Plaza,2025-12-06,1
+Cat,Persian,White,Central Park,2025-12-06,Dog,Beagle,Mixed,Queens Plaza,2025-12-14,0
+Cat,Russian Blue,Gray,Times Square,2025-12-26,Dog,Yorkshire Terrier,Brown,Riverside Park,2026-01-02,0
+Dog,Beagle,Gray,Bronx Zoo,2025-12-18,Cat,Persian,Black,Brooklyn Bridge,2025-12-24,0
+Bird,Canary,Black,Central Park,2025-12-04,Dog,Poodle,Brown,Riverside Park,2025-12-14,0
+Dog,Labrador,Black,Queens Plaza,2025-12-30,Dog,Labrador,Black,Queens Plaza,2026-01-01,1
+Cat,Maine Coon,White,Staten Island,2025-12-30,Dog,Beagle,Spotted,Central Park,2026-01-07,0
+Dog,Labrador,Striped,Bronx Zoo,2025-12-30,Dog,German Shepherd,Gray,Staten Island,2026-01-05,0
+Bird,Conure,Spotted,Queens Plaza,2025-12-14,Cat,Ragdoll,Brown,Brooklyn Bridge,2025-12-19,0
+Bird,Lovebird,Striped,Riverside Park,2025-12-02,Bird,Macaw,Orange,Manhattan,2025-12-08,0
+Bird,Finch,Orange,Bronx Zoo,2025-12-27,Bird,Canary,Golden,Queens Plaza,2026-01-01,0
+Dog,Golden Retriever,Gray,Manhattan,2025-12-15,Bird,Finch,Striped,Queens Plaza,2025-12-23,0
+Bird,Macaw,Golden,Riverside Park,2025-12-19,Bird,Macaw,Golden,Riverside Park,2025-12-27,1
+Cat,Russian Blue,Brown,Staten Island,2025-12-14,Dog,Bulldog,Gray,Times Square,2025-12-20,0
+Dog,Beagle,Spotted,Riverside Park,2025-12-30,Dog,Beagle,Spotted,Riverside Park,2025-12-30,1
+Dog,Golden Retriever,Spotted,Manhattan,2025-12-10,Dog,Yorkshire Terrier,Brown,Staten Island,2025-12-20,0
+Cat,Maine Coon,Striped,Bronx Zoo,2025-12-07,Cat,Maine Coon,Striped,Bronx Zoo,2025-12-07,1
+Dog,German Shepherd,White,Times Square,2025-12-10,Cat,Bengal,Golden,Bronx Zoo,2025-12-13,0
+Cat,Russian Blue,Black,Staten Island,2025-12-05,Cat,Russian Blue,Black,Bronx Zoo,2025-12-09,1
+Bird,Cockatiel,Brown,Manhattan,2025-12-15,Dog,Bulldog,Gray,Brooklyn Bridge,2025-12-25,0
+Cat,Maine Coon,Brown,Staten Island,2025-12-07,Cat,Maine Coon,Brown,Staten Island,2025-12-11,1
+Bird,Cockatiel,White,Times Square,2025-12-09,Bird,Cockatiel,White,Times Square,2025-12-10,1
+Cat,Siamese,Golden,Brooklyn Bridge,2025-12-18,Cat,Siamese,Golden,Brooklyn Bridge,2025-12-23,1
+Cat,British Shorthair,Striped,Times Square,2025-12-07,Bird,Parrot,Brown,Staten Island,2025-12-13,0
+Dog,Yorkshire Terrier,Spotted,Staten Island,2025-12-22,Dog,Rottweiler,White,Times Square,2026-01-01,0
+Cat,Siamese,White,Central Park,2025-12-31,Dog,Yorkshire Terrier,Black,Brooklyn Bridge,2026-01-02,0
+Dog,Rottweiler,Black,Staten Island,2025-12-19,Dog,Rottweiler,Black,Staten Island,2025-12-19,1
+Dog,German Shepherd,Gray,Central Park,2025-12-19,Dog,German Shepherd,Gray,Central Park,2025-12-21,1
+Bird,Conure,Spotted,Riverside Park,2025-12-03,Bird,Conure,Spotted,Riverside Park,2025-12-03,1
+Bird,Canary,White,Brooklyn Bridge,2025-12-04,Dog,Beagle,White,Brooklyn Bridge,2025-12-11,0
+Bird,Finch,Brown,Manhattan,2025-12-09,Cat,Russian Blue,Orange,Staten Island,2025-12-12,0
+Bird,Parrot,Striped,Staten Island,2025-12-03,Bird,Parrot,Striped,Staten Island,2025-12-12,1
+Cat,Abyssinian,Brown,Riverside Park,2025-12-12,Cat,Ragdoll,Striped,Central Park,2025-12-15,0
+Cat,Abyssinian,Black,Brooklyn Bridge,2025-12-18,Cat,Russian Blue,Spotted,Times Square,2025-12-22,0
+Dog,Bulldog,Striped,Manhattan,2025-12-05,Dog,Poodle,Striped,Central Park,2025-12-06,0
+Dog,Poodle,Orange,Manhattan,2025-12-23,Dog,Poodle,Orange,Brooklyn Bridge,2025-12-29,1
+Cat,Persian,Brown,Manhattan,2025-12-08,Cat,Persian,Brown,Manhattan,2025-12-18,1
+Bird,Finch,White,Brooklyn Bridge,2025-12-22,Cat,Siamese,Golden,Brooklyn Bridge,2025-12-30,0
+Cat,Ragdoll,Orange,Central Park,2025-12-06,Cat,Siamese,Striped,Brooklyn Bridge,2025-12-13,0
+Dog,Rottweiler,White,Staten Island,2025-12-12,Cat,Siamese,Spotted,Times Square,2025-12-19,0
+Dog,German Shepherd,Golden,Bronx Zoo,2025-12-25,Dog,German Shepherd,Golden,Bronx Zoo,2026-01-04,1
+Bird,Canary,Striped,Staten Island,2025-12-05,Bird,Parrot,Striped,Staten Island,2025-12-14,1
+Dog,Labrador,Striped,Times Square,2025-12-21,Cat,Maine Coon,Mixed,Riverside Park,2025-12-22,0
+Dog,Poodle,Spotted,Brooklyn Bridge,2025-12-25,Dog,Beagle,Spotted,Brooklyn Bridge,2025-12-30,1
+Cat,Ragdoll,Mixed,Queens Plaza,2025-12-31,Cat,Ragdoll,Black,Queens Plaza,2026-01-03,1
+Bird,Cockatiel,Orange,Riverside Park,2025-12-22,Bird,Cockatiel,Orange,Riverside Park,2025-12-24,1
+Dog,Yorkshire Terrier,Gray,Bronx Zoo,2025-12-31,Bird,Lovebird,Golden,Central Park,2025-12-31,0
+Dog,Beagle,Striped,Times Square,2025-12-06,Bird,Parrot,Gray,Riverside Park,2025-12-15,0
+Bird,Macaw,Spotted,Staten Island,2025-12-07,Bird,Finch,Orange,Queens Plaza,2025-12-11,0
+Bird,Parrot,White,Central Park,2025-12-13,Dog,Labrador,Striped,Staten Island,2025-12-16,0
+Dog,Yorkshire Terrier,Striped,Brooklyn Bridge,2025-12-23,Bird,Canary,Black,Staten Island,2026-01-02,0
+Cat,Maine Coon,Brown,Queens Plaza,2025-12-06,Cat,Maine Coon,Brown,Queens Plaza,2025-12-16,1
+Dog,Yorkshire Terrier,White,Manhattan,2025-12-22,Bird,Canary,White,Brooklyn Bridge,2025-12-23,0
+Dog,Poodle,Mixed,Times Square,2025-12-20,Cat,Siamese,Spotted,Bronx Zoo,2025-12-21,0
+Cat,Abyssinian,Spotted,Brooklyn Bridge,2025-12-05,Bird,Budgie,Striped,Brooklyn Bridge,2025-12-10,0
+Bird,Parrot,Mixed,Staten Island,2025-12-17,Dog,Labrador,Striped,Brooklyn Bridge,2025-12-24,0
+Dog,Yorkshire Terrier,Brown,Brooklyn Bridge,2025-12-14,Dog,Yorkshire Terrier,Brown,Brooklyn Bridge,2025-12-15,0
+Bird,Conure,White,Queens Plaza,2025-12-11,Cat,Maine Coon,Orange,Manhattan,2025-12-21,0
+Cat,Abyssinian,Golden,Brooklyn Bridge,2025-12-09,Cat,Abyssinian,Golden,Bronx Zoo,2025-12-10,1
+Bird,Cockatiel,Golden,Bronx Zoo,2025-12-20,Bird,Lovebird,Golden,Bronx Zoo,2025-12-23,1
+Cat,Russian Blue,Mixed,Queens Plaza,2025-12-27,Dog,Beagle,Black,Bronx Zoo,2025-12-30,0
+Cat,Persian,Orange,Manhattan,2025-12-21,Cat,Ragdoll,Brown,Queens Plaza,2025-12-21,0
+Cat,Abyssinian,Brown,Brooklyn Bridge,2025-12-07,Cat,Russian Blue,White,Central Park,2025-12-17,0
+Cat,Russian Blue,Spotted,Times Square,2025-12-29,Bird,Canary,Spotted,Queens Plaza,2025-12-31,0
+Dog,Poodle,Striped,Bronx Zoo,2025-12-25,Cat,Russian Blue,Spotted,Bronx Zoo,2025-12-29,0
+Dog,Rottweiler,Mixed,Brooklyn Bridge,2025-12-06,Dog,Poodle,Spotted,Brooklyn Bridge,2025-12-15,0
+Cat,Bengal,Golden,Bronx Zoo,2025-12-11,Dog,Golden Retriever,Golden,Bronx Zoo,2025-12-18,0
+Bird,Parrot,Black,Central Park,2025-12-18,Bird,Canary,Mixed,Queens Plaza,2025-12-20,0
+Dog,Bulldog,Black,Manhattan,2025-12-04,Dog,Poodle,Mixed,Queens Plaza,2025-12-04,0
+Cat,British Shorthair,Spotted,Brooklyn Bridge,2025-12-15,Cat,British Shorthair,Spotted,Brooklyn Bridge,2025-12-22,1
+Cat,Persian,White,Riverside Park,2025-12-03,Cat,Persian,Spotted,Riverside Park,2025-12-03,1
+Dog,German Shepherd,White,Times Square,2025-12-31,Dog,Rottweiler,Black,Times Square,2025-12-31,0
+Cat,Abyssinian,Orange,Queens Plaza,2025-12-24,Cat,Siamese,Golden,Manhattan,2025-12-25,0
+Dog,Golden Retriever,Black,Brooklyn Bridge,2025-12-26,Bird,Canary,Gray,Manhattan,2026-01-03,0
+Bird,Finch,Gray,Staten Island,2025-12-07,Bird,Lovebird,Spotted,Brooklyn Bridge,2025-12-11,0
+Dog,Poodle,Brown,Bronx Zoo,2025-12-23,Cat,Maine Coon,Golden,Central Park,2026-01-01,0
+Cat,Bengal,Orange,Queens Plaza,2025-12-02,Dog,Poodle,Mixed,Staten Island,2025-12-09,0
+Cat,Bengal,Gray,Queens Plaza,2025-12-28,Cat,Maine Coon,Brown,Riverside Park,2026-01-03,0
+Bird,Macaw,Spotted,Queens Plaza,2025-12-19,Bird,Macaw,Spotted,Queens Plaza,2025-12-23,1
+Bird,Canary,Spotted,Staten Island,2025-12-07,Cat,Maine Coon,Brown,Staten Island,2025-12-16,0
+Dog,Beagle,Spotted,Queens Plaza,2025-12-09,Bird,Budgie,Mixed,Times Square,2025-12-09,0
+Bird,Macaw,Mixed,Bronx Zoo,2025-12-22,Dog,Poodle,Spotted,Brooklyn Bridge,2025-12-23,0
+Bird,Conure,Gray,Central Park,2025-12-15,Bird,Conure,Gray,Central Park,2025-12-21,1
+Bird,Finch,Spotted,Bronx Zoo,2025-12-15,Cat,Russian Blue,White,Bronx Zoo,2025-12-16,0
+Dog,Poodle,Spotted,Bronx Zoo,2025-12-12,Cat,Russian Blue,Gray,Bronx Zoo,2025-12-18,0
+Bird,Cockatiel,White,Manhattan,2025-12-15,Dog,Beagle,Mixed,Staten Island,2025-12-16,0
+Dog,Yorkshire Terrier,Gray,Queens Plaza,2025-12-29,Cat,Abyssinian,Mixed,Riverside Park,2025-12-29,0
+Cat,Maine Coon,Gray,Brooklyn Bridge,2025-12-27,Dog,Bulldog,Black,Bronx Zoo,2026-01-04,0
+Cat,British Shorthair,Mixed,Times Square,2025-12-05,Cat,Bengal,Mixed,Times Square,2025-12-12,1
+Bird,Lovebird,Brown,Brooklyn Bridge,2025-12-21,Bird,Lovebird,Brown,Brooklyn Bridge,2025-12-27,1
+Cat,Siamese,Orange,Times Square,2025-12-05,Cat,Siamese,Orange,Times Square,2025-12-10,1
+Cat,Ragdoll,Brown,Times Square,2025-12-29,Bird,Macaw,White,Brooklyn Bridge,2026-01-02,0
+Dog,Rottweiler,Golden,Central Park,2025-12-09,Dog,Golden Retriever,Golden,Central Park,2025-12-19,1
+Bird,Finch,Gray,Central Park,2025-12-16,Cat,Russian Blue,White,Bronx Zoo,2025-12-19,0
+Dog,Poodle,Black,Bronx Zoo,2025-12-19,Cat,British Shorthair,Orange,Brooklyn Bridge,2025-12-29,0
+Bird,Lovebird,Gray,Bronx Zoo,2025-12-28,Bird,Finch,Black,Central Park,2026-01-03,0
+Bird,Macaw,Golden,Bronx Zoo,2025-12-08,Cat,Persian,Spotted,Riverside Park,2025-12-15,0
+Dog,Rottweiler,Golden,Manhattan,2025-12-08,Dog,Bulldog,Orange,Queens Plaza,2025-12-08,0
+Bird,Canary,Striped,Riverside Park,2025-12-07,Bird,Canary,Striped,Riverside Park,2025-12-08,1
+Cat,Russian Blue,Spotted,Manhattan,2025-12-03,Cat,Russian Blue,Spotted,Manhattan,2025-12-09,1
+Dog,Poodle,Spotted,Queens Plaza,2025-12-18,Dog,Poodle,Brown,Times Square,2025-12-21,1
+Cat,British Shorthair,Spotted,Queens Plaza,2025-12-16,Bird,Canary,Orange,Brooklyn Bridge,2025-12-21,0
+Bird,Budgie,Spotted,Riverside Park,2025-12-04,Cat,Ragdoll,Black,Brooklyn Bridge,2025-12-08,0
+Dog,Poodle,Orange,Central Park,2025-12-14,Dog,Poodle,Orange,Riverside Park,2025-12-24,1
+Bird,Parrot,Orange,Central Park,2025-12-23,Bird,Cockatiel,Striped,Bronx Zoo,2025-12-24,0
+Cat,Persian,Mixed,Riverside Park,2025-12-20,Dog,Yorkshire Terrier,Mixed,Riverside Park,2025-12-21,0
+Dog,Rottweiler,White,Central Park,2025-12-19,Dog,Poodle,White,Brooklyn Bridge,2025-12-23,0
+Cat,Persian,Striped,Riverside Park,2025-12-11,Cat,Persian,Striped,Manhattan,2025-12-14,1
+Cat,Maine Coon,Orange,Bronx Zoo,2025-12-06,Cat,Maine Coon,Gray,Bronx Zoo,2025-12-14,1
+Cat,Ragdoll,Gray,Times Square,2025-12-17,Dog,Golden Retriever,Black,Central Park,2025-12-21,0
+Dog,Poodle,White,Brooklyn Bridge,2025-12-28,Cat,Bengal,Gray,Queens Plaza,2026-01-05,0
+Cat,Siamese,Orange,Manhattan,2025-12-28,Dog,Golden Retriever,Gray,Bronx Zoo,2025-12-29,0
+Bird,Conure,White,Manhattan,2025-12-19,Dog,Bulldog,Striped,Times Square,2025-12-23,0
+Dog,Labrador,Brown,Queens Plaza,2025-12-21,Dog,Labrador,Spotted,Central Park,2025-12-23,0
+Bird,Budgie,Brown,Riverside Park,2025-12-14,Bird,Macaw,Brown,Riverside Park,2025-12-20,1
+Bird,Canary,White,Manhattan,2025-12-23,Cat,Persian,Mixed,Central Park,2025-12-28,0
+Dog,Bulldog,Black,Brooklyn Bridge,2025-12-26,Dog,Bulldog,Orange,Riverside Park,2025-12-28,1
+Bird,Parrot,Golden,Bronx Zoo,2025-12-28,Bird,Finch,Spotted,Staten Island,2026-01-05,0
+Cat,British Shorthair,Golden,Bronx Zoo,2025-12-11,Bird,Budgie,Orange,Manhattan,2025-12-19,0
+Bird,Cockatiel,Black,Riverside Park,2025-12-25,Bird,Cockatiel,Black,Riverside Park,2026-01-04,1
+Dog,Labrador,Brown,Bronx Zoo,2025-12-08,Cat,Persian,Orange,Staten Island,2025-12-10,0
+Bird,Budgie,Gray,Central Park,2025-12-15,Bird,Lovebird,Black,Riverside Park,2025-12-19,0
+Cat,Ragdoll,Orange,Bronx Zoo,2025-12-02,Cat,Russian Blue,White,Central Park,2025-12-06,0
+Bird,Canary,Golden,Bronx Zoo,2025-12-15,Bird,Lovebird,Golden,Bronx Zoo,2025-12-19,1
+Bird,Conure,Brown,Staten Island,2025-12-29,Cat,Abyssinian,Orange,Brooklyn Bridge,2026-01-07,0
+Dog,Beagle,Gray,Staten Island,2025-12-18,Bird,Budgie,White,Riverside Park,2025-12-27,0
+Dog,Beagle,Striped,Queens Plaza,2025-12-20,Bird,Conure,White,Brooklyn Bridge,2025-12-24,0
+Bird,Budgie,Brown,Times Square,2025-12-29,Bird,Budgie,Brown,Times Square,2026-01-07,1
+Bird,Budgie,Mixed,Times Square,2025-12-17,Bird,Macaw,Brown,Bronx Zoo,2025-12-22,0
+Bird,Canary,Mixed,Queens Plaza,2025-12-13,Bird,Finch,White,Queens Plaza,2025-12-15,0
+Bird,Conure,White,Manhattan,2025-12-24,Cat,British Shorthair,White,Bronx Zoo,2026-01-02,0
+Bird,Cockatiel,Orange,Times Square,2025-12-13,Cat,Abyssinian,Black,Brooklyn Bridge,2025-12-19,0
+Bird,Macaw,Golden,Staten Island,2025-12-06,Bird,Macaw,Golden,Staten Island,2025-12-14,1
+Cat,Ragdoll,Mixed,Central Park,2025-12-09,Bird,Conure,Orange,Riverside Park,2025-12-14,0
+Cat,Maine Coon,Golden,Central Park,2025-12-15,Cat,Bengal,Spotted,Riverside Park,2025-12-21,0
+Dog,Beagle,Black,Brooklyn Bridge,2025-12-28,Bird,Conure,Orange,Central Park,2026-01-03,0
+Dog,German Shepherd,Orange,Riverside Park,2025-12-24,Dog,German Shepherd,Spotted,Staten Island,2025-12-27,0
+Dog,Golden Retriever,Striped,Bronx Zoo,2025-12-13,Dog,Golden Retriever,Striped,Bronx Zoo,2025-12-17,1
+Bird,Finch,Brown,Times Square,2025-12-22,Bird,Finch,Brown,Times Square,2025-12-29,1
+Dog,Bulldog,Orange,Brooklyn Bridge,2025-12-14,Bird,Cockatiel,White,Staten Island,2025-12-24,0
+Bird,Canary,Orange,Riverside Park,2025-12-14,Bird,Conure,Orange,Riverside Park,2025-12-21,1
+Dog,Golden Retriever,Spotted,Riverside Park,2025-12-30,Dog,Golden Retriever,Spotted,Riverside Park,2026-01-08,1
+Cat,Ragdoll,White,Queens Plaza,2025-12-23,Cat,Ragdoll,White,Queens Plaza,2025-12-23,1
+Bird,Canary,Striped,Bronx Zoo,2025-12-24,Bird,Parrot,Orange,Bronx Zoo,2026-01-02,0
+Cat,Siamese,Gray,Riverside Park,2025-12-12,Cat,Persian,Orange,Riverside Park,2025-12-15,0
+Cat,Persian,Striped,Manhattan,2025-12-06,Bird,Conure,Gray,Times Square,2025-12-10,0
+Cat,British Shorthair,Gray,Brooklyn Bridge,2025-12-15,Cat,Bengal,Golden,Queens Plaza,2025-12-24,0
+Dog,Beagle,Orange,Riverside Park,2025-12-27,Dog,Labrador,Orange,Riverside Park,2025-12-31,1
+Dog,Bulldog,Orange,Central Park,2025-12-31,Bird,Parrot,Black,Riverside Park,2026-01-03,0
+Cat,Maine Coon,Spotted,Riverside Park,2025-12-29,Bird,Parrot,Mixed,Manhattan,2026-01-02,0
+Dog,German Shepherd,White,Times Square,2025-12-02,Dog,Beagle,White,Queens Plaza,2025-12-12,0
+Dog,Rottweiler,White,Bronx Zoo,2025-12-24,Bird,Parrot,White,Riverside Park,2026-01-01,0
+Cat,Abyssinian,Golden,Queens Plaza,2025-12-21,Dog,Labrador,Golden,Queens Plaza,2025-12-28,0
+Bird,Macaw,Orange,Brooklyn Bridge,2025-12-18,Cat,Persian,Black,Brooklyn Bridge,2025-12-22,0
+Bird,Macaw,White,Bronx Zoo,2025-12-29,Dog,Yorkshire Terrier,Brown,Bronx Zoo,2026-01-07,0
+Dog,Yorkshire Terrier,White,Times Square,2025-12-26,Bird,Parrot,Spotted,Manhattan,2026-01-02,0
+Cat,Ragdoll,White,Queens Plaza,2025-12-30,Cat,Ragdoll,White,Queens Plaza,2026-01-06,1
+Dog,Rottweiler,White,Queens Plaza,2025-12-03,Cat,British Shorthair,Mixed,Times Square,2025-12-05,0
+Bird,Finch,Spotted,Bronx Zoo,2025-12-06,Bird,Cockatiel,Black,Brooklyn Bridge,2025-12-08,0
+Bird,Lovebird,Gray,Bronx Zoo,2025-12-29,Dog,Labrador,White,Brooklyn Bridge,2026-01-08,0
+Bird,Cockatiel,Brown,Central Park,2025-12-02,Bird,Cockatiel,Brown,Queens Plaza,2025-12-12,1
+Cat,Bengal,White,Queens Plaza,2025-12-29,Bird,Lovebird,Black,Bronx Zoo,2026-01-03,0
+Dog,Rottweiler,White,Brooklyn Bridge,2025-12-17,Bird,Finch,Gray,Bronx Zoo,2025-12-22,0
+Dog,Poodle,White,Riverside Park,2025-12-08,Dog,Labrador,Striped,Queens Plaza,2025-12-11,0
+Dog,Bulldog,Mixed,Queens Plaza,2025-12-16,Dog,Bulldog,Mixed,Queens Plaza,2025-12-23,1
+Bird,Conure,White,Central Park,2025-12-23,Bird,Conure,White,Central Park,2025-12-24,1
+Cat,Persian,Striped,Times Square,2025-12-18,Bird,Cockatiel,Spotted,Times Square,2025-12-28,0
+Bird,Lovebird,Spotted,Bronx Zoo,2025-12-12,Cat,Siamese,Spotted,Brooklyn Bridge,2025-12-19,0
+Dog,Bulldog,Spotted,Bronx Zoo,2025-12-03,Bird,Canary,Brown,Brooklyn Bridge,2025-12-11,0
+Bird,Canary,Mixed,Central Park,2025-12-31,Bird,Canary,Mixed,Times Square,2026-01-05,1
+Dog,Labrador,Golden,Central Park,2025-12-22,Dog,Beagle,Golden,Central Park,2025-12-25,1
+Dog,Labrador,Orange,Central Park,2025-12-30,Cat,Abyssinian,Brown,Manhattan,2026-01-01,0
+Bird,Canary,Orange,Bronx Zoo,2025-12-23,Dog,Rottweiler,Orange,Times Square,2025-12-24,0
+Bird,Macaw,Striped,Brooklyn Bridge,2025-12-12,Bird,Lovebird,Spotted,Queens Plaza,2025-12-18,0
+Dog,German Shepherd,Golden,Times Square,2025-12-28,Cat,Abyssinian,Black,Staten Island,2026-01-05,0
+Dog,Poodle,Striped,Times Square,2025-12-03,Dog,German Shepherd,Black,Staten Island,2025-12-13,0
+Dog,Beagle,Mixed,Riverside Park,2025-12-27,Cat,Persian,Golden,Manhattan,2026-01-01,0
+Bird,Parrot,Striped,Central Park,2025-12-07,Cat,Siamese,Gray,Staten Island,2025-12-11,0
+Bird,Cockatiel,Spotted,Bronx Zoo,2025-12-03,Dog,Yorkshire Terrier,Golden,Brooklyn Bridge,2025-12-03,0
+Bird,Lovebird,Black,Queens Plaza,2025-12-11,Cat,Siamese,Orange,Bronx Zoo,2025-12-11,0
+Bird,Lovebird,Golden,Central Park,2025-12-03,Bird,Lovebird,Golden,Riverside Park,2025-12-05,1
+Cat,Russian Blue,Brown,Riverside Park,2025-12-15,Bird,Budgie,Mixed,Manhattan,2025-12-25,0
+Dog,Beagle,Black,Times Square,2025-12-23,Dog,Beagle,Black,Times Square,2026-01-01,1
+Cat,Persian,Striped,Manhattan,2025-12-04,Dog,Bulldog,Orange,Central Park,2025-12-11,0
+Dog,German Shepherd,Gray,Staten Island,2025-12-06,Dog,Beagle,Mixed,Bronx Zoo,2025-12-07,0
+Bird,Parrot,Black,Central Park,2025-12-06,Dog,Golden Retriever,White,Manhattan,2025-12-06,0
+Cat,Ragdoll,Golden,Brooklyn Bridge,2025-12-03,Cat,Ragdoll,Golden,Brooklyn Bridge,2025-12-06,1
+Bird,Conure,Golden,Staten Island,2025-12-03,Bird,Conure,Golden,Staten Island,2025-12-09,1
+Dog,Rottweiler,Spotted,Bronx Zoo,2025-12-05,Cat,Bengal,Orange,Staten Island,2025-12-15,0
+Bird,Cockatiel,Golden,Manhattan,2025-12-11,Bird,Budgie,Golden,Manhattan,2025-12-17,1
+Bird,Lovebird,Orange,Riverside Park,2025-12-31,Cat,Abyssinian,Gray,Staten Island,2026-01-08,0
+Cat,Ragdoll,Spotted,Staten Island,2025-12-13,Bird,Finch,Spotted,Manhattan,2025-12-14,0
+Bird,Cockatiel,Brown,Bronx Zoo,2025-12-23,Dog,German Shepherd,Brown,Queens Plaza,2025-12-25,0
+Bird,Parrot,Mixed,Central Park,2025-12-06,Bird,Lovebird,White,Brooklyn Bridge,2025-12-12,0
+Cat,British Shorthair,Brown,Manhattan,2025-12-29,Bird,Cockatiel,Mixed,Manhattan,2026-01-04,0
+Dog,Rottweiler,Black,Queens Plaza,2025-12-08,Dog,German Shepherd,Brown,Brooklyn Bridge,2025-12-17,0
+Dog,German Shepherd,Brown,Brooklyn Bridge,2025-12-03,Cat,Abyssinian,White,Brooklyn Bridge,2025-12-13,0
+Bird,Conure,Gray,Staten Island,2025-12-14,Bird,Conure,Gray,Central Park,2025-12-17,1
+Cat,Persian,Orange,Manhattan,2025-12-20,Cat,Persian,Spotted,Bronx Zoo,2025-12-25,0
+Bird,Lovebird,White,Riverside Park,2025-12-30,Bird,Cockatiel,White,Queens Plaza,2026-01-04,1
+Dog,Poodle,Mixed,Riverside Park,2025-12-20,Cat,Maine Coon,Spotted,Staten Island,2025-12-24,0
+Bird,Parrot,Golden,Staten Island,2025-12-04,Cat,Bengal,Brown,Central Park,2025-12-06,0
+Cat,Persian,Mixed,Queens Plaza,2025-12-29,Cat,British Shorthair,Mixed,Riverside Park,2025-12-29,0
+Cat,British Shorthair,Spotted,Brooklyn Bridge,2025-12-21,Cat,British Shorthair,Brown,Queens Plaza,2025-12-30,0
+Dog,Labrador,Black,Brooklyn Bridge,2025-12-15,Cat,Ragdoll,Striped,Central Park,2025-12-21,0
+Bird,Budgie,Golden,Riverside Park,2025-12-14,Bird,Macaw,Orange,Staten Island,2025-12-23,1
+Cat,Persian,Striped,Queens Plaza,2025-12-13,Dog,German Shepherd,Orange,Staten Island,2025-12-17,0
+Bird,Parrot,Gray,Manhattan,2025-12-30,Bird,Lovebird,Striped,Bronx Zoo,2026-01-09,0
+Bird,Canary,Orange,Staten Island,2025-12-16,Bird,Canary,Mixed,Times Square,2025-12-19,0
+Cat,Russian Blue,Golden,Riverside Park,2025-12-16,Cat,Bengal,White,Times Square,2025-12-24,0
+Dog,Rottweiler,Mixed,Central Park,2025-12-23,Dog,Golden Retriever,Black,Brooklyn Bridge,2025-12-26,0
+Dog,Poodle,Spotted,Bronx Zoo,2025-12-27,Dog,Beagle,White,Queens Plaza,2025-12-29,0
+Bird,Macaw,Spotted,Riverside Park,2025-12-14,Bird,Macaw,Spotted,Riverside Park,2025-12-18,1
+Cat,Siamese,Brown,Central Park,2025-12-23,Cat,Siamese,Striped,Brooklyn Bridge,2025-12-23,1
+Cat,Maine Coon,Orange,Central Park,2025-12-08,Cat,Maine Coon,Black,Times Square,2025-12-15,0
+Dog,Poodle,Black,Riverside Park,2025-12-11,Dog,Poodle,Black,Bronx Zoo,2025-12-11,1
+Dog,Rottweiler,Spotted,Brooklyn Bridge,2025-12-20,Cat,Bengal,Mixed,Staten Island,2025-12-30,0
+Cat,Ragdoll,Striped,Central Park,2025-12-22,Cat,Ragdoll,Spotted,Brooklyn Bridge,2025-12-25,0
+Bird,Lovebird,Striped,Riverside Park,2025-12-18,Dog,Rottweiler,White,Manhattan,2025-12-27,0
+Bird,Lovebird,Brown,Queens Plaza,2025-12-29,Cat,Abyssinian,Mixed,Central Park,2026-01-07,0
+Dog,Yorkshire Terrier,Golden,Bronx Zoo,2025-12-21,Cat,British Shorthair,White,Manhattan,2025-12-24,0
+Cat,British Shorthair,White,Times Square,2025-12-06,Bird,Parrot,Striped,Central Park,2025-12-10,0
+Dog,Bulldog,Orange,Times Square,2025-12-07,Dog,Beagle,Striped,Times Square,2025-12-12,0
+Dog,German Shepherd,Striped,Times Square,2025-12-14,Dog,Yorkshire Terrier,Mixed,Queens Plaza,2025-12-18,0
+Bird,Budgie,Orange,Central Park,2025-12-18,Dog,Rottweiler,Orange,Bronx Zoo,2025-12-27,0
+Dog,Rottweiler,Brown,Riverside Park,2025-12-21,Bird,Budgie,Golden,Riverside Park,2025-12-22,0
+Dog,Golden Retriever,Orange,Times Square,2025-12-25,Cat,British Shorthair,Orange,Central Park,2026-01-02,0
+Cat,Maine Coon,Striped,Manhattan,2025-12-26,Dog,Labrador,White,Riverside Park,2026-01-04,0
+Bird,Cockatiel,Spotted,Queens Plaza,2025-12-03,Bird,Cockatiel,Golden,Queens Plaza,2025-12-04,1
+Bird,Macaw,Black,Central Park,2025-12-03,Cat,Russian Blue,Mixed,Staten Island,2025-12-06,0
+Bird,Canary,Orange,Staten Island,2025-12-11,Cat,British Shorthair,Gray,Bronx Zoo,2025-12-11,0
+Dog,Labrador,Striped,Queens Plaza,2025-12-30,Dog,Labrador,Striped,Times Square,2026-01-06,1
+Dog,Rottweiler,Spotted,Bronx Zoo,2025-12-20,Dog,Bulldog,Spotted,Bronx Zoo,2025-12-25,1
+Dog,Poodle,Mixed,Manhattan,2025-12-15,Dog,Yorkshire Terrier,White,Riverside Park,2025-12-21,0
+Cat,Ragdoll,Orange,Riverside Park,2025-12-24,Cat,Russian Blue,Orange,Riverside Park,2026-01-03,1
+Cat,Ragdoll,Orange,Times Square,2025-12-31,Cat,Ragdoll,Orange,Times Square,2026-01-06,1
+Cat,Abyssinian,Orange,Central Park,2025-12-26,Bird,Budgie,Black,Brooklyn Bridge,2026-01-05,0
+Bird,Macaw,Orange,Bronx Zoo,2025-12-15,Bird,Lovebird,Brown,Queens Plaza,2025-12-23,0
+Cat,Siamese,Black,Manhattan,2025-12-12,Bird,Macaw,Golden,Riverside Park,2025-12-13,0
+Bird,Canary,Black,Central Park,2025-12-07,Dog,Yorkshire Terrier,Spotted,Queens Plaza,2025-12-12,0
+Bird,Finch,Spotted,Manhattan,2025-12-18,Bird,Macaw,Striped,Central Park,2025-12-28,0
+Bird,Finch,White,Riverside Park,2025-12-27,Bird,Cockatiel,Orange,Manhattan,2026-01-03,0
+Cat,Siamese,Mixed,Manhattan,2025-12-21,Cat,Maine Coon,Gray,Staten Island,2025-12-23,0
+Bird,Budgie,Orange,Queens Plaza,2025-12-15,Bird,Conure,Brown,Riverside Park,2025-12-16,0
+Dog,Labrador,Spotted,Brooklyn Bridge,2025-12-16,Bird,Parrot,Mixed,Staten Island,2025-12-21,0
+Cat,Abyssinian,White,Staten Island,2025-12-19,Bird,Cockatiel,White,Central Park,2025-12-25,0
+Dog,Bulldog,Spotted,Central Park,2025-12-21,Bird,Lovebird,Brown,Times Square,2025-12-31,0
+Cat,Ragdoll,Black,Riverside Park,2025-12-29,Cat,Maine Coon,Black,Riverside Park,2026-01-05,1
+Dog,Labrador,Golden,Staten Island,2025-12-22,Dog,Labrador,Golden,Queens Plaza,2025-12-28,1
+Bird,Budgie,Striped,Manhattan,2025-12-20,Bird,Macaw,White,Manhattan,2025-12-30,0
+Cat,Ragdoll,White,Queens Plaza,2025-12-24,Bird,Budgie,Spotted,Times Square,2025-12-27,0
+Bird,Canary,Striped,Riverside Park,2025-12-12,Bird,Canary,Striped,Queens Plaza,2025-12-20,1
+Cat,Russian Blue,Black,Central Park,2025-12-11,Cat,Russian Blue,Black,Central Park,2025-12-20,1
+Dog,Beagle,Orange,Queens Plaza,2025-12-05,Dog,Beagle,Orange,Queens Plaza,2025-12-15,1
+Cat,Ragdoll,Brown,Staten Island,2025-12-20,Bird,Macaw,Black,Manhattan,2025-12-30,0
+Bird,Canary,Brown,Brooklyn Bridge,2025-12-28,Dog,Rottweiler,Black,Central Park,2026-01-04,0
+Dog,Bulldog,Orange,Manhattan,2025-12-17,Dog,Bulldog,Orange,Manhattan,2025-12-27,1
+Bird,Macaw,Spotted,Staten Island,2025-12-24,Cat,Abyssinian,White,Central Park,2025-12-29,0
+Bird,Cockatiel,Mixed,Riverside Park,2025-12-18,Dog,Labrador,Brown,Brooklyn Bridge,2025-12-20,0
+Dog,Rottweiler,Gray,Brooklyn Bridge,2025-12-21,Cat,Persian,Striped,Brooklyn Bridge,2025-12-25,0
+Dog,Beagle,Brown,Queens Plaza,2025-12-13,Dog,Beagle,Brown,Queens Plaza,2025-12-19,1
+Cat,Abyssinian,Black,Queens Plaza,2025-12-06,Bird,Lovebird,Golden,Bronx Zoo,2025-12-16,0
+Cat,Maine Coon,Striped,Staten Island,2025-12-28,Cat,Maine Coon,White,Central Park,2026-01-06,0
+Cat,Persian,Brown,Riverside Park,2025-12-22,Cat,Abyssinian,Orange,Central Park,2025-12-27,0
+Dog,Poodle,Brown,Brooklyn Bridge,2025-12-25,Dog,Poodle,Brown,Brooklyn Bridge,2025-12-27,1
+Bird,Conure,Spotted,Riverside Park,2025-12-07,Bird,Parrot,Gray,Manhattan,2025-12-10,0
+Bird,Lovebird,Spotted,Staten Island,2025-12-20,Bird,Conure,White,Central Park,2025-12-27,0
+Bird,Lovebird,Golden,Times Square,2025-12-15,Cat,Russian Blue,Black,Times Square,2025-12-25,0
+Dog,German Shepherd,Orange,Times Square,2025-12-31,Bird,Budgie,Brown,Bronx Zoo,2025-12-31,0
+Cat,Persian,Black,Staten Island,2025-12-25,Cat,Bengal,Orange,Queens Plaza,2025-12-29,0
+Dog,German Shepherd,Orange,Staten Island,2025-12-12,Dog,Beagle,Striped,Central Park,2025-12-12,0
+Dog,Bulldog,Spotted,Queens Plaza,2025-12-19,Dog,Bulldog,Spotted,Queens Plaza,2025-12-22,1
+Dog,Bulldog,Spotted,Bronx Zoo,2025-12-27,Dog,Yorkshire Terrier,Mixed,Staten Island,2025-12-27,0
+Cat,Ragdoll,Black,Riverside Park,2025-12-31,Bird,Cockatiel,Mixed,Riverside Park,2026-01-05,0
+Cat,Persian,Spotted,Riverside Park,2025-12-31,Cat,British Shorthair,Spotted,Staten Island,2026-01-07,0
+Bird,Parrot,Brown,Bronx Zoo,2025-12-02,Dog,Yorkshire Terrier,Spotted,Staten Island,2025-12-10,0
+Cat,British Shorthair,Gray,Central Park,2025-12-15,Cat,Maine Coon,Gray,Central Park,2025-12-20,1
+Dog,Beagle,Golden,Riverside Park,2025-12-22,Cat,Bengal,Golden,Times Square,2025-12-24,0
+Dog,Golden Retriever,Spotted,Manhattan,2025-12-04,Dog,Yorkshire Terrier,Gray,Queens Plaza,2025-12-10,0
+Bird,Canary,Spotted,Bronx Zoo,2025-12-23,Bird,Canary,Spotted,Central Park,2025-12-24,1
+Cat,Siamese,Spotted,Riverside Park,2025-12-31,Cat,Ragdoll,Spotted,Queens Plaza,2026-01-09,0
+Dog,Golden Retriever,White,Brooklyn Bridge,2025-12-31,Cat,Maine Coon,Striped,Riverside Park,2026-01-02,0
+Cat,British Shorthair,Gray,Manhattan,2025-12-16,Dog,Labrador,Black,Times Square,2025-12-17,0
+Cat,British Shorthair,Orange,Riverside Park,2025-12-19,Cat,British Shorthair,Orange,Riverside Park,2025-12-24,1
+Bird,Lovebird,Spotted,Staten Island,2025-12-21,Bird,Finch,White,Times Square,2025-12-28,0
+Bird,Canary,Brown,Times Square,2025-12-16,Bird,Finch,Brown,Times Square,2025-12-16,1

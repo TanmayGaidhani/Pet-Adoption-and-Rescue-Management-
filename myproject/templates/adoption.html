@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Adopt a Pet - RescueMate</title>
+    <link rel="icon" type="image/png" href="{% static 'images/Icon_img.png' %}">
+    <link rel="stylesheet" href="{% static 'css/adoption.css' %}?v=7.0">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="{% static 'images/Icon_img.png' %}" class="logo" alt="RescueMate Logo">
+        <h2 class="logo-text">RescueMate</h2>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+        <li><a href="{% url 'found_pet' %}">Found Pets</a></li>
+        <li><a href="{% url 'report_info' %}">Rescue Reports</a></li>
+        <li><a href="{% url 'adoption' %}" class="active">Adopt a Pet</a></li>
+        <li><a href="{% url 'rescue' %}">Report</a></li>
+        <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="adoption-container">
+    
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1>🐾 Adopt a Pet</h1>
+        <p>Browse available pets and find your perfect companion</p>
+    </div>
+
+    <!-- Search and Filter Section -->
+    <div class="search-section">
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by name, breed, or type..." onkeyup="filterPets()">
+                <span class="search-icon">🔍</span>
+            </div>
+            
+            <div class="filter-controls">
+                <select id="typeFilter" onchange="filterPets()">
+                    <option value="">All Types</option>
+                    <option value="Dog">Dogs</option>
+                    <option value="Cat">Cats</option>
+                    <option value="Rabbit">Rabbits</option>
+                    <option value="Bird">Birds</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <select id="sizeFilter" onchange="filterPets()">
+                    <option value="">All Sizes</option>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                    <option value="Extra Large">Extra Large</option>
+                </select>
+                
+                <select id="ageFilter" onchange="filterPets()">
+                    <option value="">All Ages</option>
+                    <option value="puppy">Puppy/Kitten</option>
+                    <option value="young">Young</option>
+                    <option value="adult">Adult</option>
+                    <option value="senior">Senior</option>
+                </select>
+                
+                <button class="clear-filters" onclick="clearFilters()">Clear Filters</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pets Grid -->
+    <div class="pets-section">
+        <div id="petsGrid" class="pets-grid">
+            <div class="loading-message">Loading available pets...</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Adoption Request Modal -->
+<div id="adoptionModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>🐾 Adoption Application</h2>
+            <span class="close" onclick="closeAdoptionModal()">&times;</span>
+        </div>
+        
+        <div class="modal-body">
+            <div class="pet-preview" id="petPreview">
+                <!-- Pet details will be inserted here -->
+            </div>
+            
+            <form id="adoptionForm" class="adoption-form">
+                <input type="hidden" id="petId" name="pet_id">
+                
+                <div class="form-section">
+                    <h3>📝 Personal Information</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="applicantName">Full Name *</label>
+                            <input type="text" id="applicantName" name="applicant_name" value="{{ user_name }}" readonly required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="applicantEmail">Email Address *</label>
+                            <input type="email" id="applicantEmail" name="applicant_email" value="{{ user_email }}" readonly required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="applicantPhone">Phone Number *</label>
+                            <input type="tel" id="applicantPhone" name="applicant_phone" value="{{ user_phone }}" readonly required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>🏠 Housing Information</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="housingType">Housing Type *</label>
+                            <select id="housingType" name="housing_type" required>
+                                <option value="">Select Housing Type</option>
+                                <option value="House">House</option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="Condo">Condo</option>
+                                <option value="Townhouse">Townhouse</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hasYard">Do you have a yard? *</label>
+                            <select id="hasYard" name="has_yard" required>
+                                <option value="">Select</option>
+                                <option value="Yes - Fenced">Yes - Fenced</option>
+                                <option value="Yes - Unfenced">Yes - Unfenced</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>🐕 Pet Experience</h3>
+                    
+                    <div class="form-group">
+                        <label for="otherPets">Do you currently have other pets?</label>
+                        <textarea id="otherPets" name="other_pets" rows="2" placeholder="Please describe any current pets (type, age, temperament)"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experienceWithPets">Experience with Pets *</label>
+                        <select id="experienceWithPets" name="experience_with_pets" required>
+                            <option value="">Select Experience Level</option>
+                            <option value="First-time owner">First-time owner</option>
+                            <option value="Some experience">Some experience</option>
+                            <option value="Very experienced">Very experienced</option>
+                            <option value="Professional experience">Professional experience</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reasonForAdoption">Why do you want to adopt this pet? *</label>
+                        <textarea id="reasonForAdoption" name="reason_for_adoption" rows="3" required placeholder="Tell us why you'd like to adopt this pet and what you can offer them..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>⏰ Availability & Care</h3>
+                    
+                    <div class="form-group">
+                        <label for="availability">Daily Availability for Pet Care *</label>
+                        <select id="availability" name="availability" required>
+                            <option value="">Select Availability</option>
+                            <option value="Work from home">Work from home</option>
+                            <option value="Part-time work">Part-time work</option>
+                            <option value="Full-time work">Full-time work</option>
+                            <option value="Retired">Retired</option>
+                            <option value="Student">Student</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="references">References (Optional)</label>
+                        <textarea id="references" name="references" rows="2" placeholder="Veterinarian contact, previous pet experience references, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information</label>
+                        <textarea id="additionalInfo" name="additional_info" rows="3" placeholder="Anything else you'd like us to know about you or your living situation..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeAdoptionModal()">Cancel</button>
+                    <button type="submit" class="btn-submit">
+                        <span class="btn-icon">Adopt</span>
+                        Submit Adoption Application
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="{% static 'js/adoption.js' %}"></script>
+
+</body>
+</html>

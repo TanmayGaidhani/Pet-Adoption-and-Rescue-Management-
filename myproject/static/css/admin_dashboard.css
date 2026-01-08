@@ -322,11 +322,209 @@ body {
 #foundRequestsGrid,
 #rescueRequestsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  padding: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
+  padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* ===== COMPACT REPORT CARDS ===== */
+.report-card-compact {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 240px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.report-card-compact:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #fafbff;
+}
+
+.report-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.report-badge {
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.report-badge.found-badge {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.report-badge.rescue-badge {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.urgency-badge {
+  padding: 0.1rem 0.4rem;
+  border-radius: 10px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.urgency-badge.urgency-high {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.urgency-badge.urgency-medium {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.urgency-badge.urgency-low {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.report-id {
+  color: #666;
+  font-size: 0.65rem;
+  font-family: monospace;
+}
+
+.report-image-container {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-image-compact {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  object-fit: contain;
+  border-radius: 4px;
+  background: #ffffff;
+  margin: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.no-image-compact {
+  color: #999;
+  font-size: 0.75rem;
+  text-align: center;
+  background: #f8f9fa;
+  border: 1px dashed #ddd;
+  border-radius: 6px;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.report-content {
+  flex: 1;
+}
+
+.report-title {
+  color: #333;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.report-info-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 0.7rem;
+  line-height: 1.3;
+}
+
+.info-label {
+  color: #666;
+  font-weight: 500;
+  min-width: 45px;
+  flex-shrink: 0;
+}
+
+.info-value {
+  color: #333;
+  text-align: right;
+  flex: 1;
+  margin-left: 0.25rem;
+  word-break: break-word;
+}
+
+.report-actions-compact {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.btn-approve-compact, .btn-reject-compact {
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  max-width: 40px;
+  font-weight: 600;
+}
+
+.btn-approve-compact {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.btn-approve-compact:hover {
+  background: #bbf7d0;
+  transform: scale(1.05);
+}
+
+.btn-reject-compact {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.btn-reject-compact:hover {
+  background: #fecaca;
+  transform: scale(1.05);
 }
 
 /* ===== PREMIUM PET CARDS ===== */
@@ -1496,4 +1694,70 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #764ba2, #667eea);
+}
+
+/* ===== CLICKABLE ACTION CARDS ===== */
+.action-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.action-card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.action-card-link .action-card {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-card-link .action-btn {
+  pointer-events: none;
+  position: relative;
+  z-index: 2;
+}
+
+/* Add subtle animation on card hover */
+.action-card-link .action-card {
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+}
+
+/* Add ripple effect on click */
+.action-card-link .action-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.action-card-link .action-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(102, 126, 234, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  pointer-events: none;
+}
+
+.action-card-link:active .action-card::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Enhance focus states for accessibility */
+.action-card-link:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 4px;
+  border-radius: 20px;
+}
+
+.action-card-link:focus .action-card {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
