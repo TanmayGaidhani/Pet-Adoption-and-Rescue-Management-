@@ -1,10 +1,20 @@
+import os
 from pymongo import MongoClient
 from datetime import datetime, timedelta
 from bson import ObjectId
+from dotenv import load_dotenv
+
+# Load .env file
+# We look for .env in the parent directory of this file (myproject/myproject/ -> myproject/)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 # MongoDB connection
-client = MongoClient('mongodb://127.0.0.1:27017/')
-db = client['rescue_pet']
+MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb://127.0.0.1:27017/')
+DATABASE_NAME = os.getenv('DATABASE_NAME', 'rescue_pet')
+
+client = MongoClient(MONGODB_URI)
+db = client[DATABASE_NAME]
 users_collection = db['users']
 rescues_collection = db['rescues']
 

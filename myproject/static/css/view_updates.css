@@ -42,49 +42,19 @@ body {
   font-weight: 700;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-  align-items: center;
-}
-
-.nav-links a {
+.dashboard-link {
   text-decoration: none;
-  color: #333;
+  color: #374151;
   font-weight: 500;
-  transition: color 0.3s;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-}
-
-.nav-links a:hover {
-  color: #667eea;
-}
-
-.nav-links a.active {
-  color: #667eea;
-  font-weight: 600;
-}
-
-.profile-link {
-  padding: 8px 15px;
-  background: #f0f0f0;
-  border-radius: 20px;
-}
-
-.user-icon {
   font-size: 18px;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
 }
 
-.logout-link {
-  color: #f44336 !important;
-}
-
-.logout-link:hover {
-  color: #d32f2f !important;
+.dashboard-link:hover {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
 }
 
 /* ===== VIEW UPDATES SECTION ===== */
@@ -539,21 +509,6 @@ body {
 @media (max-width: 767px) {
   .navbar {
     padding: 15px 20px;
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-
-  .nav-links {
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size: 14px;
-  }
-
-  .nav-links a {
-    padding: 6px 12px;
-    white-space: nowrap;
   }
 
   .logo-text {
@@ -563,6 +518,11 @@ body {
   .logo {
     width: 40px;
     height: 40px;
+  }
+
+  .dashboard-link {
+    font-size: 16px;
+    padding: 6px 12px;
   }
 
   .view-updates-section {
@@ -582,30 +542,31 @@ body {
   }
 
   .stats-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     margin-bottom: 30px;
   }
 
   .stat-card {
-    padding: 15px;
+    padding: 12px 8px;
     flex-direction: column;
     text-align: center;
-    gap: 10px;
+    gap: 8px;
   }
 
   .stat-icon {
-    font-size: 30px;
-    width: 50px;
-    height: 50px;
+    font-size: 28px;
+    width: 45px;
+    height: 45px;
   }
 
   .stat-number {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .stat-label {
-    font-size: 13px;
+    font-size: 10px;
+    line-height: 1.2;
   }
 
   .filter-tabs {
@@ -695,16 +656,6 @@ body {
     padding: 12px 15px;
   }
 
-  .nav-links {
-    gap: 8px;
-    font-size: 13px;
-  }
-
-  .nav-links a {
-    padding: 5px 8px;
-    font-size: 13px;
-  }
-
   .logo-text {
     font-size: 18px;
   }
@@ -712,6 +663,11 @@ body {
   .logo {
     width: 35px;
     height: 35px;
+  }
+
+  .dashboard-link {
+    font-size: 15px;
+    padding: 5px 10px;
   }
 
   .view-updates-section {
@@ -731,19 +687,19 @@ body {
   }
 
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
     margin-bottom: 25px;
   }
 
   .stat-card {
-    padding: 12px;
+    padding: 10px 6px;
   }
 
   .stat-icon {
-    font-size: 25px;
-    width: 45px;
-    height: 45px;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
   }
 
   .stat-number {
@@ -751,7 +707,8 @@ body {
   }
 
   .stat-label {
-    font-size: 12px;
+    font-size: 9px;
+    line-height: 1.1;
   }
 
   .filter-tabs {
@@ -825,16 +782,6 @@ body {
     padding: 10px 12px;
   }
 
-  .nav-links {
-    gap: 6px;
-    font-size: 12px;
-  }
-
-  .nav-links a {
-    padding: 4px 6px;
-    font-size: 12px;
-  }
-
   .logo-text {
     font-size: 16px;
   }
@@ -842,6 +789,11 @@ body {
   .logo {
     width: 30px;
     height: 30px;
+  }
+
+  .dashboard-link {
+    font-size: 14px;
+    padding: 5px 8px;
   }
 
   .view-updates-section {
@@ -861,21 +813,21 @@ body {
   }
 
   .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
     margin-bottom: 20px;
   }
 
   .stat-card {
-    padding: 10px;
-    flex-direction: row;
-    gap: 12px;
+    padding: 8px 4px;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .stat-icon {
-    font-size: 22px;
-    width: 40px;
-    height: 40px;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
   }
 
   .stat-number {
@@ -883,7 +835,8 @@ body {
   }
 
   .stat-label {
-    font-size: 11px;
+    font-size: 8px;
+    line-height: 1;
   }
 
   .filter-tabs {

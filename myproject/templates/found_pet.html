@@ -21,17 +21,7 @@
     <h2 class="logo-text">RescueMate</h2>
   </div>
 
-  <ul class="nav-links">
-    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
-    <li><a href="{% url 'rescue' %}">Report Pet</a></li>
-    <li><a href="{% url 'found_pet' %}" class="active">Found Pet</a></li>
-    <li><a href="{% url 'report_info' %}">Report Info</a></li>
-    <li><a href="{% url 'user_profile' %}" class="profile-link">
-      <span class="user-icon">👤</span>
-      {{ user_name }}
-    </a></li>
-    <li><a href="{% url 'logout' %}">Logout</a></li>
-  </ul>
+  <a href="{% url 'dashboard' %}" class="dashboard-link">Dashboard</a>
 </nav>
 
 <!-- ===== FOUND PETS SECTION ===== -->
@@ -89,6 +79,56 @@
 </section>
 
 <script src="{% static 'js/found_pet.js' %}"></script>
+
+<script>
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const hamburger = document.querySelector('.hamburger-menu');
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+}
+
+// User dropdown functions
+function toggleUserDropdown(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const dropdown = document.getElementById('userDropdownMenu');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(event) {
+    const userDropdown = document.getElementById('userDropdownMenu');
+    const userToggle = document.querySelector('.user-dropdown-toggle');
+    const navLinks = document.getElementById('navLinks');
+    const hamburger = document.querySelector('.hamburger-menu');
+    
+    // Close user dropdown if clicking outside
+    if (!userToggle.contains(event.target) && !userDropdown.contains(event.target)) {
+        userDropdown.style.display = 'none';
+    }
+    
+    // Close mobile menu if clicking outside
+    if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+});
+
+// Prevent back button after logout
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function() {
+    window.history.pushState(null, "", window.location.href);
+};
+
+// Check session on page load
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
+</script>
 
 </body>
 </html>

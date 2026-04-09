@@ -759,18 +759,19 @@
 /* Mobile Large (480px - 575px) */
 @media (max-width: 575px) {
   .ai-chat-window {
-    width: calc(100vw - 20px);
-    height: calc(100vh - 100px);
-    right: 10px;
-    bottom: 75px;
-    border-radius: 12px;
+    width: calc(100vw - 30px);
+    height: 520px;
+    max-height: 75vh;
+    right: 15px;
+    bottom: 85px;
+    border-radius: 16px;
   }
   
   .ai-chat-button {
-    width: 55px;
-    height: 55px;
-    bottom: 15px;
-    right: 15px;
+    width: 58px;
+    height: 58px;
+    bottom: 18px;
+    right: 16px;
   }
 
   .ai-chat-header {
@@ -905,18 +906,19 @@
 /* Mobile Small (320px - 479px) */
 @media (max-width: 479px) {
   .ai-chat-window {
-    width: 100vw;
-    height: 100vh;
-    right: 0;
-    bottom: 0;
-    border-radius: 0;
+    width: calc(100vw - 20px);
+    height: 500px;
+    max-height: 70vh;
+    right: 10px;
+    bottom: 90px;
+    border-radius: 16px;
   }
   
   .ai-chat-button {
-    width: 50px;
-    height: 50px;
-    bottom: 12px;
-    right: 12px;
+    width: 56px;
+    height: 56px;
+    bottom: 20px;
+    right: 15px;
   }
 
   .ai-chat-header {

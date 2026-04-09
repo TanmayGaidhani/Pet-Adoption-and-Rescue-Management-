@@ -28,6 +28,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  z-index: 1001;
 }
 
 .logo {
@@ -42,45 +43,60 @@ body {
   font-weight: 700;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-  align-items: center;
-}
-
-.nav-links a {
+/* Dashboard Link */
+.dashboard-link {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  transition: color 0.3s;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
   white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.dashboard-link:hover {
+  color: #4facfe;
+  background: rgba(79, 172, 254, 0.1);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: #f8fafc;
   color: #4facfe;
 }
 
-.profile-link {
-  padding: 8px 15px;
-  background: #f0f0f0;
-  border-radius: 20px;
+.dropdown-icon {
+  width: 18px;
+  height: 18px;
+  color: currentColor;
+  flex-shrink: 0;
 }
 
-.user-icon {
-  font-size: 18px;
+.dropdown-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 8px 0;
 }
 
-.logout-link {
-  color: #f44336 !important;
+.logout-item {
+  color: #ef4444;
 }
 
-.logout-link:hover {
-  color: #d32f2f !important;
+.logout-item:hover {
+  background: #fef2f2;
+  color: #dc2626;
 }
 
 /* ===== FOUND PETS SECTION ===== */
@@ -126,6 +142,7 @@ body {
 .search-box {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .search-box input {
@@ -143,7 +160,7 @@ body {
 }
 
 .search-btn {
-  padding: 15px 25px;
+  padding: 15px 30px;
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   color: white;
   border: none;
@@ -151,6 +168,8 @@ body {
   font-size: 18px;
   cursor: pointer;
   transition: transform 0.3s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .search-btn:hover {
@@ -160,10 +179,13 @@ body {
 .filter-options {
   display: flex;
   gap: 15px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .filter-options select {
+  flex: 1;
+  min-width: 0;
   padding: 12px 15px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
@@ -513,21 +535,52 @@ body {
 @media (max-width: 767px) {
   .navbar {
     padding: 15px 20px;
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
   }
 
+  /* Show hamburger menu */
+  .hamburger-menu {
+    display: flex;
+  }
+
+  /* Hide navigation links by default, show on toggle */
   .nav-links {
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size: 14px;
+    position: fixed;
+    top: 75px;
+    right: -100%;
+    width: 250px;
+    height: calc(100vh - 75px);
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 0;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
   }
 
   .nav-links a {
-    padding: 6px 12px;
-    white-space: nowrap;
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 15px;
+  }
+
+  /* User dropdown stays visible */
+  .user-dropdown-container {
+    position: relative;
   }
 
   .logo-text {
@@ -561,8 +614,7 @@ body {
   }
 
   .search-box {
-    flex-direction: column;
-    gap: 12px;
+    gap: 8px;
   }
 
   .search-box input {
@@ -571,18 +623,19 @@ body {
   }
 
   .search-btn {
-    padding: 10px 18px;
-    font-size: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
   }
 
   .filter-options {
-    flex-direction: column;
     gap: 12px;
+    flex-wrap: nowrap;
   }
 
   .filter-options select {
     padding: 8px 10px;
     font-size: 13px;
+    min-width: 0;
   }
 
   .pets-section {
@@ -590,7 +643,7 @@ body {
   }
 
   .pets-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 10px;
   }
@@ -656,13 +709,7 @@ body {
   }
 
   .nav-links {
-    gap: 8px;
-    font-size: 13px;
-  }
-
-  .nav-links a {
-    padding: 5px 8px;
-    font-size: 13px;
+    width: 220px;
   }
 
   .logo-text {
@@ -672,6 +719,14 @@ body {
   .logo {
     width: 35px;
     height: 35px;
+  }
+
+  .user-dropdown-toggle {
+    padding: 6px 12px;
+  }
+
+  .user-name {
+    font-size: 13px;
   }
 
   .found-pets-section {
@@ -697,36 +752,38 @@ body {
   }
 
   .search-box {
-    gap: 10px;
+    gap: 6px;
   }
 
   .search-box input {
-    padding: 8px;
+    padding: 8px 10px;
     font-size: 13px;
   }
 
   .search-btn {
-    padding: 8px 15px;
-    font-size: 14px;
+    padding: 8px 16px;
+    font-size: 15px;
   }
 
   .filter-options {
     gap: 10px;
+    flex-wrap: nowrap;
   }
 
   .filter-options select {
     padding: 6px 8px;
     font-size: 12px;
+    min-width: 0;
   }
 
   .pets-grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
     padding: 8px;
   }
 
   .pet-card-compact {
-    max-width: 200px;
+    max-width: 100%;
   }
   
   .pet-image-container {
@@ -786,13 +843,9 @@ body {
   }
 
   .nav-links {
-    gap: 6px;
-    font-size: 12px;
-  }
-
-  .nav-links a {
-    padding: 4px 6px;
-    font-size: 12px;
+    width: 200px;
+    top: 65px;
+    height: calc(100vh - 65px);
   }
 
   .logo-text {
@@ -802,6 +855,18 @@ body {
   .logo {
     width: 30px;
     height: 30px;
+  }
+
+  .user-dropdown-toggle {
+    padding: 5px 10px;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .user-icon {
+    font-size: 20px;
   }
 
   .found-pets-section {
@@ -828,39 +893,41 @@ body {
   }
 
   .search-box {
-    gap: 8px;
+    gap: 5px;
   }
 
   .search-box input {
-    padding: 6px;
+    padding: 8px 10px;
     font-size: 12px;
     border-radius: 8px;
   }
 
   .search-btn {
-    padding: 6px 12px;
-    font-size: 13px;
+    padding: 8px 14px;
+    font-size: 14px;
     border-radius: 8px;
   }
 
   .filter-options {
     gap: 8px;
+    flex-wrap: nowrap;
   }
 
   .filter-options select {
     padding: 5px 6px;
     font-size: 11px;
     border-radius: 6px;
+    min-width: 0;
   }
 
   .pets-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 6px;
     padding: 6px;
   }
 
   .pet-card-compact {
-    max-width: 180px;
+    max-width: 100%;
     padding: 0.5rem;
   }
   

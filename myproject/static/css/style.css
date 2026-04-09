@@ -717,31 +717,40 @@ footer::after {
 /* Tablet Portrait (576px - 767px) */
 @media (max-width: 767px) {
   .navbar {
-    padding: 15px 20px;
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
+    padding: 10px 16px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
   }
 
-  .nav-links {
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size: 15px;
-  }
-
-  .nav-links a {
-    padding: 6px 12px;
-    font-size: 15px;
+  .logo-container {
+    flex-shrink: 0;
+    gap: 8px;
   }
 
   .logo-text {
-    font-size: 24px;
+    font-size: 18px;
+    white-space: nowrap;
   }
 
   .logo {
-    width: 45px;
-    height: 45px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-links {
+    gap: 4px;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    font-size: 13px;
+  }
+
+  .nav-links a {
+    padding: 6px 8px;
+    font-size: 13px;
+    white-space: nowrap;
   }
 
   .typewriter {
@@ -883,26 +892,37 @@ footer::after {
 /* Mobile Large (480px - 575px) */
 @media (max-width: 575px) {
   .navbar {
-    padding: 12px 15px;
+    padding: 10px 12px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
   }
 
-  .nav-links {
-    gap: 10px;
-    font-size: 14px;
-  }
-
-  .nav-links a {
-    padding: 5px 8px;
-    font-size: 14px;
+  .logo-container {
+    gap: 6px;
+    flex-shrink: 0;
   }
 
   .logo-text {
-    font-size: 20px;
+    font-size: 16px;
+    white-space: nowrap;
   }
 
   .logo {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-links {
+    gap: 2px;
+    flex-wrap: nowrap;
+    font-size: 13px;
+  }
+
+  .nav-links a {
+    padding: 5px 7px;
+    font-size: 13px;
+    white-space: nowrap;
   }
 
   .typewriter {
@@ -1026,26 +1046,37 @@ footer::after {
 /* Mobile Small (320px - 479px) */
 @media (max-width: 479px) {
   .navbar {
-    padding: 10px 12px;
+    padding: 8px 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
   }
 
-  .nav-links {
-    gap: 8px;
-    font-size: 13px;
-  }
-
-  .nav-links a {
-    padding: 4px 6px;
-    font-size: 13px;
+  .logo-container {
+    gap: 5px;
+    flex-shrink: 0;
   }
 
   .logo-text {
-    font-size: 18px;
+    font-size: 14px;
+    white-space: nowrap;
   }
 
   .logo {
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-links {
+    gap: 0;
+    flex-wrap: nowrap;
+    font-size: 12px;
+  }
+
+  .nav-links a {
+    padding: 4px 5px;
+    font-size: 12px;
+    white-space: nowrap;
   }
 
   .typewriter {

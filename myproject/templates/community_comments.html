@@ -21,19 +21,7 @@
     <h2 class="logo-text">RescueMate</h2>
   </div>
 
-  <ul class="nav-links">
-    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
-    <li><a href="{% url 'found_pet' %}">Found Pets</a></li>
-    <li><a href="{% url 'report_info' %}">Rescue Reports</a></li>
-    <li><a href="{% url 'adoption' %}">Adopt a Pet</a></li>
-    <li><a href="{% url 'rescue' %}">Report</a></li>
-    <li><a href="{% url 'community_comments' %}" class="active">Community</a></li>
-    <li><a href="{% url 'user_profile' %}" class="profile-link">
-      <span class="user-icon">👤</span>
-      {{ user_name }}
-    </a></li>
-    <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
-  </ul>
+  <a href="{% url 'dashboard' %}" class="dashboard-link">Dashboard</a>
 </nav>
 
 <!-- ===== COMMUNITY COMMENTS SECTION ===== -->

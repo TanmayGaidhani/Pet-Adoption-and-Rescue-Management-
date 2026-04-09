@@ -20,14 +20,7 @@
         <h2 class="logo-text">RescueMate</h2>
     </div>
 
-    <ul class="nav-links">
-        <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
-        <li><a href="{% url 'found_pet' %}">Found Pets</a></li>
-        <li><a href="{% url 'report_info' %}">Rescue Reports</a></li>
-        <li><a href="{% url 'adoption' %}" class="active">Adopt a Pet</a></li>
-        <li><a href="{% url 'rescue' %}">Report</a></li>
-        <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
-    </ul>
+    <a href="{% url 'dashboard' %}" class="dashboard-link">Dashboard</a>
 </nav>
 
 <!-- ===== MAIN CONTENT ===== -->
@@ -42,36 +35,42 @@
     <!-- Search and Filter Section -->
     <div class="search-section">
         <div class="search-container">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search by name, breed, or type..." onkeyup="filterPets()">
-                <span class="search-icon">🔍</span>
+            <!-- Search Bar Row -->
+            <div class="search-row">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search by name, breed, or type..." onkeyup="filterPets()">
+                    <span class="search-icon">🔍</span>
+                </div>
             </div>
             
-            <div class="filter-controls">
-                <select id="typeFilter" onchange="filterPets()">
-                    <option value="">All Types</option>
-                    <option value="Dog">Dogs</option>
-                    <option value="Cat">Cats</option>
-                    <option value="Rabbit">Rabbits</option>
-                    <option value="Bird">Birds</option>
-                    <option value="Other">Other</option>
-                </select>
-                
-                <select id="sizeFilter" onchange="filterPets()">
-                    <option value="">All Sizes</option>
-                    <option value="Small">Small</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                    <option value="Extra Large">Extra Large</option>
-                </select>
-                
-                <select id="ageFilter" onchange="filterPets()">
-                    <option value="">All Ages</option>
-                    <option value="puppy">Puppy/Kitten</option>
-                    <option value="young">Young</option>
-                    <option value="adult">Adult</option>
-                    <option value="senior">Senior</option>
-                </select>
+            <!-- Filter Controls Row -->
+            <div class="filter-row">
+                <div class="filter-controls">
+                    <select id="typeFilter" onchange="filterPets()">
+                        <option value="">All Types</option>
+                        <option value="Dog">Dogs</option>
+                        <option value="Cat">Cats</option>
+                        <option value="Rabbit">Rabbits</option>
+                        <option value="Bird">Birds</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    
+                    <select id="sizeFilter" onchange="filterPets()">
+                        <option value="">All Sizes</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                        <option value="Extra Large">Extra Large</option>
+                    </select>
+                    
+                    <select id="ageFilter" onchange="filterPets()">
+                        <option value="">All Ages</option>
+                        <option value="puppy">Puppy/Kitten</option>
+                        <option value="young">Young</option>
+                        <option value="adult">Adult</option>
+                        <option value="senior">Senior</option>
+                    </select>
+                </div>
                 
                 <button class="clear-filters" onclick="clearFilters()">Clear Filters</button>
             </div>
@@ -224,6 +223,40 @@
 
 <!-- JavaScript -->
 <script src="{% static 'js/adoption.js' %}"></script>
+
+<script>
+// User dropdown functions
+function toggleUserDropdown(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const dropdown = document.getElementById('userDropdownMenu');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(event) {
+    const userDropdown = document.getElementById('userDropdownMenu');
+    const userToggle = document.querySelector('.user-dropdown-toggle');
+    
+    // Close user dropdown if clicking outside
+    if (!userToggle.contains(event.target) && !userDropdown.contains(event.target)) {
+        userDropdown.style.display = 'none';
+    }
+});
+
+// Prevent back button after logout
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function() {
+    window.history.pushState(null, "", window.location.href);
+};
+
+// Check session on page load
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
+</script>
 
 </body>
 </html>
