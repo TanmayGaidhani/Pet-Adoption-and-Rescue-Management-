@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: rescuemate
+    runtime: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate --run-syncdb"
+    startCommand: "gunicorn myproject.wsgi:application --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com"
+      - key: MONGODB_URI
+        sync: false
+      - key: DATABASE_NAME
+        value: "rescue_pet"
+      - key: BREVO_API_KEY
+        sync: false
+      - key: SENDER_EMAIL
+        sync: false
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://rescuemate.onrender.com"
