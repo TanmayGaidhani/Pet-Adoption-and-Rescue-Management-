@@ -273,7 +273,15 @@ function showPetDetails(petId) {
 // ===== ADOPTION FORM SUBMISSION =====
 document.getElementById('adoptionForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
+    // Validate address
+    const address = document.getElementById('address');
+    if (!validateRequired(address, 'Address')) { address.focus(); return; }
+
+    // Validate reason
+    const reason = document.getElementById('reasonForAdoption');
+    if (!validateRequired(reason, 'Reason for adoption')) { reason.focus(); return; }
+
     const formData = new FormData(this);
     const submitBtn = document.querySelector('.btn-submit');
     const originalText = submitBtn.innerHTML;
