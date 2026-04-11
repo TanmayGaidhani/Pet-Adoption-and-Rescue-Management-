@@ -80,15 +80,15 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Cookie-based sessions (no DB needed — works on Render free tier)
+# Sessions stored in cookies (no DB required on Render)
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 SESSION_COOKIE_AGE = 1200
-SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False  # Set True only if HTTPS is enforced
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SAMESITE = 'Lax'
 
-# Messages using cookies (no DB needed)
-MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+# Messages fallback storage (cookies + session fallback)
+MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
 
 # Email via Brevo API (handled in utils/email.py)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
