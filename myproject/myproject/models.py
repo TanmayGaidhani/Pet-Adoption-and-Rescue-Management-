@@ -8,36 +8,37 @@ from dotenv import load_dotenv
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
-# MongoDB connection — lazy init to avoid connecting at import time during collectstatic
+# MongoDB connection — deferred until first use
 _client = None
-_db = None
+_db_instance = None
 
 def get_db():
-    global _client, _db
-    if _db is None:
-        MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb://127.0.0.1:27017/')
-        DATABASE_NAME = os.getenv('DATABASE_NAME', 'rescue_pet')
-        _client = MongoClient(MONGODB_URI)
-        _db = _client[DATABASE_NAME]
-    return _db
+    global _client, _db_instance
+    if _db_instance is None:
+        uri = os.getenv('MONGODB_URI', 'mongodb://127.0.0.1:27017/')
+        name = os.getenv('DATABASE_NAME', 'rescue_pet')
+        _client = MongoClient(uri)
+        _db_instance = _client[name]
+    return _db_instance
 
-def get_collection(name):
-    return get_db()[name]
+# Proxy object so existing code like db['collection'] still works
+class _DBProxy:
+    def __getitem__(self, name):
+        return get_db()[name]
+    def __getattr__(self, name):
+        return getattr(get_db(), name)
 
-# Keep these for backward compatibility — they resolve lazily
-class _LazyCollection:
+class _CollectionProxy:
     def __init__(self, name):
         self._name = name
     def __getattr__(self, item):
         return getattr(get_db()[self._name], item)
+    def __getitem__(self, item):
+        return get_db()[self._name][item]
 
-db = type('LazyDB', (), {
-    '__getitem__': lambda self, name: get_db()[name],
-    '__getattr__': lambda self, name: get_db()[name],
-})()
-
-users_collection = _LazyCollection('users')
-rescues_collection = _LazyCollection('rescues')
+db = _DBProxy()
+users_collection = _CollectionProxy('users')
+rescues_collection = _CollectionProxy('rescues')
 
 class User:
     """User model using PyMongo directly"""
