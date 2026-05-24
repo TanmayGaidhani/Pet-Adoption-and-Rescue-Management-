@@ -5,18 +5,39 @@ from bson import ObjectId
 from dotenv import load_dotenv
 
 # Load .env file
-# We look for .env in the parent directory of this file (myproject/myproject/ -> myproject/)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
-# MongoDB connection
-MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb://127.0.0.1:27017/')
-DATABASE_NAME = os.getenv('DATABASE_NAME', 'rescue_pet')
+# MongoDB connection — lazy init to avoid connecting at import time during collectstatic
+_client = None
+_db = None
 
-client = MongoClient(MONGODB_URI)
-db = client[DATABASE_NAME]
-users_collection = db['users']
-rescues_collection = db['rescues']
+def get_db():
+    global _client, _db
+    if _db is None:
+        MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb://127.0.0.1:27017/')
+        DATABASE_NAME = os.getenv('DATABASE_NAME', 'rescue_pet')
+        _client = MongoClient(MONGODB_URI)
+        _db = _client[DATABASE_NAME]
+    return _db
+
+def get_collection(name):
+    return get_db()[name]
+
+# Keep these for backward compatibility — they resolve lazily
+class _LazyCollection:
+    def __init__(self, name):
+        self._name = name
+    def __getattr__(self, item):
+        return getattr(get_db()[self._name], item)
+
+db = type('LazyDB', (), {
+    '__getitem__': lambda self, name: get_db()[name],
+    '__getattr__': lambda self, name: get_db()[name],
+})()
+
+users_collection = _LazyCollection('users')
+rescues_collection = _LazyCollection('rescues')
 
 class User:
     """User model using PyMongo directly"""
