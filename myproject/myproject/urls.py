@@ -34,6 +34,7 @@ urlpatterns = [
     
     # Main URLs
     path('', views.index, name='index'),
+    path('demo/', views.demo_credentials, name='demo_credentials'),
     path('signup/', views.signup, name='signup'),
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),

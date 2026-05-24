@@ -21,12 +21,11 @@
   </div>
 
   <ul class="nav-links">
-  <li><a href="#home">Home</a></li>
-  <!-- <li><a href="#adopt">Adopt</a></li>
-  <li><a href="#rescue">Rescue</a></li> -->
-  <li><a href="{% url 'login' %}">Login</a></li>
-  <li><a href="{% url 'signup' %}">Sign Up</a></li>
-</ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="{% url 'login' %}">Login</a></li>
+    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+    <li><a href="{% url 'demo_credentials' %}" class="demo-nav-btn">🔑 Try Demo</a></li>
+  </ul>
 
 </nav>
 
@@ -97,11 +96,72 @@
   </div>
 </section>
 
+<!-- ===== TRIAL CREDENTIALS SECTION ===== -->
+<section class="trial-section">
+  <div class="trial-container">
+    <h2 class="trial-title">🔑 Try It Out</h2>
+    <p class="trial-subtitle">Use these demo credentials to explore the platform</p>
+    <div class="trial-cards">
+
+      <div class="trial-card">
+        <div class="trial-role">👤 User Login</div>
+        <div class="trial-field">
+          <span class="trial-label">Email</span>
+          <span class="trial-value" id="userEmail">demouser@rescuemate.com</span>
+          <button class="copy-btn" onclick="copyText('userEmail')">Copy</button>
+        </div>
+        <div class="trial-field">
+          <span class="trial-label">Password</span>
+          <span class="trial-value" id="userPass">Demo@1234</span>
+          <button class="copy-btn" onclick="copyText('userPass')">Copy</button>
+        </div>
+        <a href="{% url 'login' %}" class="trial-login-btn">Login as User →</a>
+      </div>
+
+      <div class="trial-card trial-card-admin">
+        <div class="trial-role">👑 Admin Login</div>
+        <div class="trial-field">
+          <span class="trial-label">Email</span>
+          <span class="trial-value" id="adminEmail">admin@rescuemate.com</span>
+          <button class="copy-btn" onclick="copyText('adminEmail')">Copy</button>
+        </div>
+        <div class="trial-field">
+          <span class="trial-label">Password</span>
+          <span class="trial-value" id="adminPass">Admin@1234</span>
+          <button class="copy-btn" onclick="copyText('adminPass')">Copy</button>
+        </div>
+        <a href="{% url 'login' %}" class="trial-login-btn">Login as Admin →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer>
   RescueMate — Together We Save Lives
 </footer>
 
 <script src="{% static 'js/script.js' %}"></script>
+<script>
+function toggleDemo() {
+    const menu = document.getElementById('demoMenu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+function copyAndLogin(email, password) {
+    // Store credentials in sessionStorage and redirect to login
+    sessionStorage.setItem('demo_email', email);
+    sessionStorage.setItem('demo_password', password);
+    window.location.href = "{% url 'login' %}";
+}
+
+document.addEventListener('click', function(e) {
+    const dropdown = document.querySelector('.demo-dropdown');
+    if (!dropdown.contains(e.target)) {
+        document.getElementById('demoMenu').style.display = 'none';
+    }
+});
+</script>
 </body>
 </html>

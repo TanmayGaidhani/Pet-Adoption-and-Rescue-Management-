@@ -1206,3 +1206,221 @@ footer::after {
     display: none;
   }
 }
+
+/* ===== TRIAL CREDENTIALS SECTION ===== */
+.trial-section {
+  background: linear-gradient(135deg, #f0f4ff 0%, #faf0ff 100%);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.trial-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.trial-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.trial-subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.trial-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.trial-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 320px;
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
+  border: 2px solid #e8ecff;
+  text-align: left;
+}
+
+.trial-card-admin {
+  border-color: #e8d5ff;
+  box-shadow: 0 8px 30px rgba(118, 75, 162, 0.15);
+}
+
+.trial-role {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f0f4ff;
+}
+
+.trial-card-admin .trial-role {
+  color: #764ba2;
+  border-bottom-color: #f5f0ff;
+}
+
+.trial-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+  background: #f8f9ff;
+  padding: 0.6rem 0.85rem;
+  border-radius: 8px;
+}
+
+.trial-label {
+  font-size: 0.75rem;
+  color: #888;
+  font-weight: 600;
+  min-width: 60px;
+}
+
+.trial-value {
+  flex: 1;
+  font-size: 0.88rem;
+  color: #333;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.copy-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.copy-btn:hover { background: #5a6fd8; }
+
+.trial-card-admin .copy-btn { background: #764ba2; }
+.trial-card-admin .copy-btn:hover { background: #6a3d96; }
+
+.trial-login-btn {
+  display: block;
+  text-align: center;
+  margin-top: 1.25rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.trial-login-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .trial-cards { flex-direction: column; align-items: center; }
+  .trial-card { width: 100%; max-width: 360px; }
+}
+
+/* ===== DEMO DROPDOWN IN NAVBAR ===== */
+.demo-dropdown {
+    position: relative;
+}
+
+.demo-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 2px solid rgba(255,255,255,0.5);
+    padding: 0.45rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.demo-btn:hover {
+    background: rgba(255,255,255,0.35);
+    border-color: white;
+}
+
+.demo-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    background: white;
+    border-radius: 14px;
+    padding: 1.25rem;
+    min-width: 280px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    z-index: 9999;
+    color: #333;
+}
+
+.demo-menu-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #667eea;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f0f4ff;
+}
+
+.demo-role {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 0.4rem;
+}
+
+.demo-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f9ff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #333;
+    font-family: monospace;
+}
+
+.demo-row button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.demo-row button:hover { opacity: 0.85; }
+
+/* Try Demo navbar button */
+.demo-nav-btn {
+    background: rgba(255,255,255,0.2) !important;
+    border: 2px solid rgba(255,255,255,0.6) !important;
+    border-radius: 20px !important;
+    padding: 0.4rem 1rem !important;
+    font-weight: 700 !important;
+    transition: all 0.2s !important;
+}
+.demo-nav-btn:hover {
+    background: rgba(255,255,255,0.35) !important;
+    border-color: white !important;
+}

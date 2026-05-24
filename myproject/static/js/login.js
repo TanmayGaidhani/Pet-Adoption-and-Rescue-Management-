@@ -77,3 +77,17 @@ document.addEventListener('DOMContentLoaded', function() {
     alert('🔑 Password reset link will be sent to your email!');
   });
 });
+
+// Auto-fill demo credentials if coming from Try Demo button
+window.addEventListener('DOMContentLoaded', function() {
+    const demoEmail = sessionStorage.getItem('demo_email');
+    const demoPass = sessionStorage.getItem('demo_password');
+    if (demoEmail && demoPass) {
+        setTimeout(() => {
+            document.getElementById('email').value = demoEmail;
+            document.getElementById('password').value = demoPass;
+            sessionStorage.removeItem('demo_email');
+            sessionStorage.removeItem('demo_password');
+        }, 600);
+    }
+});

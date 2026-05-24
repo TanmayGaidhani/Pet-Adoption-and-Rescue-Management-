@@ -19,6 +19,14 @@ def index(request):
     return render(request, "index.html")
 
 
+def demo_credentials(request):
+    return render(request, "demo_credentials.html")
+
+
+def demo_credentials(request):
+    return render(request, "demo_credentials.html")
+
+
 @never_cache
 def signup(request):
     # If already logged in, redirect to dashboard

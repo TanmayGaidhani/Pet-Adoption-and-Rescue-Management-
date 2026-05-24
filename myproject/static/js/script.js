@@ -58,3 +58,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Copy trial credentials to clipboard
+function copyText(elementId) {
+    const text = document.getElementById(elementId).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector(`#${elementId} ~ .copy-btn`) ||
+                    document.querySelector(`[onclick="copyText('${elementId}')"]`);
+        if (btn) {
+            const original = btn.textContent;
+            btn.textContent = '✓';
+            setTimeout(() => btn.textContent = original, 1500);
+        }
+    });
+}
