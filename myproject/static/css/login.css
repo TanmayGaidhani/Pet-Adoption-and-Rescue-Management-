@@ -762,3 +762,271 @@ body {
     font-size: 13px;
   }
 }
+
+/* ==========================================================
+   DEMO CREDENTIALS STYLES (Login Page)
+   ========================================================== */
+
+/* Quick 1-Click Demo Bar */
+.quick-demo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+  border: 1.5px dashed rgba(102, 126, 234, 0.35);
+  border-radius: 14px;
+  padding: 10px 14px;
+  margin-bottom: 22px;
+  transition: all 0.25s ease;
+}
+
+.quick-demo-bar:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.12) 0%, rgba(118, 75, 162, 0.12) 100%);
+  border-color: rgba(102, 126, 234, 0.6);
+}
+
+.quick-demo-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4f46e5;
+  white-space: nowrap;
+}
+
+.quick-demo-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quick-demo-chip {
+  background: #ffffff;
+  border: 1.5px solid #667eea;
+  color: #4338ca;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(102, 126, 234, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.quick-demo-chip.admin-chip {
+  border-color: #764ba2;
+  color: #6b21a8;
+}
+
+.quick-demo-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.25);
+  background: #667eea;
+  color: #ffffff;
+}
+
+.quick-demo-chip.admin-chip:hover {
+  background: #764ba2;
+  color: #ffffff;
+}
+
+.quick-demo-chip.quick-filled {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+  color: #ffffff !important;
+}
+
+/* Field Demo Hints Box */
+.field-demo-hints {
+  margin-top: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 8px 10px;
+  transition: all 0.25s ease;
+}
+
+.field-demo-hints:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.field-demo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  padding: 0 2px;
+}
+
+.field-demo-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+}
+
+.field-demo-action-hint {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.field-demo-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-demo-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.field-demo-card:hover {
+  border-color: #667eea;
+  background: #f0f4ff;
+  transform: translateX(2px);
+  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.12);
+}
+
+.role-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.role-user {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.role-admin {
+  background: #fae8ff;
+  color: #86198f;
+}
+
+.demo-value {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e293b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.demo-value.mono-font {
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.5px;
+}
+
+.demo-copy-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.demo-copy-btn:hover {
+  background: #667eea;
+  border-color: #667eea;
+  color: #ffffff;
+}
+
+.demo-copy-btn.copied {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+  color: #ffffff !important;
+}
+
+.demo-copy-btn.filled {
+  background: #6366f1 !important;
+  border-color: #6366f1 !important;
+  color: #ffffff !important;
+}
+
+/* Input Pulse on Autofill */
+@keyframes inputPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+    border-color: #667eea;
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(102, 126, 234, 0.25);
+    border-color: #667eea;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+    border-color: #4CAF50;
+  }
+}
+
+.input-wrapper input.highlight-pulse {
+  animation: inputPulse 0.7s ease !important;
+  border-color: #4CAF50 !important;
+}
+
+/* Responsive adjustments for demo credentials */
+@media (max-width: 575px) {
+  .quick-demo-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .quick-demo-chips {
+    justify-content: stretch;
+  }
+
+  .quick-demo-chip {
+    flex: 1;
+    justify-content: center;
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .field-demo-card {
+    padding: 5px 6px;
+    gap: 6px;
+  }
+
+  .role-badge {
+    font-size: 10px;
+    padding: 2px 5px;
+  }
+
+  .demo-value {
+    font-size: 11px;
+  }
+
+  .demo-copy-btn {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+}
+

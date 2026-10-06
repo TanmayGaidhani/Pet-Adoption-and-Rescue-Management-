@@ -1,0 +1,24 @@
+name: Keep Render Service Awake
+
+on:
+  schedule:
+    # Ping every 10 minutes (Render free tier sleeps after 15 minutes of inactivity)
+    - cron: '*/10 * * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions UI
+
+jobs:
+  keep_alive:
+    name: Ping Render Health Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send keep-alive ping to Render
+        run: |
+          URL="https://pet-adoption-and-rescue-management.onrender.com/health/"
+          echo "Pinging Render service at $URL..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+          echo "Response HTTP Status: $HTTP_STATUS"
+          if [ "$HTTP_STATUS" -eq 200 ]; then
+            echo "✅ RescueMate is active and alive!"
+          else
+            echo "⚠️ Service returned HTTP $HTTP_STATUS (or waking up from sleep)"
+          fi

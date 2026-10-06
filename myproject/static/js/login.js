@@ -84,10 +84,98 @@ window.addEventListener('DOMContentLoaded', function() {
     const demoPass = sessionStorage.getItem('demo_password');
     if (demoEmail && demoPass) {
         setTimeout(() => {
-            document.getElementById('email').value = demoEmail;
-            document.getElementById('password').value = demoPass;
+            fillField('email', demoEmail);
+            fillField('password', demoPass);
             sessionStorage.removeItem('demo_email');
             sessionStorage.removeItem('demo_password');
         }, 600);
     }
 });
+
+// ===== DEMO CREDENTIALS FUNCTIONS =====
+
+function fillField(fieldId, value, cardElement) {
+  const input = document.getElementById(fieldId);
+  if (!input) return;
+
+  input.removeAttribute('readonly');
+  input.value = value;
+  input.style.borderColor = '#4CAF50';
+  input.dispatchEvent(new Event('input', { bubbles: true }));
+  input.dispatchEvent(new Event('change', { bubbles: true }));
+
+  // Animation pulse effect on input
+  input.classList.remove('highlight-pulse');
+  void input.offsetWidth; // Force DOM reflow to re-trigger CSS keyframe
+  input.classList.add('highlight-pulse');
+  setTimeout(() => input.classList.remove('highlight-pulse'), 800);
+
+  // Button feedback on the clicked card
+  if (cardElement) {
+    const btn = cardElement.querySelector('.demo-copy-btn');
+    if (btn) {
+      const originalText = btn.textContent;
+      btn.textContent = '✓ Filled';
+      btn.classList.add('filled');
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.classList.remove('filled');
+      }, 1200);
+    }
+  }
+}
+
+function copyValue(event, text, btn) {
+  if (event) {
+    event.stopPropagation();
+  }
+  const originalText = btn.textContent;
+
+  function onCopied() {
+    btn.textContent = '✓ Copied';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.classList.remove('copied');
+    }, 1500);
+  }
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(onCopied).catch(() => {
+      fallbackCopy(text);
+      onCopied();
+    });
+  } else {
+    fallbackCopy(text);
+    onCopied();
+  }
+}
+
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+  } catch (err) {}
+  document.body.removeChild(ta);
+}
+
+function quickFillAll(emailVal, passVal, btn) {
+  fillField('email', emailVal);
+  fillField('password', passVal);
+
+  if (btn) {
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span>✓ Applied!</span>';
+    btn.classList.add('quick-filled');
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.classList.remove('quick-filled');
+    }, 1400);
+  }
+}
+

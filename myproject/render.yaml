@@ -20,4 +20,4 @@ services:
       - key: SENDER_EMAIL
         sync: false
       - key: CSRF_TRUSTED_ORIGINS
-        value: "https://rescuemate.onrender.com"
+        value: "https://rescuemate.onrender.com,https://pet-adoption-and-rescue-management.onrender.com"

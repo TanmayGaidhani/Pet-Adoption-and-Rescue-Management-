@@ -32,6 +32,10 @@ urlpatterns = [
     # Django Admin (MUST come after custom admin URLs)
     path('admin/', admin.site.urls),
     
+    # Health check for uptime monitoring & keeping Render awake
+    path('health/', views.health_check, name='health_check'),
+    path('ping/', views.health_check, name='ping'),
+
     # Main URLs
     path('', views.index, name='index'),
     path('demo/', views.demo_credentials, name='demo_credentials'),

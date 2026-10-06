@@ -49,22 +49,73 @@
       </div>
       {% endif %}
 
+      <!-- Quick Demo Access Bar -->
+      <div class="quick-demo-bar" id="quickDemoBar">
+        <span class="quick-demo-title">⚡ Try Demo:</span>
+        <div class="quick-demo-chips">
+          <button type="button" class="quick-demo-chip user-chip" onclick="quickFillAll('demouser@rescuemate.com', 'Demo@1234', this)" title="1-Click Fill User Credentials">
+            👤 Demo User
+          </button>
+          <button type="button" class="quick-demo-chip admin-chip" onclick="quickFillAll('admin@rescuemate.com', 'Admin@1234', this)" title="1-Click Fill Admin Credentials">
+            👑 Demo Admin
+          </button>
+        </div>
+      </div>
+
       <form id="loginForm" class="login-form" method="POST">
         {% csrf_token %}
-        <div class="form-group">
+        <div class="form-group" id="emailGroup">
           <label for="email">Email Address</label>
           <div class="input-wrapper">
             <span class="input-icon">📧</span>
             <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="off">
           </div>
+          <!-- Demo credentials near email -->
+          <div class="field-demo-hints" id="emailDemoHints">
+            <div class="field-demo-header">
+              <span class="field-demo-title">🔑 Demo Emails</span>
+              <span class="field-demo-action-hint">Click to autofill or copy</span>
+            </div>
+            <div class="field-demo-cards">
+              <div class="field-demo-card" id="demoUserEmailCard" onclick="fillField('email', 'demouser@rescuemate.com', this)" title="Click to fill email">
+                <span class="role-badge role-user">👤 User</span>
+                <span class="demo-value" id="demoUserEmailVal">demouser@rescuemate.com</span>
+                <button type="button" class="demo-copy-btn" onclick="copyValue(event, 'demouser@rescuemate.com', this)" title="Copy email">Copy</button>
+              </div>
+              <div class="field-demo-card" id="demoAdminEmailCard" onclick="fillField('email', 'admin@rescuemate.com', this)" title="Click to fill email">
+                <span class="role-badge role-admin">👑 Admin</span>
+                <span class="demo-value" id="demoAdminEmailVal">admin@rescuemate.com</span>
+                <button type="button" class="demo-copy-btn" onclick="copyValue(event, 'admin@rescuemate.com', this)" title="Copy email">Copy</button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" id="passwordGroup">
           <label for="password">Password</label>
           <div class="input-wrapper">
             <span class="input-icon">🔒</span>
             <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="new-password">
             <span class="toggle-password" id="togglePassword">👁️</span>
+          </div>
+          <!-- Demo credentials near password -->
+          <div class="field-demo-hints" id="passwordDemoHints">
+            <div class="field-demo-header">
+              <span class="field-demo-title">🔑 Demo Passwords</span>
+              <span class="field-demo-action-hint">Click to autofill or copy</span>
+            </div>
+            <div class="field-demo-cards">
+              <div class="field-demo-card" id="demoUserPassCard" onclick="fillField('password', 'Demo@1234', this)" title="Click to fill password">
+                <span class="role-badge role-user">👤 User</span>
+                <span class="demo-value mono-font" id="demoUserPassVal">Demo@1234</span>
+                <button type="button" class="demo-copy-btn" onclick="copyValue(event, 'Demo@1234', this)" title="Copy password">Copy</button>
+              </div>
+              <div class="field-demo-card" id="demoAdminPassCard" onclick="fillField('password', 'Admin@1234', this)" title="Click to fill password">
+                <span class="role-badge role-admin">👑 Admin</span>
+                <span class="demo-value mono-font" id="demoAdminPassVal">Admin@1234</span>
+                <button type="button" class="demo-copy-btn" onclick="copyValue(event, 'Admin@1234', this)" title="Copy password">Copy</button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -86,6 +137,6 @@
   </div>
 </section>
 
-<script src="{% static 'js/login.js' %}?v=3"></script>
+<script src="{% static 'js/login.js' %}?v=4"></script>
 </body>
 </html>

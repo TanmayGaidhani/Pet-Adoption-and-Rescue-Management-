@@ -19,8 +19,13 @@ def index(request):
     return render(request, "index.html")
 
 
-def demo_credentials(request):
-    return render(request, "demo_credentials.html")
+def health_check(request):
+    """Lightweight health check endpoint for uptime monitoring and keeping Render awake"""
+    return JsonResponse({
+        "status": "healthy",
+        "service": "rescuemate",
+        "timestamp": datetime.now().isoformat()
+    })
 
 
 def demo_credentials(request):
