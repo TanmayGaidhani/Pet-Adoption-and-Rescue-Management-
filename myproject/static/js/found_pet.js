@@ -64,7 +64,9 @@ document.addEventListener('DOMContentLoaded', function() {
         noResults.style.display = 'none';
         
         petsGrid.innerHTML = pets.map(pet => {
-            const imageSrc = pet.image_path ? `/media/${pet.image_path}` : null;
+            const imageSrc = pet.image_path 
+                ? (pet.image_path.startsWith('http') ? pet.image_path : `/media/${pet.image_path}`) 
+                : null;
             
             return `
                 <div class="pet-card-compact">

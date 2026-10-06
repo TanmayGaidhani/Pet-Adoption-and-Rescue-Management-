@@ -62,7 +62,7 @@ function displayPets(pets) {
     
     grid.innerHTML = pets.map(pet => {
         const imageSrc = pet.image_path 
-            ? `/media/${pet.image_path}` 
+            ? (pet.image_path.startsWith('http') ? pet.image_path : `/media/${pet.image_path}`) 
             : null;
         
         // Create traits array

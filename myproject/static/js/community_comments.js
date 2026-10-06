@@ -101,7 +101,7 @@ function loadComments() {
                     <div class="comment-message">${escapeHtml(comment.message)}</div>
                     ${comment.image_path ? `
                         <div class="comment-image" onclick="openImageModal('${comment.image_path}')">
-                            <img src="/media/${comment.image_path}" alt="Comment image" loading="lazy">
+                            <img src="${comment.image_path.startsWith('http') ? comment.image_path : '/media/' + comment.image_path}" alt="Comment image" loading="lazy">
                         </div>
                     ` : ''}
                 </div>

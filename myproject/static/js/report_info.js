@@ -66,7 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
         noResults.style.display = 'none';
         
         reportsGrid.innerHTML = reports.map(report => {
-            const imageSrc = report.image_path ? `/media/${report.image_path}` : null;
+            const imageSrc = report.image_path 
+                ? (report.image_path.startsWith('http') ? report.image_path : `/media/${report.image_path}`) 
+                : null;
             
             return `
                 <div class="report-card-compact">
