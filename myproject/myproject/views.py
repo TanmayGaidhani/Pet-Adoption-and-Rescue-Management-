@@ -20,10 +20,21 @@ def index(request):
 
 
 def health_check(request):
-    """Lightweight health check endpoint for uptime monitoring and keeping Render awake"""
+    """Health check endpoint for uptime monitoring and database connectivity check"""
+    db_info = {"status": "ok"}
+    if request.GET.get('check_db'):
+        try:
+            from .models import get_db
+            db_instance = get_db()
+            db_instance.command('ping')
+            db_info = {"status": "connected"}
+        except Exception as e:
+            db_info = {"status": "error", "message": f"{type(e).__name__}: {str(e)}"}
+            
     return JsonResponse({
-        "status": "healthy",
+        "status": "healthy" if db_info.get("status") != "error" else "degraded",
         "service": "rescuemate",
+        "database": db_info,
         "timestamp": datetime.now().isoformat()
     })
 
@@ -133,32 +144,72 @@ def login_view(request):
             return redirect("dashboard")
     
     if request.method == "POST":
-        email = request.POST.get("email")
-        password = request.POST.get("password")
+        email = (request.POST.get("email") or "").strip()
+        password = (request.POST.get("password") or "").strip()
 
-        user = User.find_by_email(email)
+        try:
+            user = User.find_by_email(email)
 
-        if user:
-            if check_password(password, user['password']):
-                # Clear any existing session data
-                request.session.flush()
-                # Create new session
-                request.session["user_id"] = str(user['_id'])
-                request.session["user_name"] = user['fullname']
-                request.session["is_admin"] = user.get('is_admin', False)
-                request.session.set_expiry(1200)  # Session expires in 20 hour
-                
-                # Redirect based on user type
-                if user.get('is_admin', False):
-                    messages.success(request, f"Welcome Admin {user['fullname']}!")
+            if user:
+                if check_password(password, user['password']):
+                    # Clear any existing session data
+                    request.session.flush()
+                    # Create new session
+                    request.session["user_id"] = str(user['_id'])
+                    request.session["user_name"] = user['fullname']
+                    request.session["is_admin"] = user.get('is_admin', False)
+                    request.session.set_expiry(1200)  # Session expires in 20 min
+                    
+                    # Redirect based on user type
+                    if user.get('is_admin', False):
+                        messages.success(request, f"Welcome Admin {user['fullname']}!")
+                        return redirect("admin_dashboard")
+                    else:
+                        messages.success(request, f"Welcome {user['fullname']}!")
+                        return redirect("dashboard")
+                else:
+                    messages.error(request, "Invalid password!")
+            else:
+                # Demo accounts fallback if demo users are not yet seeded in MongoDB
+                if email.lower() == "demouser@rescuemate.com" and password == "Demo@1234":
+                    request.session.flush()
+                    request.session["user_id"] = "000000000000000000000001"
+                    request.session["user_name"] = "Demo User"
+                    request.session["is_admin"] = False
+                    request.session.set_expiry(1200)
+                    messages.success(request, "Welcome Demo User!")
+                    return redirect("dashboard")
+                elif email.lower() == "admin@rescuemate.com" and password == "Admin@1234":
+                    request.session.flush()
+                    request.session["user_id"] = "000000000000000000000002"
+                    request.session["user_name"] = "Admin"
+                    request.session["is_admin"] = True
+                    request.session.set_expiry(1200)
+                    messages.success(request, "Welcome Admin!")
                     return redirect("admin_dashboard")
                 else:
-                    messages.success(request, f"Welcome {user['fullname']}!")
-                    return redirect("dashboard")
+                    messages.error(request, "User does not exist!")
+        except Exception as e:
+            # If MongoDB connection times out or fails, check if credentials match demo accounts
+            if email.lower() == "demouser@rescuemate.com" and password == "Demo@1234":
+                request.session.flush()
+                request.session["user_id"] = "000000000000000000000001"
+                request.session["user_name"] = "Demo User"
+                request.session["is_admin"] = False
+                request.session.set_expiry(1200)
+                messages.success(request, "Welcome Demo User!")
+                return redirect("dashboard")
+            elif email.lower() == "admin@rescuemate.com" and password == "Admin@1234":
+                request.session.flush()
+                request.session["user_id"] = "000000000000000000000002"
+                request.session["user_name"] = "Admin"
+                request.session["is_admin"] = True
+                request.session.set_expiry(1200)
+                messages.success(request, "Welcome Admin!")
+                return redirect("admin_dashboard")
             else:
-                messages.error(request, "Invalid password!")
-        else:
-            messages.error(request, "User does not exist!")
+                messages.error(request, f"Database Connection Warning: Unable to connect to MongoDB ({type(e).__name__}). Please check MONGODB_URI and MongoDB Atlas Network Access.")
+
 
     response = render(request, "login.html")
     response['Cache-Control'] = 'no-cache, no-store, must-revalidate, private'

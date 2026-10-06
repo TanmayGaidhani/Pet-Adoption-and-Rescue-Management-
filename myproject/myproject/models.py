@@ -17,7 +17,7 @@ def get_db():
     if _db_instance is None:
         uri = os.getenv('MONGODB_URI', 'mongodb://127.0.0.1:27017/')
         name = os.getenv('DATABASE_NAME', 'rescue_pet')
-        _client = MongoClient(uri)
+        _client = MongoClient(uri, serverSelectionTimeoutMS=5000, connectTimeoutMS=5000)
         _db_instance = _client[name]
     return _db_instance
 
@@ -81,7 +81,10 @@ class User:
     def get_by_id(user_id):
         """Get user by ID"""
         from bson import ObjectId
-        return users_collection.find_one({'_id': ObjectId(user_id)})
+        try:
+            return users_collection.find_one({'_id': ObjectId(user_id)})
+        except Exception:
+            return None
     
     @staticmethod
     def find_by_id(user_id):
